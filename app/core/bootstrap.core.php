@@ -22,32 +22,32 @@
 class Bootstrap
 {
 	/** Controller Container
-     *
-     * [eg.] User
-     * @var string $controller */
+	 *
+	 * [eg.] User
+	 * @var string $controller */
 	private $controller;
 
 	/** Action Container
-     *
-     * [eg.] Register
-     * @var string $action */
+	 *
+	 * [eg.] Register
+	 * @var string $action */
 	private $action;
 
 	/** Request Container
-     *
-     * [eg.] user_name or id
-     * @var string $request */
+	 *
+	 * [eg.] user_name or id
+	 * @var string $request */
 	private $request;
 
 
 	/**
-     * Core Bootstrap Construct Function
-     *
-     * Set URL's Value in Container eg.('' = index)
-     *
-     * @param array $request URL's Value
-     * @return void
-     */
+	 * Core Bootstrap Construct Function
+	 *
+	 * Set URL's Value in Container eg.('' = index)
+	 *
+	 * @param array $request URL's Value
+	 * @return void
+	 */
 	public function __construct(array $request)
 	{
 		$this->request = $request;
@@ -67,11 +67,11 @@ class Bootstrap
 
 
 	/** Create Controller Function
-     *
-     * Check Classes, Method & Requests ara exists.
-     *
-     * @return object Intantiation New Object in $controller (Bootstrap's Class) From Controller Class
-     */
+	 *
+	 * Check Classes, Method & Requests ara exists.
+	 *
+	 * @return object Intantiation New Object in $controller (Bootstrap's Class) From Controller Class
+	 */
 	public function createController()
 	{
 		$this->controller = NS_CONTROLLERS . $this->controller;
@@ -79,9 +79,9 @@ class Bootstrap
 		if (class_exists($this->controller)) {
 
 			/** Parent Class Name
-             *
-             * Get Controller's Parent Class Name [eg.] Core Controller
-             * @var array $parents */
+			 *
+			 * Get Controller's Parent Class Name [eg.] Core Controller
+			 * @var array $parents */
 			$parents = class_parents($this->controller);
 
 			if (in_array(NS_CORE . 'Controller', $parents)) {
