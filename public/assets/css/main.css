@@ -1989,6 +1989,7 @@ textarea {
 
 .greeneye-emergency-card {
 	padding: 50px 30px;
+	border-radius: var(--borderRadius);
 }
 
 .greeneye-emergency-card i {
@@ -2163,12 +2164,14 @@ textarea {
 .greeneye-contact-area .contact-form .form-control {
 	width: 100%;
 	height: 55px;
-	background-color: var(--white);
+	background-color: var(--light);
 	padding: 15px;
 	border: none;
 	font-size: 12px;
 	font-style: italic;
 	margin-bottom: 0 !important;
+	border-radius: var(--borderRadius);
+	box-shadow: 0 2px 5px var(--shadow);
 }
 
 .leave-comment-area .comment-form textarea.form-control,
