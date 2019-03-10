@@ -1,0 +1,79 @@
+/*
+ * @Author: GurjarsPro
+ * @Date: 2019-03-10 12:32:49
+ * @Last Modified by: krishna_gujjjar
+ * @Last Modified time: 2019-03-10 22:36:22
+ */
+
+:root {
+	--primary: #1cca96;
+	--secondary: #ced7df;
+	--success: #626cfc;
+	--danger: #ff0062;
+	--dark: #3a4161;
+	--light: #eceef2;
+	--white: #ffffff;
+	--primaryFade: #1cca969f;
+	--lightFade: #eceef280;
+	--shadow: #00000030;
+	--borderPill: 25px;
+	--borderCircle: 50%;
+	--borderRadius: .25rem;
+}
+
+::selection {
+	background: var(--dark);
+	color: var(--white);
+}
+
+.stroke-none {
+	stroke: none;
+}
+
+.fill-none {
+	fill: none;
+}
+
+.fill-danger {
+	fill: var(--danger);
+}
+
+.fill-facebook {
+	fill: #625fff;
+}
+
+.fill-twitter {
+	fill: #32acf3
+}
+
+.fill-github {
+	fill: #8c8da5
+}
+
+.fill-slack {
+	fill: var(--primary);
+}
+
+.fill-light {
+	fill: #eceef2
+}
+
+.stroke-dark {
+	stroke: #3a4161
+}
+
+.stroke-light {
+	stroke: #eceef2
+}
+
+.text-light {
+	color: var(--light);
+}
+
+.centered {
+	position: fixed;
+	left: 0%;
+	top: 0%;
+	z-index: 9999999;
+	transform: scale(.8);
+}
