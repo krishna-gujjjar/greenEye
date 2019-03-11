@@ -1989,7 +1989,7 @@ textarea {
 
 .greeneye-emergency-card {
 	padding: 50px 30px;
-	border-radius: var(--borderRadius);
+	/* border-radius: var(--borderRadius); */
 }
 
 .greeneye-emergency-card i {
