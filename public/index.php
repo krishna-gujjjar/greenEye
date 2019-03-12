@@ -82,7 +82,7 @@
 						<div class="main-menu h-100">
 							<nav class="navbar h-100 navbar-expand-lg">
 								<!-- Logo Area  -->
-								<a class="navbar-brand" href="index.html"><img src="assets/img/core-img/logo.png" alt="Logo" /></a>
+								<a class="navbar-brand" href="index.php"><img src="assets/img/core-img/logo.png" alt="Logo" /></a>
 
 								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu"
 								 aria-expanded="false" aria-label="Toggle navigation">
@@ -93,22 +93,22 @@
 									<!-- Menu Area -->
 									<ul class="navbar-nav ml-auto">
 										<li class="nav-item active">
-											<a class="nav-link" href="index.html">Home
+											<a class="nav-link" href="index.php">Home
 												<span class="sr-only">(current)</span>
 											</a>
 										</li>
 
 										<li class="nav-item">
-											<a class="nav-link" href="about-us.html">About Us</a>
+											<a class="nav-link" href="about-us.php">About Us</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link" href="services.html">Services</a>
+											<a class="nav-link" href="services.php">Services</a>
 										</li>
 										<!-- <li class="nav-item">
-											<a class="nav-link" href="blog.html">News</a>
+											<a class="nav-link" href="blog.php">News</a>
 										</li> -->
 										<li class="nav-item">
-											<a class="nav-link" href="contact.html">Contact</a>
+											<a class="nav-link" href="contact.php">Contact</a>
 										</li>
 									</ul>
 									<!-- Appointment Button -->
@@ -466,15 +466,15 @@
 							facility
 						</h2>
 						<p>
-							Our aim is to bring healthcare of world class health facillities 
-							within the reach of every individual. We are committed to the achievement and maintenance 
-							of excellence in education, research and healthcare for the benefit of humanity. 
+							Our aim is to bring healthcare of world class health facillities
+							within the reach of every individual. We are committed to the achievement and maintenance
+							of excellence in education, research and healthcare for the benefit of humanity.
 
     						Our mission is also to transcend the realm of curative care. With a new focus o
 							n preventive care, Sudha hospital is going beyond medicine. And as we are growing
- 							in the 21st century ,we stand committed to building 
+ 							in the 21st century ,we stand committed to building
 							an infrastructure that will create an environment that protects and nurtures our future
-							. And for all Sudha hospitalites who are dedicated over the path of health care, for us 
+							. And for all Sudha hospitalites who are dedicated over the path of health care, for us
 							Coming together is a beginning; keeping together is progress; working together is success.
 						</p>
 						<a href="#" class="btn greeneye-btn mt-50">View the services <span>+</span></a>
@@ -774,7 +774,7 @@
 	<!-- Active js -->
 	<script src="assets/js/main.js"></script>
 	<script>
-		$('#year').html(new Date().getFullYear());
+		$('#year').php(new Date().getFullYear());
 
 		// Feather Icons
 		feather.replace({

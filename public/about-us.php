@@ -36,7 +36,7 @@ include "include/header.php";
 						<div class="main-menu h-100">
 							<nav class="navbar h-100 navbar-expand-lg">
 								<!-- Logo Area  -->
-								<a class="navbar-brand" href="index.html"><img src="assets/img/core-img/logo.png" alt="Logo"></a>
+								<a class="navbar-brand" href="index.php"><img src="assets/img/core-img/logo.png" alt="Logo"></a>
 
 								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu"
 								 aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -45,20 +45,20 @@ include "include/header.php";
 									<!-- Menu Area -->
 									<ul class="navbar-nav ml-auto">
 										<li class="nav-item">
-											<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+											<a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
 										</li>
 
 										<li class="nav-item active">
-											<a class="nav-link" href="about-us.html">About Us</a>
+											<a class="nav-link" href="about-us.php">About Us</a>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link" href="services.html">Services</a>
+											<a class="nav-link" href="services.php">Services</a>
 										</li>
 										<!-- <li class="nav-item">
-											<a class="nav-link" href="blog.html">News</a>
+											<a class="nav-link" href="blog.php">News</a>
 										</li> -->
 										<li class="nav-item">
-											<a class="nav-link" href="contact.html">Contact</a>
+											<a class="nav-link" href="contact.php">Contact</a>
 										</li>
 									</ul>
 									<!-- Appointment Button -->
@@ -99,12 +99,12 @@ include "include/header.php";
 							nd educational town in the Hadoti Region. Founded by eminent surgeons Dr. R. K. Agrawal
 							 and Dr. (Mrs.) Sudha Agrawal, under vision of Lt. Shrilal Agrawal, the institution has
 							  been envisioned with the aim of bringing to India the highest standards of medical ca
-							  re along with clinical research, education and training. Sudha hospital is governed 
+							  re along with clinical research, education and training. Sudha hospital is governed
 							  under the guiding principles of providing medical services to patients with care, co
 							  mpassion, commitment. Spread across 25,000 sq feet area , the institute includes a res
 							  earch center and nursing school. It has 100 beds and over 50 critical care beds with 8
 							   operation theatres including 2 OT which has air handling system and catering to ove
-							   r 20 specialties. 
+							   r 20 specialties.
 							Sudha hospital brings together an outstanding pool of doctors, and clinical researchers
 
 							 to foster collaborative, multidisciplinary investigations, inspiring new ideas and di
@@ -582,13 +582,13 @@ include "include/header.php";
 									 facillities within the reach of every individual. We a
 									 re committed to the achievement and maintenance of excell
 									 ence in education, research and healthcare for the benefi
-									 t of humanity. 
+									 t of humanity.
 
 
 									 Our mission is also to transcend
- 
+
 									 the realm of curative care. With a new focus on preventive
- 
+
 									 care, Sudha hospital is going beyond medicine. And as we are growing in the 21st century ,we stand committed to building an infrastructure that will create an environment that protects and nurtures our future. And for all Sudha hospitalites who are dedicated over the path of health care, for us Coming together is a beginning; keeping together is progress; working together is success.
 
 
@@ -637,7 +637,7 @@ include "include/header.php";
 	<!-- Active js -->
 	<script src="assets/js/main.js"></script>
 	<script>
-		$('#year').html(new Date().getFullYear());
+		$('#year').php(new Date().getFullYear());
 
 		// Feather Icons
 		feather.replace({
