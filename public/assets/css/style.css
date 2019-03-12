@@ -12,7 +12,7 @@
 	outline: none;
 	list-style: none;
 	text-decoration: none;
-	font-family: 'Asap', sans-serif;
+	font-family: "Asap", sans-serif;
 	/* font-family: 'Roboto', sans-serif; */
 }
 
@@ -29,14 +29,11 @@
 
 	--white: #fff;
 
-
 	--primaryFade: #ff8f799f;
 
 	--lightFade: #eceef280;
 
 	--shadow: #00000030;
-
-
 
 	--primary: #0abd0a;
 	--success: #6eff55;
@@ -44,9 +41,32 @@
 	--light: #e8f5e6;
 	--dark: #354e34;
 	--primaryFade: #e8f5e69f;
+
+	--primary: #21a32f;
+	--success: #79f086;
+	--light: #d4fad8;
+	--dark: #005609;
+	--primaryFade: #f1fdf2;
+
+	/* --primary: #4AB19D; */
+	/* --primary: #1cca96; */
+
+	--success: #ef3d59;
+
+	/* --success: #E17A47; */
+
+	--warning: #efc958;
+
+	--primary: #21a32f;
+	--success: #ff0062;
+	/* --secondary: #354e34; */
+	--secondary: #727f86;
+	--dark: #344e5c;
+	--primaryFade: #eceef2;
+
 	--borderPill: 25px;
 	--borderCircle: 50%;
-	--borderRadius: .25rem;
+	--borderRadius: 0.25rem;
 }
 
 ::selection {
@@ -71,11 +91,11 @@
 }
 
 .fill-twitter {
-	fill: #32acf3
+	fill: #32acf3;
 }
 
 .fill-github {
-	fill: #8c8da5
+	fill: #8c8da5;
 }
 
 .fill-slack {
@@ -83,15 +103,15 @@
 }
 
 .fill-light {
-	fill: #eceef2
+	fill: #eceef2;
 }
 
 .stroke-dark {
-	stroke: #3a4161
+	stroke: #3a4161;
 }
 
 .stroke-light {
-	stroke: #eceef2
+	stroke: #eceef2;
 }
 
 .text-light {
@@ -103,5 +123,5 @@
 	left: 0%;
 	top: 0%;
 	z-index: 9999999;
-	transform: scale(.8);
+	transform: scale(0.8);
 }
