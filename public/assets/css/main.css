@@ -17,15 +17,6 @@
 @import url(card.css);
 @import url(style.css);
 
-* {
-	margin: 0;
-	padding: 0;
-}
-
-body {
-	font-family: "Roboto", sans-serif;
-}
-
 h1,
 h2,
 h3,
@@ -48,8 +39,8 @@ a {
 	transition-duration: 500ms;
 	text-decoration: none;
 	outline: none;
-	font-size: 14px;
-	font-weight: 700;
+	font-size: 16px;
+	font-weight: 600;
 }
 
 a:hover,
@@ -344,10 +335,10 @@ img {
 	height: 45px;
 	padding: 0 55px 0 30px;
 	line-height: 42px;
-	font-size: 14px;
+	font-size: 16px;
 	min-width: 140px;
 	border-radius: var(--borderPill);
-	font-weight: 700;
+	font-weight: 600;
 	position: relative;
 	z-index: 1;
 	-webkit-transition-duration: 500ms;

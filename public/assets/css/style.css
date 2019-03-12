@@ -5,17 +5,45 @@
  * @Last Modified time: 2019-03-10 22:36:22
  */
 
+* {
+	margin: 0 auto;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	list-style: none;
+	text-decoration: none;
+	font-family: 'Asap', sans-serif;
+	/* font-family: 'Roboto', sans-serif; */
+}
+
 :root {
 	--primary: #1cca96;
-	--secondary: #ced7df;
+	--secondary: #82e5f7;
 	--success: #626cfc;
+	--warning: #ff8f79;
 	--danger: #ff0062;
+
 	--dark: #3a4161;
-	--light: #eceef2;
-	--white: #ffffff;
-	--primaryFade: #1cca969f;
+	/* --light: #eceef2; */
+	--light: #f4f2ef;
+
+	--white: #fff;
+
+
+	--primaryFade: #ff8f799f;
+
 	--lightFade: #eceef280;
+
 	--shadow: #00000030;
+
+
+
+	--primary: #0abd0a;
+	--success: #6eff55;
+	--secondary: #8f958f;
+	--light: #e8f5e6;
+	--dark: #354e34;
+	--primaryFade: #e8f5e69f;
 	--borderPill: 25px;
 	--borderCircle: 50%;
 	--borderRadius: .25rem;
