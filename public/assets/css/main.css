@@ -424,7 +424,7 @@ img {
 
 .greeneye-appoint-btn {
 	display: inline-block;
-	color: var(--light);
+	color: var(--white);
 	background-color: var(--success);
 	height: 50px;
 	padding: 0 15px;
@@ -618,7 +618,8 @@ img {
 	font-size: 14px;
 	text-transform: capitalize;
 	padding: 10px 20px;
-	color: var(--white);
+	/* color: var(--white); */
+	color: var(--dark);
 	font-weight: 500;
 	margin: 0 1px;
 	border-radius: var(--borderRadius);
@@ -626,10 +627,12 @@ img {
 
 .header-area .main-menu .nav-link:hover {
 	background-color: var(--primary);
+	color: var(--white);
 }
 
 .header-area .main-menu .nav-link:focus {
 	background-color: var(--primary);
+	color: var(--white);
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -654,6 +657,7 @@ img {
 
 .header-area .main-menu .nav-item.active .nav-link {
 	background-color: var(--primary);
+	color: var(--white);
 }
 
 .dropdown-menu.show {
