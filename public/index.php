@@ -84,8 +84,7 @@
 								<!-- Logo Area  -->
 								<a class="navbar-brand" href="index.php"><img src="assets/img/core-img/logo.png" alt="Logo" /></a>
 
-								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu"
-								 aria-expanded="false" aria-label="Toggle navigation">
+								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation">
 									<span class="navbar-toggler-icon"></span>
 								</button>
 
@@ -764,7 +763,8 @@
 	<!-- Feather js -->
 	<script src="vendors/feather/feather.min.js"></script>
 	<!-- jQuery js-->
-	<script src="vendors/jquery/jquery-2.2.4.min.js"></script>
+	<!-- <script src="vendors/jquery/jquery-2.2.4.min.js"></script> -->
+	<script src="vendors/jquery/jquery-3.3.1.min.js"></script>
 	<!-- Popper js -->
 	<script src="vendors/popperjs/popper.min.js"></script>
 	<!-- Bootstrap js -->
@@ -774,8 +774,8 @@
 	<!-- Active js -->
 	<script src="assets/js/main.js"></script>
 	<script>
-		$('#year').php(new Date().getFullYear());
-
+		// Get Current Year for Copyright
+		$('#year').html(new Date().getFullYear());
 		// Feather Icons
 		feather.replace({
 			'fill': "currentColor",

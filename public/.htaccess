@@ -1,0 +1,18 @@
+#  * @Author: GurjarsPro
+#  * @Date: 2019-03-13 20:58:32
+#  * @Last Modified by:   krishna_gujjjar
+#  * @Last Modified time: 2019-03-13 20:58:32
+
+
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+
+	# Set Base Path
+	RewriteBase /greenEye/public
+
+	# Clean URL
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	# RewriteRule ^([a-zA-Z]*)/?([a-zA-Z]*)?/?([a-zA-Z0-9]*)?/?$ index.php?page=$1&action=$2&id=$3 [QSA,L]
+	RewriteRule ^([a-zA-Z]*)/?([a-zA-Z]*)?/?([a-zA-Z0-9]*)?/?$ index.php [QSA,L]
+</IfModule>
