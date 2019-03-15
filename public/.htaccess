@@ -11,8 +11,11 @@
 	RewriteBase /greenEye/public
 
 	# Clean URL
-	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteCond %{REQUEST_FILENAME} !-f
-	# RewriteRule ^([a-zA-Z]*)/?([a-zA-Z]*)?/?([a-zA-Z0-9]*)?/?$ index.php?page=$1&action=$2&id=$3 [QSA,L]
-	RewriteRule ^([a-zA-Z]*)/?([a-zA-Z]*)?/?([a-zA-Z0-9]*)?/?$ index.php [QSA,L]
+	# RewriteCond %{REQUEST_FILENAME} !-d
+	# RewriteCond %{REQUEST_FILENAME} !-f
+	# # RewriteRule ^([a-zA-Z]*)/?([a-zA-Z]*)?/?([a-zA-Z0-9]*)?/?$ index.php?page=$1&action=$2&id=$3 [QSA,L]
+	# RewriteRule ^([a-zA-Z]*)/?([a-zA-Z]*)?/?([a-zA-Z0-9]*)?/?$ index.php [QSA,L]
+
+    RewriteCond %{SCRIPT_FILENAME} !-d
+    RewriteRule ^([^.]+)$ $1.php [NC,L]
 </IfModule>
