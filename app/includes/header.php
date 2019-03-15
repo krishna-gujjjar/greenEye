@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Title  -->
-    <title>GreenEye - Health &amp; Medical | Home</title>
+    <title>GreenEye | <?php Config::getPageTitle(); ?></title>
 
     <!-- Favicon  -->
     <link rel="icon" href="<?php echo ASSETS; ?>img/core-img/favicon.ico" />
@@ -71,28 +71,21 @@
                                 <div class="collapse navbar-collapse" id="medilifeMenu">
                                     <!-- Menu Area -->
                                     <ul class="navbar-nav ml-auto">
-                                        <li class="nav-item active">
-                                            <a class="nav-link" href="index">Home
-                                                <span class="sr-only">(current)</span>
-                                            </a>
+                                        <li class="nav-item <?php Config::Title('index'); ?>">
+                                            <a class="nav-link" href="index">Home</a>
                                         </li>
-
-                                        <li class="nav-item">
+                                        <li class="nav-item <?php Config::Title('about-us'); ?>">
                                             <a class="nav-link" href="about-us">About Us</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <li class="nav-item <?php Config::Title('services'); ?>">
                                             <a class="nav-link" href="services">Services</a>
                                         </li>
-                                        <!-- <li class="nav-item">
-											<a class="nav-link" href="blog">News</a>
-										</li> -->
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="contact">Contact</a>
+                                        <li class="nav-item <?php Config::Title('contact-us'); ?>">
+                                            <a class="nav-link" href="contact-us">Contact</a>
                                         </li>
                                     </ul>
                                     <!-- Appointment Button -->
-                                    <a href="#" class="btn greeneye-appoint-btn ml-30">For <span>emergencies</span> Click
-                                        here</a>
+                                    <a href="#" class="btn greeneye-appoint-btn ml-30">For <span>emergencies</span> Click here</a>
                                 </div>
                             </nav>
                         </div>
