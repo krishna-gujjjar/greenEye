@@ -1,0 +1,89 @@
+/*
+ * @Author: GurjarsPro
+ * @Date: 2019-03-16 18:25:52
+ * @Last Modified by: krishna_gujjjar
+ * @Last Modified time: 2019-03-16 23:15:41
+ */
+
+:root {
+    --primary: #21a32f;
+    --secondary: #727f86;
+    --success: #ff0062;
+    --warning: #efc958;
+    --danger: #ff8f79;
+
+    --primaryD: #21a32fcc;
+    --secondaryD: #727f86cc;
+    --successD: #ff0062cc;
+    --warningD: #efc958cc;
+    --dangerD: #ff8f79cc;
+
+    --primaryS: #21a32f80;
+    --secondaryS: #727f8680;
+    --successS: #ff006280;
+    --warningS: #efc95880;
+    --dangerS: #ff8f7980;
+
+    --primarySL: #21a32f40;
+    --secondarySL: #727f8640;
+    --successSL: #ff006240;
+    --warningSL: #efc95840;
+    --dangerSL: #ff8f7940;
+
+    --light: #d4fad8;
+    --dark: #344e5c;
+    --primaryFade: #eceef2;
+
+    --white: #fff;
+    --lightFade: #eceef280;
+    --shadow: #00000030;
+
+
+    --priL1: #b8e1bd;
+    --priL2: #A1d8a7;
+    --priL3: #82cb8a;
+    --priL4: #58ba63;
+
+    --priD1: #169624;
+    --priD2: #0e891b;
+    --priD3: #067c13;
+    --priD4: #006f0c;
+
+
+    --scsL1: #ffaecd;
+    --scsL2: #FF93bc;
+    --scsL3: #ff6fa6;
+    --scsL4: #ff3f89;
+
+    --scsD1: #f2005d;
+    --scsD2: #e50058;
+    --scsD3: #d80053;
+    --scsD4: #cc004e;
+
+
+    --wrngL1: #f9edca;
+    --wrngL2: #f8e8b8;
+    --wrngL3: #f5e0A1;
+    --wrngL4: #F3D681;
+
+    --wrngD1: #E2BB47;
+    --wrngD2: #D5AE39;
+    --wrngD3: #C8A12B;
+    --wrngD4: #BC941F;
+
+    --dnL1: #ffd8d4;
+    --dnL2: #ffcfc6;
+    --dnL3: #ffc0B3;
+    --dnL4: #ffab9a;
+
+    --dnD1: #f27d66;
+    --dnD2: #e56d55;
+    --dnD3: #d85e46;
+    --dnD4: #cc5037;
+
+}
+
+::selection {
+    background: var(--dark);
+    color: var(--white);
+}
