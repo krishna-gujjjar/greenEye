@@ -3,7 +3,7 @@
 
 <footer class="footer footer-static footer-light">
     <p class="clearfix text-muted text-center px-2">
-        <span>Copyright &copy; <a href="#" class="text-bold-800 primary darken-2">Gurjar's ProTech </a>, All rights reserved. </span>
+        <span>Copyright &copy; <a href="" class="text-bold-800 primary darken-2">GreenEye </a>, All rights reserved. </span>
     </p>
 </footer>
 
@@ -242,13 +242,13 @@
 <!-- BEGIN PAGE VENDOR JS-->
 <script src="app-assets/vendors/js/chartist.min.js"></script>
 <!-- END PAGE VENDOR JS-->
-<!-- BEGIN CONVEX JS-->
+<!-- BEGIN greenEye JS-->
 <script src="app-assets/js/app-sidebar.js"></script>
 <script src="app-assets/js/notification-sidebar.js"></script>
 <script src="app-assets/js/customizer.js"></script>
-<!-- END CONVEX JS-->
+<!-- END greenEye JS-->
 <!-- BEGIN PAGE LEVEL JS-->
-<script src="app-assets/js/dashboard-ecommerce.js"></script>
+<script src="app-assets/js/main.js"></script>
 <!-- END PAGE LEVEL JS-->
 </body>
 
