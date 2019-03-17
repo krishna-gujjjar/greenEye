@@ -79,8 +79,7 @@
                 <div class="col-12">
                     <div class="bottom-footer-content">
                         <!-- Copywrite Text -->
-                        <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=ff30347ce9cf225ce7e29e8db05e4660b4a7f794'></script>
-                        <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/502954/t/0"></script>
+                      
                         <div class="copywrite-text">
                             <p>
                                 Copyright &copy; <span id="year"></span>
