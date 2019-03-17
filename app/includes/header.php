@@ -11,7 +11,18 @@
     <title>GreenEye | <?php Config::getPageTitle(); ?></title>
 
     <!-- Favicon  -->
-    <link rel="icon" href="<?php echo ASSETS; ?>img/core-img/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo ASSETS; ?>img/core-img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo ASSETS; ?>img/core-img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo ASSETS; ?>img/core-img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo ASSETS; ?>img/core-img/apple-touch-icon.png">
+    <link rel="manifest" href="<?php echo ASSETS; ?>img/core-img/site.webmanifest">
+    <meta name="apple-mobile-web-app-title" content="greenEye">
+    <meta name="application-name" content="greenEye">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="<?php echo VENDORS; ?>bootstrap/css/bootstrap.min.css">
