@@ -14,7 +14,7 @@
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                     </p>
 
-                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                    <form action="<?php echo str_replace('.php', '', $_SERVER['PHP_SELF']); ?>">
                         <div class="form-group">
                             <label>Email Address</label>
                             <input type="email" name="loginName" class="form-control form-control-lg" placeholder="user@example.com" autocomplete="off" autofocus>
