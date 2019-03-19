@@ -11,6 +11,29 @@
     'use strict';
     $(window).on("load", function () {
 
+        if (typeof Chartist === 'undefined') return;
+
+        if (!$('#Widget-line-chart').length)
+            return;
+
+        if (!$('#Widget-line-chart1').length)
+            return;
+
+        if (!$('#Widget-line-chart2').length)
+            return;
+
+        if (!$('#line-chart').length)
+            return;
+
+        if (!$('#Stack-bar-chart').length)
+            return;
+
+        if (!$('#bar-chart').length)
+            return;
+
+        if (!$('#donut-dashboard-chart').length)
+            return;
+
         // Widget Area Chart 1 Starts
         var widgetlineChart = new Chartist.Line('#Widget-line-chart', {
             labels: [1, 2, 3, 4, 5, 6],
