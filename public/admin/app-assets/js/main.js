@@ -1,12 +1,11 @@
 /*
  * @Author: GurjarsPro
  * @Date: 2019-03-17 11:53:46
- * @Last Modified by:   krishna_gujjjar
- * @Last Modified time: 2019-03-17 11:53:46
+ * @Last Modified by: krishna_gujjjar
+ * @Last Modified time: 2019-03-19 23:38:17
  */
 
 // chartist chart
-// ------------------------------]
 (function (window, document, $) {
     'use strict';
     $(window).on("load", function () {
@@ -35,7 +34,7 @@
             return;
 
         // Widget Area Chart 1 Starts
-        var widgetlineChart = new Chartist.Line('#Widget-line-chart', {
+        let widgetlineChart = new Chartist.Line('#Widget-line-chart', {
             labels: [1, 2, 3, 4, 5, 6],
             series: [
                 [0, 13, 6, 30, 18, 28]
@@ -66,10 +65,8 @@
             }),
         });
 
-
-
         widgetlineChart.on('created', function (data) {
-            var defs = data.svg.elem('defs');
+            const defs = data.svg.elem('defs');
             defs.elem('linearGradient', {
                 id: 'wGradient',
                 x1: 0,
@@ -94,9 +91,9 @@
 
         });
         widgetlineChart.on('draw', function (data) {
-            var circleRadius = 10;
+            const circleRadius = 10;
             if (data.type === 'point') {
-                var circle = new Chartist.Svg('circle', {
+                const circle = new Chartist.Svg('circle', {
                     cx: data.x,
                     cy: data.y,
                     r: circleRadius,
@@ -122,7 +119,7 @@
         // Widget Area Chart 1 Ends
 
         // Widget Area Chart 2 Starts
-        var widgetlineChart = new Chartist.Line('#Widget-line-chart1', {
+        widgetlineChart = new Chartist.Line('#Widget-line-chart1', {
             labels: [1, 2, 3, 4, 5, 6],
             series: [
                 [0, 13, 6, 30, 18, 28]
@@ -154,7 +151,7 @@
         });
 
         widgetlineChart.on('created', function (data) {
-            var defs = data.svg.elem('defs');
+            const defs = data.svg.elem('defs');
             defs.elem('linearGradient', {
                 id: 'wGradient1',
                 x1: 0,
@@ -168,7 +165,7 @@
                 offset: 1,
                 'stop-color': 'rgba(250,91,76, 1)'
             });
-            var targetLineX = data.chartRect.x1 + (data.chartRect.width() - (data.chartRect.width() / data.bounds.step));
+            const targetLineX = data.chartRect.x1 + (data.chartRect.width() - (data.chartRect.width() / data.bounds.step));
 
             data.svg.elem('line', {
                 x1: targetLineX,
@@ -179,9 +176,9 @@
 
         });
         widgetlineChart.on('draw', function (data) {
-            var circleRadius = 10;
+            const circleRadius = 10;
             if (data.type === 'point') {
-                var circle = new Chartist.Svg('circle', {
+                const circle = new Chartist.Svg('circle', {
                     cx: data.x,
                     cy: data.y,
                     r: circleRadius,
@@ -206,7 +203,7 @@
         // Widget Area Chart 2 Ends
 
         // Widget Area Chart 3 Starts
-        var widgetlineChart = new Chartist.Line('#Widget-line-chart2', {
+        widgetlineChart = new Chartist.Line('#Widget-line-chart2', {
             labels: [1, 2, 3, 4, 5, 6],
             series: [
                 [0, 13, 6, 30, 18, 28]
@@ -238,7 +235,7 @@
         });
 
         widgetlineChart.on('created', function (data) {
-            var defs = data.svg.elem('defs');
+            const defs = data.svg.elem('defs');
             defs.elem('linearGradient', {
                 id: 'wGradient2',
                 x1: 0,
@@ -263,9 +260,9 @@
 
         });
         widgetlineChart.on('draw', function (data) {
-            var circleRadius = 10;
+            const circleRadius = 10;
             if (data.type === 'point') {
-                var circle = new Chartist.Svg('circle', {
+                const circle = new Chartist.Svg('circle', {
                     cx: data.x,
                     cy: data.y,
                     r: circleRadius,
@@ -290,7 +287,7 @@
         // Widget Area Chart 3 Ends
 
         // Line with Area Chart Starts
-        var lineArea = new Chartist.Line('#line-chart', {
+        const lineArea = new Chartist.Line('#line-chart', {
             labels: ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th"],
             series: [
                 [0, 4500, 2600, 6100, 2600, 6500, 3200, 6800],
@@ -318,7 +315,7 @@
         });
 
         lineArea.on('created', function (data) {
-            var defs = data.svg.elem('defs');
+            const defs = data.svg.elem('defs');
             defs.elem('linearGradient', {
                 id: 'linear1',
                 x1: 1,
@@ -335,9 +332,9 @@
         });
 
         lineArea.on('draw', function (data) {
-            var circleRadius = 10;
+            const circleRadius = 10;
             if (data.type === 'point') {
-                var circle = new Chartist.Svg('circle', {
+                const circle = new Chartist.Svg('circle', {
                     cx: data.x,
                     cy: data.y,
                     r: circleRadius,
@@ -363,7 +360,7 @@
         // Line with Area Chart Ends
 
         // Stack bar Chart Starts
-        var Stackbarchart = new Chartist.Bar('#Stack-bar-chart', {
+        const Stackbarchart = new Chartist.Bar('#Stack-bar-chart', {
             labels: ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
             series: [
                 [7, 4, 2, -2, -4, -7, -7, -4, -2, 2, 4, 7]
@@ -382,7 +379,7 @@
         });
 
         Stackbarchart.on('created', function (data) {
-            var defs = data.svg.elem('defs');
+            const defs = data.svg.elem('defs');
             defs.elem('linearGradient', {
                 id: 'StackbarGradient',
                 x1: 0,
@@ -420,7 +417,7 @@
         // Stack bar Chart Ends
 
         // Bar Chart Starts
-        var barChart = new Chartist.Bar('#bar-chart', {
+        const barChart = new Chartist.Bar('#bar-chart', {
                 labels: ["Sport", "Music", "Travel", "News", "Blog"],
                 series: [
                     [35, 20, 30, 45, 55]
@@ -450,7 +447,7 @@
             ]);
 
         barChart.on('created', function (data) {
-            var defs = data.svg.elem('defs');
+            const defs = data.svg.elem('defs');
             defs.elem('linearGradient', {
                 id: 'gradient4',
                 x1: 0,
@@ -519,9 +516,7 @@
             });
         });
         barChart.on('draw', function (data) {
-            var barHorizontalCenter, barVerticalCenter, label, value;
             if (data.type === 'bar') {
-
                 data.element.attr({
                     y1: 195,
                     x1: data.x1 + 0.001
@@ -540,7 +535,7 @@
 
         // Donut Chart Starts
 
-        var Donutdata = {
+        const Donutdata = {
             series: [{
                     "name": "done",
                     "className": "ct-done",
@@ -559,7 +554,7 @@
             ]
         };
 
-        var donut = new Chartist.Pie('#donut-dashboard-chart', {
+        const donut = new Chartist.Pie('#donut-dashboard-chart', {
 
             series: [{
                     "name": "done",
@@ -583,7 +578,7 @@
             donutSolid: true,
             donutWidth: 30,
             labelInterpolationFnc: function (value) {
-                var total = Donutdata.series.reduce(function (prev, series) {
+                const total = Donutdata.series.reduce(function (prev, series) {
                     return prev + series.value;
                 }, 0);
                 return total + '%';
@@ -591,7 +586,7 @@
         });
 
         donut.on('created', function (data) {
-            var defs = data.svg.elem('defs');
+            const defs = data.svg.elem('defs');
             defs.elem('linearGradient', {
                 id: 'donutGradient1',
                 x1: 0,

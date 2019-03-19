@@ -37,8 +37,8 @@
 
 <body data-col="2-columns" class=" 2-columns ">
     <!-- ////////////////////////////////////////////////////////////////////////////-->
+    <?php if ('login' !== basename($_SERVER['PHP_SELF'], '.php')) : ?>
     <div class="wrapper nav-collapsed menu-collapsed sidebar-lg">
-
         <div data-active-color="white" data-background-color="primary" data-image="" class="app-sidebar">
             <div class="sidebar-header">
                 <div class="logo clearfix">
@@ -361,7 +361,6 @@
             <div class="sidebar-background"></div>
         </div>
 
-
         <nav class="navbar navbar-expand-lg navbar-light bg-faded">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -559,6 +558,8 @@
                 </div>
             </div>
         </nav>
+
         <div class="main-panel">
             <div class="main-content">
                 <div class="content-wrapper">
+                    <?php endif; ?>

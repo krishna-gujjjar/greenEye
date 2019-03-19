@@ -1,3 +1,4 @@
+<?php if ('login' !== basename($_SERVER['PHP_SELF'], '.php')) : ?>
 </div>
 </div>
 
@@ -228,8 +229,9 @@
         </div>
     </div>
 </aside>
+<?php endif; ?>
 
-<!-- BEGIN VENDOR JS-->
+
 <script src="app-assets/vendors/js/core/jquery-3.3.1.min.js"></script>
 <script src="app-assets/vendors/js/core/popper.min.js"></script>
 <script src="app-assets/vendors/js/core/bootstrap.min.js"></script>
@@ -238,18 +240,15 @@
 <script src="app-assets/vendors/js/jquery.matchHeight-min.js"></script>
 <script src="app-assets/vendors/js/screenfull.min.js"></script>
 <script src="app-assets/vendors/js/pace/pace.min.js"></script>
-<!-- BEGIN VENDOR JS-->
-<!-- BEGIN PAGE VENDOR JS-->
+
+
 <script src="app-assets/vendors/js/chartist.min.js"></script>
-<!-- END PAGE VENDOR JS-->
-<!-- BEGIN greenEye JS-->
+
 <script src="app-assets/js/app-sidebar.js"></script>
 <script src="app-assets/js/notification-sidebar.js"></script>
 <script src="app-assets/js/customizer.js"></script>
-<!-- END greenEye JS-->
-<!-- BEGIN PAGE LEVEL JS-->
+
 <script src="app-assets/js/main.js"></script>
-<!-- END PAGE LEVEL JS-->
 </body>
 
 </html>
