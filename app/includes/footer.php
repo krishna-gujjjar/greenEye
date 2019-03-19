@@ -79,7 +79,6 @@
                 <div class="col-12">
                     <div class="bottom-footer-content">
                         <!-- Copywrite Text -->
-                      
                         <div class="copywrite-text">
                             <p>
                                 Copyright &copy; <span id="year"></span>

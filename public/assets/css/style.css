@@ -115,7 +115,7 @@
 }
 
 .text-light {
-    color: var(--light);
+    color: var(--light) !important;
 }
 
 .centered {
@@ -124,4 +124,8 @@
     top: 0%;
     z-index: 9999999;
     transform: scale(0.8);
+}
+
+.bg-primary {
+    background-color: var(--primary) !important;
 }

@@ -41,8 +41,6 @@
 
             <div class="col-12 col-lg-4">
                 <div class="content-sidebar">
-
-
                     <!-- Contact Card -->
                     <div class="greeneye-contact-card mb-50">
 
@@ -51,7 +49,8 @@
                                 <i class="icon-doctor"></i>
                             </div>
                             <div class="contact-meta">
-                                <p>Address:borkhera , kota,raj <br>kota, CA 93424 </p>
+                                <p class="text-capitalize">Address : Kota, Rajasthan IN
+                                </p>
                             </div>
                         </div>
 
@@ -60,7 +59,7 @@
                                 <i class="icon-doctor"></i>
                             </div>
                             <div class="contact-meta">
-                                <p>Phone: +91 7792819874</p>
+                                <p>Phone : &nbsp;&nbsp;&nbsp;+91-123-456-7890</p>
                             </div>
                         </div>
 
@@ -69,12 +68,12 @@
                                 <i class="icon-doctor"></i>
                             </div>
                             <div class="contact-meta">
-                                <p>Email: greeneye@gmail.com</p>
+                                <p>Email : admin@greeneye.tk</p>
                             </div>
                         </div>
 
 
-                        <div class="contact-social-area">
+                        <div class="contact-social-area text-left mr-30 mt-5 d-flex">
                             <a href="#"><i class="fill-facebook stroke-none" data-feather="facebook"></i></a>
                             <a href="#"><i class="fill-github stroke-none" data-feather="github"></i></a>
                             <a href="#"><i class="fill-slack stroke-none" data-feather="slack"></i></a>
@@ -83,25 +82,27 @@
 
                     </div>
 
-
                     <!-- medilife Emergency Card -->
                     <div class="greeneye-emergency-card bg-img bg-overlay" style="background-image: url(<?php echo ASSETS; ?>img/bg-img/about1.jpg);">
                         <i class="icon-smartphone"></i>
                         <h2>For Emergency calls</h2>
-                        <h3>+12-823-611-8721</h3>
+                        <h3>+91-123-456-7890</h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<center>
-    <h1>OUR LOCATION</h1>
-</center><br><br>
-<!-- Google Maps -->
-<!-- Google Maps -->
-<div class="col-12 col-sm-6 col-xl-3">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d461369.30528190744!2d75.78084025401128!3d25.389820465253212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396f9b30c41bb44d%3A0x5f5c103200045588!2sKota%2C+Rajasthan!5e0!3m2!1sen!2sin!4v1552324077362" width="100%" height="350" frameborder="0"></iframe>
-</div>
+
+<section class="section-padding-100 bg-overlay">
+    <div class="container-fluid text-center">
+        <h1 class="text-light pb-5">OUR LOCATION</h1>
+        <div class="row">
+            <div class="col-12 col-sm-12 px-3 px-md-5">
+                <iframe class="shadow" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d461369.30528190744!2d75.78084025401128!3d25.389820465253212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396f9b30c41bb44d%3A0x5f5c103200045588!2sKota%2C+Rajasthan!5e0!3m2!1sen!2sin!4v1552324077362" width="100%" height="600" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
 
 <?php Import::Footer(); ?>
