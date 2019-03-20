@@ -2,12 +2,15 @@
  * @Author: GurjarsPro
  * @Date: 2019-03-17 11:53:46
  * @Last Modified by: krishna_gujjjar
- * @Last Modified time: 2019-03-19 23:38:17
+ * @Last Modified time: 2019-03-20 10:03:41
  */
 
 // chartist chart
 (function (window, document, $) {
     'use strict';
+    // Input, Select, Textarea validations except submit button
+    $("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
+
     $(window).on("load", function () {
 
         if (typeof Chartist === 'undefined') return;

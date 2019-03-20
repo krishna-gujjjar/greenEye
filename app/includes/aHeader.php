@@ -132,7 +132,7 @@
                             </ul>
                         </li>
                         <li class=" nav-item">
-                            <a href="cards.php">
+                            <a href="cards">
                                 <i class="icon-layers"></i>
                                 <span data-i18n="" class="menu-title">Cards</span>
                             </a>

@@ -22,26 +22,25 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>Email Address</label>
-                            <input type="email" name="loginName" class="form-control form-control-lg" placeholder="user@example.com" autocomplete="off" autofocus>
+                            <h5>Repeat Username</h5>
+                            <div class="controls">
+                                <input type="text" data-validation-match-match="loginName" class="form-control" required autocomplete="off" data-validation-required-message="Oops! You missed this." data-validation-match-message="Look Like It's Defferent, Please Type Same Username." data-validation-regex-regex="([a-zA-Z-_@.])*" data-validation-regex-message="Oops! You Mistyped, Please Type Valid Username.">
+                            </div>
                         </div>
-
                         <div class="form-group">
                             <div class="row">
                                 <div class="col">
-                                    <label>Password</label>
+                                    <h5>Password</h5>
                                 </div>
                                 <div class="col-auto">
                                     <a href="password-reset" class="form-text small text-muted"> Forgot password? </a>
                                 </div>
                             </div>
-
-                            <div class="input-group input-group-merge">
-                                <input type="password" name="loginPass" class="form-control form-control-lg" placeholder="Enter your password" autocomplete="off">
+                            <div class="controls">
+                                <input type="password" name="loginPass" class="form-control" required autocomplete="off" data-validation-required-message="Your Password is a Secret, Please Tell me" minlength="5" data-validation-minlength-message="Oops! It's too short.">
                             </div>
                         </div>
-
-                        <button class="btn btn-lg btn-block btn-primary mb-3" name="login" value="login">Sign in</button>
+                        <button name="login" type="submit" class="btn btn-lg btn-block btn-primary mb-3" value="login">Sign in</button>
 
                         <p class="text-center">
                             <small class="text-muted text-center">
@@ -50,7 +49,7 @@
                         </p>
                     </form>
                 </div>
-                <footer class="footer footer-light pl-0 mt-5 pt-md-5">
+                <footer class="footer footer-light pl-0 pt-md-5">
                     <p class="clearfix text-muted text-center px-2">
                         <span>Copyright &copy; <a href="" class="text-bold-800 primary darken-2">GreenEye </a>, All rights reserved. </span>
                     </p>

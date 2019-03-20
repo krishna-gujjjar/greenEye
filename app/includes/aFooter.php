@@ -231,7 +231,6 @@
 </aside>
 <?php endif; ?>
 
-
 <script src="app-assets/vendors/js/core/jquery-3.3.1.min.js"></script>
 <script src="app-assets/vendors/js/core/popper.min.js"></script>
 <script src="app-assets/vendors/js/core/bootstrap.min.js"></script>
@@ -240,6 +239,9 @@
 <script src="app-assets/vendors/js/jquery.matchHeight-min.js"></script>
 <script src="app-assets/vendors/js/screenfull.min.js"></script>
 <script src="app-assets/vendors/js/pace/pace.min.js"></script>
+<?php  ?>
+<script src="app-assets/vendors/js/jqBootstrapValidation.js"></script>
+<?php  ?>
 
 
 <script src="app-assets/vendors/js/chartist.min.js"></script>

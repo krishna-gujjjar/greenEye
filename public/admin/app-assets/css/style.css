@@ -2,7 +2,7 @@
  * @Author: GurjarsPro
  * @Date: 2019-03-16 18:25:52
  * @Last Modified by: krishna_gujjjar
- * @Last Modified time: 2019-03-19 19:51:41
+ * @Last Modified time: 2019-03-20 10:20:06
  */
 
 :root {
@@ -11,6 +11,9 @@
     --success: #ff0062;
     --warning: #efc958;
     --danger: #ff8f79;
+
+    --invalid: #FF9149;
+    --valid: #28D094;
 
     --primaryD: #21a32fcc;
     --secondaryD: #727f86cc;
