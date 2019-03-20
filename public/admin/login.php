@@ -14,7 +14,13 @@
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                     </p>
 
-                    <form action="<?php echo str_replace('.php', '', $_SERVER['PHP_SELF']); ?>">
+                    <form action="<?php echo str_replace('.php', '', str_replace('/public', '', $_SERVER['PHP_SELF'])); ?>" novalidate>
+                        <div class="form-group">
+                            <h5>Username</h5>
+                            <div class="controls">
+                                <input type="text" name="loginName" class="form-control" required autocomplete="off" data-validation-required-message="Hey ! Your Username is Importent for me, Please tell me." data-validation-regex-regex="([a-zA-Z-_@.])*" data-validation-regex-message="Oops! You Mistyped, Please Type Valid Username.">
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label>Email Address</label>
                             <input type="email" name="loginName" class="form-control form-control-lg" placeholder="user@example.com" autocomplete="off" autofocus>
