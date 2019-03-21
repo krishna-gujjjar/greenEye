@@ -1,4 +1,6 @@
 <?php require_once '../../__constants.php'; ?>
+<?php new green ?>
+<?php new database; ?>
 <?php Import::getHeader(); ?>
 <div class="container-fluid">
     <!--Statistics cards Starts-->
