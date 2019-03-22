@@ -1,7 +1,10 @@
 <?php require_once '../../__constants.php'; ?>
-<?php new green ?>
-<?php new database; ?>
+<?php use GreenEye\App \{
+    Config\Import,
+    Validators\validate
+}; ?>
 <?php Import::getHeader(); ?>
+<?php $valid = new validate; ?>
 <div class="container-fluid">
     <!--Statistics cards Starts-->
     <div class="row">

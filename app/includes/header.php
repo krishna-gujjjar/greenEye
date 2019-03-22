@@ -1,3 +1,4 @@
+<?php use GreenEye\App\Config\Config; ?>
 <!DOCTYPE html>
 <html lang="en">
 

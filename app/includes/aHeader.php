@@ -37,7 +37,7 @@
 
 <body data-col="2-columns" class=" 2-columns ">
     <!-- ////////////////////////////////////////////////////////////////////////////-->
-    <?php if ('login' !== basename($_SERVER['PHP_SELF'], '.php')) : ?>
+    <?php if ('login' !== self::getName()) : ?>
     <div class="wrapper nav-collapsed menu-collapsed sidebar-lg">
         <div data-active-color="white" data-background-color="primary" data-image="" class="app-sidebar">
             <div class="sidebar-header">

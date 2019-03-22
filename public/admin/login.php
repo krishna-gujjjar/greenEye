@@ -1,30 +1,35 @@
 <?php require_once '../../__constants.php'; ?>
+<?php use GreenEye\App \{
+    Config\Import,
+    Functions\getSelf,
+    Validators\validate
+}; ?>
 <?php Import::getHeader(); ?>
+<?php $valid = new validate; ?>
 <div class="container-fluid">
     <section>
         <div class="row">
-
             <div class="col-12 col-md-5 col-lg-6 col-xl-5 px-lg-5">
                 <div class="pt-md-5 pt-3 mt-md-5 mt-1 pb-md-5">
                     <h1 class=" display-4 text-center mb-3 font-weight-bold text-capitalize">
-                        Sign in
+                        <?php echo SITENAME, ' ', 'Admin'; ?>
                     </h1>
 
                     <p class="text-muted text-center mb-5">
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                     </p>
 
-                    <form action="<?php echo str_replace('.php', '', str_replace('/public', '', $_SERVER['PHP_SELF'])); ?>" novalidate>
+                    <form action="<?php getSelf::delPublic() ?>" novalidate>
                         <div class="form-group">
                             <h5>Username</h5>
                             <div class="controls">
-                                <input type="text" name="loginName" class="form-control" required autocomplete="off" data-validation-required-message="Hey ! Your Username is Importent for me, Please tell me." data-validation-regex-regex="([a-zA-Z-_@.])*" data-validation-regex-message="Oops! You Mistyped, Please Type Valid Username.">
+                                <input type="text" name="loginName" class="form-control" required autocomplete="off" data-validation-required-message="Hey ! Your Username is Importent for me, Please tell me." data-validation-regex-regex="([a-zA-Z-_@.])*" data-validation-regex-message="Oops! You Mistyped, Please Type Valid Username." minlength="5" data-validation-minlength-message="Oops! It's too short.">
                             </div>
                         </div>
                         <div class="form-group">
                             <h5>Repeat Username</h5>
                             <div class="controls">
-                                <input type="text" data-validation-match-match="loginName" class="form-control" required autocomplete="off" data-validation-required-message="Oops! You missed this." data-validation-match-message="Look Like It's Defferent, Please Type Same Username." data-validation-regex-regex="([a-zA-Z-_@.])*" data-validation-regex-message="Oops! You Mistyped, Please Type Valid Username.">
+                                <input type="text" data-validation-match-match="loginName" class="form-control" required autocomplete="off" data-validation-required-message="Oops! You missed this." data-validation-match-message="Look Like It's Defferent, Please Type Same Username." data-validation-regex-regex="([a-zA-Z-_@.])*" data-validation-regex-message="Oops! You Mistyped, Please Type Valid Username." minlength="5" data-validation-minlength-message="Oops! It's too short.">
                             </div>
                         </div>
                         <div class="form-group">
@@ -41,12 +46,6 @@
                             </div>
                         </div>
                         <button name="login" type="submit" class="btn btn-lg btn-block btn-primary mb-3" value="login">Sign in</button>
-
-                        <p class="text-center">
-                            <small class="text-muted text-center">
-                                Don't have an account yet? <a href="sign-up">Sign up</a> now.
-                            </small>
-                        </p>
                     </form>
                 </div>
                 <footer class="footer footer-light pl-0 pt-md-5">
@@ -57,7 +56,6 @@
             </div>
             <div class="col-12 col-md-7 col-lg-6 col-xl-7 d-none d-lg-block px-5 bg-light">
                 <div class="bg-overlay bg-img vh-100" style="background: url('assets/img/auth.svg');"></div>
-                <!-- <div class="bg-overlay bg-img vh-100" style="background: url('app-assets/img/photos/16.jpeg');"></div> -->
             </div>
         </div>
     </section>

@@ -1,14 +1,11 @@
-<?php
+<?php namespace GreenEye\App\Config;
+
+/** @param string $className */
 spl_autoload_register(function ($className) {
-    if (file_exists(__DIR__ . DIRECTORY_SEPARATOR . $className . '.php')) {
-        require_once __DIR__ . DIRECTORY_SEPARATOR . "$className.php";
-        return true;
-    } else {
-        $className = str_replace('\\', DIRECTORY_SEPARATOR, strtolower($className));
-        if (file_exists(__DIR__ . DIRECTORY_SEPARATOR . "$className.php")) {
-            require_once __DIR__ . DIRECTORY_SEPARATOR . "$className.php";
-            return true;
-        }
+    /** @var string|false Required Class's Path */
+    $path = realpath(str_replace('greeneye/', ROOT, strtolower(str_replace(BS, DS, $className))) . '.php');
+    if (file_exists($path)) {
+        return require_once $path;
     }
     return false;
 });

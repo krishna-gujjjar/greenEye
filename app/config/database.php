@@ -1,4 +1,8 @@
-<?php
+<?php namespace GreenEye\App\Config;
+
+use \PDO as PDO;
+
+/** Database Connection Class */
 abstract class database
 {
     const DB_TYPE = 'mysql';

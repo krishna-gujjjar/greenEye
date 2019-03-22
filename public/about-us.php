@@ -1,4 +1,5 @@
 <?php require_once '../__constants.php'; ?>
+<?php use GreenEye\App\Config\Import; ?>
 <?php Import::Header(); ?>
 <!-- ***** Breadcumb Area Start ***** -->
 <section class="breadcumb-area bg-img gradient-background-overlay" style="background-image: url(<?php echo ASSETS; ?>img/bg-img/breadcumb1.jpg);">

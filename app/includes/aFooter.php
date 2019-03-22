@@ -1,10 +1,9 @@
-<?php if ('login' !== basename($_SERVER['PHP_SELF'], '.php')) : ?>
+<?php if ('login' !== self::getName()) : ?>
 </div>
 </div>
-
 <footer class="footer footer-static footer-light">
     <p class="clearfix text-muted text-center px-2">
-        <span>Copyright &copy; <a href="" class="text-bold-800 primary darken-2">GreenEye </a>, All rights reserved. </span>
+        <span>Copyright &copy; <?php echo date('Y', time()); ?> <a href="" class="text-bold-800 primary darken-2">GreenEye </a>, All rights reserved. </span>
     </p>
 </footer>
 

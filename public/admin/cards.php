@@ -1,4 +1,5 @@
 <?php require_once '../../__constants.php'; ?>
+<?php use GreenEye\App\Config\Import; ?>
 <?php Import::getHeader(); ?>
 <div class="container-fluid">
     <!-- Minimal statistics section start -->

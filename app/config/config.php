@@ -1,19 +1,25 @@
-<?php
+<?php namespace GreenEye\App\Config;
+
+use GreenEye\App\Functions\getSelf;
+
+/** Basic Configation Class */
 class Config
 {
+    use getSelf;
+
     /** Active Current Page
      * @param string $title Page Name
      * @return string */
     static function Title($title)
     {
-        return ($title === basename($_SERVER['PHP_SELF'], '.php')) and print('active');
+        return ($title === self::getName()) and print('active');
     }
 
     /** Get Page Title
      * @return string */
     static function getPageTitle()
     {
-        $title = basename($_SERVER['PHP_SELF'], '.php');
+        $title = self::getName();
         return ($title === 'index' and print('Home')) or print(ucwords(str_replace('-', ' ', $title)));
     }
 }
