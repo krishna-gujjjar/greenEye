@@ -13,7 +13,8 @@ abstract class database
 
     protected $dns;
     protected $options;
-    protected $dbh;
+    protected $con;
+    protected $error;
     protected $stmt;
 
     public function __construct()
@@ -28,29 +29,87 @@ abstract class database
 
     public function connect()
     {
-        if (!$this->dbh) {
+        if (!$this->con) {
             try {
-                $this->dbh = new PDO(
+                $this->con = new PDO(
                     $this->dns,
                     self::DB_USER,
                     self::DB_PASS,
                     $this->options
                 );
-                if ($this->dbh) {
+                if ($this->con) {
                     echo 'Connected to Server';
                 } else {
-                    echo 'Not Connected';
+                    die('Not Connected');
                 }
             } catch (PDOException $e) {
-                echo $e->getMessage();
+                echo $this->error = $e->getMessage();
             }
         } else {
             echo 'Not Try to Connect';
         }
+        return $this->con;
     }
 
-    // public function __destruct()
-    // {
-    //     $this->dbh = null;
-    // }
+    public function query(string $query)
+    {
+        $this->stmt = $this->con->prepare($query);
+    }
+
+    public function bind($param, $value, $type = null)
+    {
+        if (is_null($type)) {
+            switch (true) {
+                case is_int($value):
+                    $type = PDO::PARAM_INT;
+                    break;
+                case is_bool($value):
+                    $type = PDO::PARAM_BOOL;
+                    break;
+                case is_null($value):
+                    $type = PDO::PARAM_NULL;
+                    break;
+                default:
+                    $type = PDO::PARAM_STR;
+            }
+        }
+        $this->stmt->bindValue($param, $value, $type);
+    }
+
+    // Execute the prepared statement
+    public function execute()
+    {
+        return $this->stmt->execute();
+    }
+
+    // Get result set as array of objects
+    public function resultset()
+    {
+        $this->execute();
+        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    // Get single record as object
+    public function single()
+    {
+        $this->execute();
+        return $this->stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    // Get record row count
+    public function rowCount()
+    {
+        return $this->stmt->rowCount();
+    }
+
+    // Returns the last inserted ID
+    public function lastInsertId()
+    {
+        return $this->con->lastInsertId();
+    }
+
+    public function __destruct()
+    {
+        $this->con and $this->con = null;
+    }
 }

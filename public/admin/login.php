@@ -6,6 +6,7 @@
 }; ?>
 <?php Import::getHeader(); ?>
 <?php $valid = new validate; ?>
+
 <div class="container-fluid">
     <section>
         <div class="row">
@@ -18,6 +19,7 @@
                     <p class="text-muted text-center mb-5">
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                     </p>
+                    <p class="text-primary"><?php isset($_REQUEST['loginPass']) and print($valid->enc($_REQUEST['loginPass'])) ?></p>
 
                     <form action="<?php getSelf::delPublic() ?>" novalidate>
                         <div class="form-group">

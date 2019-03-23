@@ -1,7 +1,5 @@
 <?php require_once '../__constants.php'; ?>
-<?php use GreenEye\App\Config\Config;
-use GreenEye\App\Config\Import;
-?>
+<?php use GreenEye\App\Config\Import; ?>
 <?php Import::Header(); ?>
 
 <!-- ***** Hero Area Start ***** -->

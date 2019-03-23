@@ -10,14 +10,14 @@ class Config
     /** Active Current Page
      * @param string $title Page Name
      * @return string */
-    static function Title($title)
+    public static function Title($title)
     {
         return ($title === self::getName()) and print('active');
     }
 
     /** Get Page Title
      * @return string */
-    static function getPageTitle()
+    public static function getPageTitle()
     {
         $title = self::getName();
         return ($title === 'index' and print('Home')) or print(ucwords(str_replace('-', ' ', $title)));
