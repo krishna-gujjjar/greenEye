@@ -12,7 +12,10 @@ defined('SITEMAIL') or define('SITEMAIL', 'admin@greeneye.tk');
 
 /** Base Constants */
 defined('BASE') or define('BASE', 'greenEye');
-defined('ROOT') or define('ROOT',  __DIR__ . DIRECTORY_SEPARATOR);
+
+/** Project Folder Name */
+defined('BASE_FOLDER') or define('BASE_FOLDER', 'greenEye/');
+defined('ROOT') or define('ROOT', $_SERVER['DOCUMENT_ROOT'] . DS . BASE_FOLDER);
 
 /** File Path Constants */
 defined('CONFIG') or define('CONFIG', ROOT . 'app/config/');
