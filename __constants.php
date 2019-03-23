@@ -1,6 +1,17 @@
 <?php namespace GreenEye;
 
-ini_set('display_errors', 1);
+function msg($msg)
+{
+    print("<center style='color: #3a4161'><h1 style='margin: 25% 0%;font-family: serif; font-size: 40px'>" . $msg . "</h1></center>");
+}
+
+/** Check PHP Version */
+version_compare(phpversion(), '7.2.14', '>=') or die(msg("Please Update Your PHP Version, Your Current Version is &nbsp;'<span style='color: #ff0062'>" . phpversion() . "</span>'."));
+
+/** Check Folder Exist or Not */
+realpath($_SERVER['DOCUMENT_ROOT'] . '/greenEye/') or die(msg("Project Base Folder 'greenEye' Not Found On Document Root &nbsp;'<span style='#ff0062'>" . $_SERVER['DOCUMENT_ROOT'] . "</span>'."));
+
+ini_set('display_errors', 1); //Show Errors
 
 /** Basic Constants*/
 defined('DS') or define('DS', DIRECTORY_SEPARATOR);
