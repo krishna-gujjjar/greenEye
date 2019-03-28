@@ -42,5 +42,7 @@ defined('ROOT_URL') or define('ROOT_URL', 'http://test.io/greenEye/'); //For ME
 defined('PUBLIC_URL') or define('PUBLIC_URL', ROOT_URL . 'public/');
 defined('ASSETS') or define('ASSETS', PUBLIC_URL . 'assets/');
 defined('VENDORS') or define('VENDORS', PUBLIC_URL . 'vendors/');
+defined('ADMIN') or define('ADMIN', str_replace('/public', '', PUBLIC_URL . 'admin/'));
+defined('LOGIN') or define('LOGIN', str_replace('/public', '', PUBLIC_URL . 'admin/login'));
 
 require_once  CONFIG . 'autoloader.php';
