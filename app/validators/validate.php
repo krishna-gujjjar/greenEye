@@ -1,14 +1,15 @@
 <?php namespace GreenEye\App\Validators;
 
 use GreenEye\App \{
-    Config\database,
-    Functions\valid
+    Functions\Valid,
+    Helper\Flash,
+    Libs\Database as GreenEyeDatabase
 };
 
 /** Validate Class */
-class validate extends database
+class Validate extends GreenEyeDatabase
 {
-    use valid;
+    use Valid;
 
     protected $loginName;
     protected $loginPass;
@@ -36,12 +37,16 @@ class validate extends database
                         $_SESSION['uSer_iD'] = $row['gReeneye_uiD'];
                         $_SESSION['uSer_lvL'] = $row['gReeneye_ulvL'];
                         $_SESSION['gReeneye'] = rand(0000, 9999);
-                        print_r($_SESSION);
+                        Flash::setMsg($row['gReeneye_unamE'] . ' Login Successfull.', 'success');
+                        header('location:' . ADMIN);
+                        // $_SESSION['success'] = array();
+                        //
                     } else {
-                        echo 'not found';
+                        Flash::setMsg('Invalid Login Details', 'warning');
+                        // echo '<script>window.location.href="login"</script>';
                     }
                 } else {
-                    echo 'Wrong';
+                    Flash::setMsg('Something Went Wrong', 'error');
                 }
             }
         }

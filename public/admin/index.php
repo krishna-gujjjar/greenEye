@@ -1,8 +1,11 @@
 <?php require_once '../../__constants.php'; ?>
 <?php use GreenEye\App \{
     Config\Import,
-    Validators\validate
+    Functions\Valid,
+    Helper\Flash
 }; ?>
+<?php if (Valid::user()) : ?>
+<?php Flash::display(); ?>
 <?php Import::getHeader(); ?>
 <?php $valid = new validate; ?>
 <div class="container-fluid">

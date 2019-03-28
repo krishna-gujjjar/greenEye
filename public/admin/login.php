@@ -2,10 +2,13 @@
 <?php use GreenEye\App \{
     Config\Import,
     Functions\getSelf,
-    Validators\validate
+    Validators\Validate,
+    Helper\Flash,
+    Functions\Valid
 }; ?>
 <?php Import::getHeader(); ?>
-<?php $valid = new validate; ?>
+<?php $valid = new Validate; ?>
+<?php Flash::display(); ?>
 
 <div class="container-fluid">
     <section>
