@@ -6,10 +6,6 @@ use GreenEye\App\Functions\getSelf;
 class Import
 {
     use getSelf;
-    public function __construct()
-    {
-        echo 'Import Class Included';
-    }
 
     /** Import Header */
     public static function Header()
