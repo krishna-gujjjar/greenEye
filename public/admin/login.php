@@ -6,6 +6,7 @@
     Helper\Flash,
     Functions\Valid
 }; ?>
+<?php if (!Valid::user()) : ?>
 <?php Import::getHeader(); ?>
 <?php $valid = new Validate; ?>
 <?php Flash::display(); ?>
@@ -22,7 +23,6 @@
                     <p class="text-muted text-center mb-5">
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                     </p>
-                    <p class="text-primary"><?php isset($_REQUEST['loginPass']) and print($valid->enc($_REQUEST['loginPass'])) ?></p>
 
                     <form action="<?php getSelf::delPublic() ?>" novalidate>
                         <div class="form-group">
@@ -66,3 +66,6 @@
     </section>
 </div>
 <?php Import::getFooter(); ?>
+<?php else : ?>
+<?php header('location:' . ADMIN); ?>
+<?php endif; ?>

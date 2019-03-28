@@ -7,7 +7,6 @@
 <?php if (Valid::user()) : ?>
 <?php Flash::display(); ?>
 <?php Import::getHeader(); ?>
-<?php $valid = new validate; ?>
 <div class="container-fluid">
     <!--Statistics cards Starts-->
     <div class="row">
@@ -394,3 +393,6 @@
     </div>
 </div>
 <?php Import::getFooter(); ?>
+<?php else : ?>
+<?php header('location:' . LOGIN); ?>
+<?php endif; ?>
