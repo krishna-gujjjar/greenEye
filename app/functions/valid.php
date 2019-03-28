@@ -1,8 +1,15 @@
 <?php namespace GreenEye\App\Functions;
 
 /** Validating Form */
-trait valid
+trait Valid
 {
+    /** Check User is Login or Not
+     * @return true|false */
+    public static function user()
+    {
+        return isset($_SESSION['gReeneye']) && !empty($_SESSION['gReeneye']) && isset($_SESSION['uSer_namE']) && !empty($_SESSION['uSer_namE']);
+    }
+
     /** Encrpting String
      * @param string $string
      * @return string */
@@ -24,7 +31,7 @@ trait valid
     /** Check Container is Empty or not
      * @param string|null $str1
      * @param string|null $str2
-     * @return bool */
+     * @return true|false */
     public function notEmp($str1, $str2)
     {
         return !empty($str1) && isset($str1) && !empty($str2) && isset($str2);
