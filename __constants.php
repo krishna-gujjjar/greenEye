@@ -1,5 +1,7 @@
 <?php namespace GreenEye;
 
+require_once 'app/config/setdb.php';
+
 function msg($msg)
 {
     print("<center style='color: #3a4161'><h1 style='margin: 25% 0%;font-family: serif; font-size: 40px'>" . $msg . "</h1></center>");
@@ -10,6 +12,12 @@ version_compare(phpversion(), '7.2.14', '>=') or die(msg("Please Update Your PHP
 
 /** Check Folder Exist or Not */
 realpath($_SERVER['DOCUMENT_ROOT'] . '/greenEye/') or die(msg("Project Base Folder 'greenEye' Not Found On Document Root &nbsp;'<span style='#ff0062'>" . $_SERVER['DOCUMENT_ROOT'] . "</span>'."));
+
+defined('DB_HOST') or die(msg("Please Define Database host"));
+defined('DB_TYPE') or die(msg("Please Define Database Type"));
+defined('DB_USER') or die(msg("Please Define Database Username"));
+defined('DB_PASS') or die(msg("Please Define Database Password"));
+defined('DB_NAME') or die(msg("Please Define Database Name"));
 
 if (!session_id()) @session_start();
 
