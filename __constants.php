@@ -11,6 +11,8 @@ version_compare(phpversion(), '7.2.14', '>=') or die(msg("Please Update Your PHP
 /** Check Folder Exist or Not */
 realpath($_SERVER['DOCUMENT_ROOT'] . '/greenEye/') or die(msg("Project Base Folder 'greenEye' Not Found On Document Root &nbsp;'<span style='#ff0062'>" . $_SERVER['DOCUMENT_ROOT'] . "</span>'."));
 
+if (!session_id()) @session_start();
+
 ini_set('display_errors', 1); //Show Errors
 
 /** Basic Constants*/
