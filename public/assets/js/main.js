@@ -14,7 +14,7 @@
 
 	// :: Fullscreen Active Code
 	$window.on('resizeEnd', function () {
-		$(".full_height").height($window.height());
+		$('.full_height').height($window.height());
 	});
 
 	$window.on('resize', function () {
@@ -22,12 +22,12 @@
 		this.resizeTO = setTimeout(function () {
 			$(this).trigger('resizeEnd');
 		}, 300);
-	}).trigger("resize");
+	}).trigger('resize');
 
 	// :: Sticky Active Code
 	if ($window.width() > 767) {
 		if ($.fn.sticky) {
-			$("#stickyHeader").sticky({
+			$('#stickyHeader').sticky({
 				topSpacing: 0
 			});
 		}
@@ -38,11 +38,11 @@
 
 	// :: Nicescroll Active Code
 	if ($.fn.niceScroll) {
-		$("body, textarea").niceScroll({
-			cursorcolor: "var(--primary)",
-			cursorborder: "none",
-			cursorwidth: "8px",
-			background: "transperent"
+		$('body, textarea').niceScroll({
+			cursorcolor: 'var(--primary)',
+			cursorborder: 'none',
+			cursorwidth: '8px',
+			background: 'transperent'
 		});
 	}
 
@@ -67,7 +67,7 @@
 		});
 
 		welcomeSlide.on('translate.owl.carousel', function () {
-			var slideLayer = $("[data-animation]");
+			var slideLayer = $('[data-animation]');
 			slideLayer.each(function () {
 				var anim_name = $(this).data('animation');
 				$(this).removeClass('animated ' + anim_name).css('opacity', '0');
@@ -75,7 +75,7 @@
 		});
 
 		welcomeSlide.on('translated.owl.carousel', function () {
-			var slideLayer = welcomeSlide.find('.owl-item.active').find("[data-animation]");
+			var slideLayer = welcomeSlide.find('.owl-item.active').find('[data-animation]');
 			slideLayer.each(function () {
 				var anim_name = $(this).data('animation');
 				$(this).addClass('animated ' + anim_name).css('opacity', '1');
