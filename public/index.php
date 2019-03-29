@@ -145,7 +145,7 @@
 <!-- ***** Features Area End ***** -->
 
 <!-- ***** About Us Area Start ***** -->
-<section class="greenEye-about-us-area section-padding-100-20">
+<section class="greenEye-about-us-area section-padding-100-100">
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-4">
