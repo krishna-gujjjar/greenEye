@@ -362,8 +362,8 @@
 </div>
 <!-- ***** Gallery Area End ***** -->
 
-<!-- ***** Features Area Start ***** -->
-<div class="greeneye-features-area section-padding-100">
+<!-- ***** Cool Facts Area Start ***** -->
+<section class="greeneye-cool-facts-area section-padding-100-50">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-lg-6">
@@ -492,8 +492,8 @@
 					</div> -->
 <!-- </div>
 			</div>
-		</div> -->
-<!-- ***** Blog Area End ***** -->
+</section>
+<!-- ***** Cool Facts Area End ***** -->
 
 <!-- ***** Emergency Area Start ***** -->
 <div class="greeneye-emergency-area section-padding-100-50">
