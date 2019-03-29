@@ -329,8 +329,8 @@
 <!-- ***** Doctor Area End ***** -->
 
 <!-- ***** Gallery Area Start ***** -->
-<!-- <div class="greeneye-gallery-area owl-carousel">
-		<!-- Single Gallery Item -->
+<div class="greeneye-gallery-area owl-carousel">
+    <!-- Single Gallery Item -->
 <!-- <div class="single-gallery-item">
 			<img src="<?php echo ASSETS; ?>img/bg-img/g1.jpg" alt="" />
 			<div class="view-more-btn"> -->
