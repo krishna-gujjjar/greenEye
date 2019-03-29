@@ -73,58 +73,31 @@
 <!-- ***** Hero Area End ***** -->
 
 <!-- ***** SITE Area Start ***** -->
-<div class="greeneye-book-an-appoinment-area">
+<div class="greeneye-site-area">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="appointment-form-content">
+                <div class="site-content">
                     <div class="row no-gutters align-items-center">
                         <div class="col-12 col-lg-9">
-                            <div class="greeneye-appointment-form">
-                                <!-- <form action="#" method="post">
-										<div class="row align-items-end">
-											<div class="col-12 col-md-4">
-												<div class="form-group">
-													<select class="form-control" id="speciality">
-														<option>Speciality 1</option>
-														<option>Speciality 2</option>
-														<option>Speciality 3</option>
-														<option>Speciality 4</option>
-														<option>Speciality 5</option>
-													</select>
-												</div>
-											</div>
-											<div class="col-12 col-md-4">
-												<div class="form-group">
-													<select class="form-control" id="doctors">
-														<option>Doctors 1</option>
-														<option>Doctors 2</option>
-														<option>Doctors 3</option>
-														<option>Doctors 4</option>
-														<option>Doctors 5</option>
-													</select>
-												</div>
-											</div>
-											<div class="col-12 col-md-2">
-												<div class="form-group">
-													<input type="text" class="form-control" name="date" id="date" placeholder="Date">
-												</div>
-											</div>
-											<div class="col-12 col-md-2">
-												<div class="form-group">
-													<input type="text" class="form-control" name="time" id="time" placeholder="Time">
-												</div>
-											</div>
-											<div class="col-12 col-md-4">
-												<div class="form-group">
-													<input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="name" id="name"
-													 placeholder="Name">
-												</div>
-											</div>
-											<div class="col-12 col-md-4">
-												<div class="form-group">
-													<input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="number" id="number"
-													 placeholder="Phone">
+                            <div class="greeneye-site">
+                                <h1 class="text-light text-center">
+                                    <span>Glad to See You,</span> &nbsp; <span class="d-md-inline d-block">Welcome to Our</span>
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            <div class="greeneye-contact-info">
+                                <div class="single-contact-info text-center">
+                                    <h1 class="text-white"><?php echo SITENAME; ?></h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- ***** SITE Area End ***** -->
 
