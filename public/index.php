@@ -359,7 +359,7 @@
 				<a href="img/bg-img/g4.jpg" class="btn gallery-img">See More +</a>
 			</div>
 		</div>
-	</div> -->
+</div>
 <!-- ***** Gallery Area End ***** -->
 
 <!-- ***** Features Area Start ***** -->
