@@ -2,6 +2,7 @@
 
 use \PDO as PDO;
 use GreenEye\App\Helper\DB;
+use function GreenEye\errMsg;
 
 require_once ROOT . 'app/config/setdb.php';
 
@@ -47,17 +48,14 @@ abstract class Database extends DB
                     DB_PASS,
                     $this->options
                 );
-                if ($this->dbh) {
-
-                    echo 'Connected to Server';
-                } else {
-                    die('Not Connected');
+                if (!$this->dbh) {
+                    die(errMsg('Server Not Connected.'));
                 }
             } catch (PDOException $e) {
-                echo $this->error = $e->getMessage();
+                echo errMsg($this->error = $e->getMessage());
             }
         } else {
-            echo 'Not Try to Connect';
+            echo errMsg('Server Not Live Yet.');
         }
         return $this->dbh;
     }
