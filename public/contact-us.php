@@ -1,5 +1,8 @@
 <?php require_once '../__constants.php'; ?>
-<?php use GreenEye\App\Config\Import; ?>
+<?php use GreenEye\App\Config \{
+    Import,
+    Config
+}; ?>
 <?php Import::Header(); ?>
 <!-- ***** Breadcumb Area Start ***** -->
 <section class="breadcumb-area bg-img gradient-background-overlay" style="background-image: url(<?php echo ASSETS; ?>img/bg-img/breadcumb3.jpg);">
@@ -7,7 +10,7 @@
         <div class="row h-100 align-items-center">
             <div class="col-12">
                 <div class="breadcumb-content">
-                    <h3 class="breadcumb-title">Contact</h3>
+                    <h3 class="breadcumb-title"><?php Config::getPageTitle(); ?></h3>
                     <p>Lorem ipsum dolor sit amet, consectetuer</p>
                 </div>
             </div>

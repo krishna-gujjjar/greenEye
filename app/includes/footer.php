@@ -56,7 +56,7 @@
 
                         <div class="footer-newsletter-area">
                             <form action="#">
-                                <input type="email" class="form-control border-0 mb-0" name="newsletterEmail" id="newsletterEmail" placeholder="Your Email Here" />
+                                <input type="email" class="form-control bg-light border-0 mb-0" name="newsletterEmail" id="newsletterEmail" placeholder="Your Email Here" />
                                 <button type="submit">Subscribe</button>
                             </form>
                             <p>

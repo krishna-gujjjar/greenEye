@@ -33,8 +33,8 @@
     <link rel="stylesheet" href="<?php echo ASSETS; ?>css/themify-icons.css">
     <link rel="stylesheet" href="<?php echo ASSETS; ?>css/greeneye-icons.css">
     <link rel="stylesheet" href="<?php echo ASSETS; ?>css/nice-select.css">
-    <link rel="stylesheet" href="<?php echo ASSETS; ?>style/main.min.css">
-    <!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
+    <!-- <link rel="stylesheet" href="<?php echo ASSETS; ?>style/main.min.css"> -->
+    <link rel="stylesheet" href="<?php echo ASSETS; ?>/css/main.css" />
 </head>
 
 <body>
@@ -48,12 +48,12 @@
     <!-- ***** Header Area Start ***** -->
     <header class="header-area">
         <!-- Top Header Area -->
-        <div class="top-header-area">
+        <div class="top-header-area d-none d-md-block">
             <div class="container h-100">
                 <div class="row h-100">
                     <div class="col-12 h-100">
                         <div class="h-100 d-md-flex justify-content-between align-items-center">
-                            <p>Welcome to <span>GreenEye</span></p>
+                            <p>Welcome to <span><?php echo SITENAME ?></span></p>
                             <p>
                                 Opening Hours : Monday to Saturday - 8am to
                                 10pm Contact : <span>+91-123-456-7890</span>
@@ -70,13 +70,13 @@
                 <div class="row h-100 align-items-center">
                     <div class="col-12 h-100">
                         <div class="main-menu h-100">
-                            <nav class="navbar h-100 navbar-expand-lg">
+                            <nav class="navbar h-100 navbar-expand-lg navbar-dark">
                                 <!-- Logo Area  -->
                                 <a class="navbar-brand" href="index">
                                     <img src="<?php echo ASSETS; ?>img/core-img/logo.png" alt="Logo" />
                                 </a>
 
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation">
+                                <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
 
@@ -85,6 +85,9 @@
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item <?php Config::Title('index'); ?>">
                                             <a class="nav-link" href="index">Home</a>
+                                        </li>
+                                        <li class="nav-item <?php Config::Title('our-doctors'); ?>">
+                                            <a class="nav-link" href="about-us">Our Doctors</a>
                                         </li>
                                         <li class="nav-item <?php Config::Title('about-us'); ?>">
                                             <a class="nav-link" href="about-us">About Us</a>

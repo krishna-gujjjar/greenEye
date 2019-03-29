@@ -200,20 +200,4 @@
     </div>
 </section>
 
-<!-- ***** CTA Area Start ***** -->
-<!-- <div class="medilife-cta-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="cta-content">
-						<i class="icon-smartphone"></i>
-						<h2>For Emergency calls</h2>
-						<h3>+12-823-611-8721</h3>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-<!-- ***** CTA Area End ***** -->
-
 <?php Import::Footer(); ?>
