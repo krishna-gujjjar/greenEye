@@ -1,19 +1,12 @@
 /*
  * @Author: GurjarsPro
  * @Date: 2019-03-11 23:49:03
- * @Last Modified by:   krishna_gujjjar
- * @Last Modified time: 2019-03-11 23:49:03
+ * @Last Modified by: krishna_gujjjar
+ * @Last Modified time: 2019-03-29 20:09:19
  */
 
 /* @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900"); */
 
-/* @import url(../../vendors/bootstrap/css/bootstrap.min.css);
-@import url(../../vendors/animate/animate.css);
-@import url(owl.carousel.css);
-@import url(magnific-popup.css);
-@import url(themify-icons.css);
-@import url(greeneye-icons.css);
-@import url(nice-select.css); */
 @import url(card.css);
 @import url(style.css);
 
@@ -190,6 +183,10 @@ img {
 
 .mb-100 {
     margin-bottom: 100px;
+}
+
+.bg-primary {
+    background: var(--primary) !important;
 }
 
 .bg-img {
@@ -583,7 +580,8 @@ img {
     height: 110px;
     position: relative;
     z-index: 1;
-    background-color: var(--primaryFade);
+    background-color: var(--Fade);
+    box-shadow: 0 10px 10px 0 #00000033;
     -webkit-transition-duration: 500ms;
     transition-duration: 500ms;
 }
@@ -604,8 +602,7 @@ img {
     width: 100%;
     z-index: 10000 !important;
     height: 80px;
-    box-shadow: 0 10px 10px 0 #00000033;
-    background-color: var(--dark);
+    background: #071f06;
 }
 
 @media only screen and (max-width: 767px) {
@@ -618,8 +615,8 @@ img {
     font-size: 14px;
     text-transform: capitalize;
     padding: 10px 20px;
-    /* color: var(--white); */
-    color: var(--dark);
+    color: var(--white);
+    /* color: var(--dark); */
     font-weight: 500;
     margin: 0 1px;
     border-radius: var(--borderRadius);
@@ -928,48 +925,48 @@ textarea {
     border-radius: 0;
 }
 
-.greeneye-book-an-appoinment-area {
+.greeneye-site-area {
     position: relative;
     z-index: 1;
     margin-top: -65px;
 }
 
-.greeneye-book-an-appoinment-area .appointment-form-content {
+.greeneye-site-area .site-content {
     border-radius: var(--borderRadius);
     background-color: var(--dark);
     box-shadow: 0 10px 15px 3px var(--shadow);
 }
 
-.greeneye-book-an-appoinment-area .greeneye-appointment-form {
+.greeneye-site-area .greeneye-site {
     border-radius: var(--borderRadius);
     background-color: var(--dark);
     padding: 60px 50px;
 }
 
-.greeneye-book-an-appoinment-area .greeneye-appointment-form select {
+.greeneye-site-area .greeneye-site select {
     border: 2px solid var(--secondary);
     background-color: transparent;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .greeneye-book-an-appoinment-area .greeneye-appointment-form {
+    .greeneye-site-area .greeneye-site {
         padding: 40px 30px;
     }
 }
 
 @media only screen and (max-width: 767px) {
-    .greeneye-book-an-appoinment-area .greeneye-appointment-form {
+    .greeneye-site-area .greeneye-site {
         padding: 30px;
     }
 }
 
 @media only screen and (max-width: 767px) {
-    .greeneye-book-an-appoinment-area .greeneye-appointment-form button[type=submit] {
+    .greeneye-site-area .greeneye-site button[type=submit] {
         margin-top: 15px;
     }
 }
 
-.greeneye-book-an-appoinment-area .greeneye-contact-info {
+.greeneye-site-area .greeneye-contact-info {
     /* margin-right: 15px; */
     padding: 30px;
     background-color: var(--primary);
@@ -977,7 +974,7 @@ textarea {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .greeneye-book-an-appoinment-area .greeneye-contact-info {
+    .greeneye-site-area .greeneye-contact-info {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -1225,8 +1222,8 @@ textarea {
 
 /* :: 12.0 Footer Area CSS */
 .footer-area {
-    background-color: var(--dark);
-    /* background-color: #020f20; */
+    /* background-color: var(--dark); */
+    background-color: #071f06;
     padding-left: 45px;
     padding-right: 45px;
 }
