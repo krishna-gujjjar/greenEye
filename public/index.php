@@ -72,7 +72,7 @@
 </section>
 <!-- ***** Hero Area End ***** -->
 
-<!-- ***** Book An Appoinment Area Start ***** -->
+<!-- ***** SITE Area Start ***** -->
 <div class="greeneye-book-an-appoinment-area">
     <div class="container">
         <div class="row">
@@ -125,7 +125,31 @@
 												<div class="form-group">
 													<input type="text" class="form-control border-top-0 border-right-0 border-left-0" name="number" id="number"
 													 placeholder="Phone">
-												</div>
+</div>
+<!-- ***** SITE Area End ***** -->
+
+<!-- ***** Features Area Start ***** -->
+<div class="greeneye-features-area section-padding-100">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-6">
+                <div class="features-content">
+                    <h2>
+                        A new way to treat pacients in a revolutionary facility
+                    </h2>
+                    <p>
+                        Our aim is to bring healthcare of world class health facillities
+                        within the reach of every individual. We are committed to the achievement and maintenance
+                        of excellence in education, research and healthcare for the benefit of humanity.
+
+                        Our mission is also to transcend the realm of curative care. With a new focus o
+                        n preventive care, Sudha hospital is going beyond medicine. And as we are growing
+                        in the 21st century ,we stand committed to building
+                        an infrastructure that will create an environment that protects and nurtures our future
+                        . And for all Sudha hospitalites who are dedicated over the path of health care, for us
+                        Coming together is a beginning; keeping together is progress; working together is success.
+                    </p>
+                    <a href="#" class="btn greeneye-btn mt-50">View the services <span>+</span></a>
 											</div>
 											<div class="col-12 col-md-4">
 												<div class="form-group">
