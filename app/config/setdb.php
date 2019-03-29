@@ -22,7 +22,8 @@ defined('DB_USER') or define('DB_USER', 'root');
  *
  * Name of Our Database User's Password
  * * By Default It's Root */
-defined('DB_PASS') or define('DB_PASS', 'root');
+defined('DB_PASS') or define('DB_PASS', 'root');    //For Me
+// defined('DB_PASS') or define('DB_PASS', '');     //For You
 
 /** Database Name
  *
