@@ -123,7 +123,7 @@
                         Coming together is a beginning; keeping together is progress; working together is success.
                     </p>
                     <a href="#" class="btn greeneye-btn mt-50">View the services <span>+</span></a>
-											</div>
+                </div>
 											<div class="col-12 col-md-4">
 												<div class="form-group">
 													<input type="email" class="form-control border-top-0 border-right-0 border-left-0" name="email" id="email"
@@ -140,44 +140,9 @@
 												<div class="form-group mb-0">
 													<button type="submit" class="btn greeneye-btn">Make an Appointment
 														<span>+</span></button>
-												</div>
-											</div>
-										</div>
-									</form> -->
-                                <h1 class="text-light text-center">
-                                    Glad to See You, &nbsp; Welcome to Our
-                                </h1>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-3">
-                            <div class="greeneye-contact-info">
-                                <!-- Single Contact Info
-									<div class="single-contact-info mb-30">
-										<img src="<?php echo ASSETS; ?>img/icons/alarm-clock.png" alt="">
-										<p>Mon - Sat 08:00 - 21:00 <br>Sunday CLOSED</p>
-									</div> -->
-                                <!-- Single Contact Info -->
-                                <!-- <div class="single-contact-info mb-30">
-										<img src="<?php echo ASSETS; ?>img/icons/envelope.png" alt="">
-										<p>0080 673 729 766 <br>contact@business.com</p>
-									</div> -->
-                                <!-- Single Contact Info -->
-                                <!-- <div class="single-contact-info">
-										<img src="<?php echo ASSETS; ?>img/icons/map-pin.png" alt="">
-										<p>Lamas Str, no 14-18 <br>41770 Miami</p>
-									</div> -->
-                                <div class="single-contact-info">
-                                    <h1 style="color:#fff">GreenEye</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
-<!-- ***** Book An Appoinment Area End ***** -->
+<!-- ***** Features Area End ***** -->
 
 <!-- ***** About Us Area Start ***** -->
 <section class="greenEye-about-us-area section-padding-100-20">
