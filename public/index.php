@@ -258,8 +258,75 @@
             </div>
         </div>
     </div>
-</section>
-<!-- ***** Cool Facts Area End ***** -->
+                                <div class="name align-self-center">Lee Hied <span class="position">Pediatrician</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- .flip-container -->
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="greenEye-blocks">
+                    <div class="flipper">
+                        <div class="front" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/d1.jpg);">
+                            <div class="box">
+                                <h2>Prakash Rao</h2>
+                                <p>Ophthalmologist</p>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <!-- back content -->
+                            <blockquote>
+                                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an
+                                    almost unorthographic life One day however a small line of blind text by the name
+                                    of Lorem&rdquo;</p>
+                            </blockquote>
+                            <div class="author d-flex">
+                                <div class="image mr-3 align-self-center">
+                                    <div class="img bg-img" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/d1.jpg);"></div>
+                                </div>
+                                <div class="name align-self-center">Prakash Rao <span class="position">Ophthalmologist</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- .flip-container -->
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="greenEye-blocks">
+                    <div class="flipper">
+                        <div class="front" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/7.jpg);">
+                            <div class="box">
+                                <h2>Aldin Powell</h2>
+                                <p>Pulmonologist</p>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <!-- back content -->
+                            <blockquote>
+                                <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an
+                                    almost unorthographic life One day however a small line of blind text by the name
+                                    of Lorem&rdquo;</p>
+                            </blockquote>
+                            <div class="author d-flex">
+                                <div class="image mr-3 align-self-center">
+                                    <div class="img bg-img" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/7.jpg);"></div>
+                                </div>
+                                <div class="name align-self-center">Aldin Powell <span class="position">Pulmonologist</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- .flip-container -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                <h4>We are well experienced doctors</h4>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is
+                    a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ***** Doctor Area End ***** -->
 
 <!-- ***** Gallery Area Start ***** -->
 <!-- <div class="greeneye-gallery-area owl-carousel">
