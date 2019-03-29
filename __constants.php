@@ -2,22 +2,27 @@
 
 require_once 'app/config/setdb.php';
 
-function msg($msg)
+/** Error Message Function
+ *
+ * Show Error Message on Page
+ * @param string $msg Display Message String
+ */
+function errMsg($msg)
 {
     print("<center style='color: #3a4161'><h1 style='margin: 25% 0%;font-family: serif; font-size: 40px'>" . $msg . "</h1></center>");
 }
 
 /** Check PHP Version */
-version_compare(phpversion(), '7.2.14', '>=') or die(msg("Please Update Your PHP Version, Your Current Version is &nbsp;'<span style='color: #ff0062'>" . phpversion() . "</span>'."));
+version_compare(phpversion(), '7.2.14', '>=') or die(errMsg("Please Update Your PHP Version, Your Current Version is &nbsp;'<span style='color: #ff0062'>" . phpversion() . "</span>'."));
 
 /** Check Folder Exist or Not */
-realpath($_SERVER['DOCUMENT_ROOT'] . '/greenEye/') or die(msg("Project Base Folder 'greenEye' Not Found On Document Root &nbsp;'<span style='#ff0062'>" . $_SERVER['DOCUMENT_ROOT'] . "</span>'."));
+realpath($_SERVER['DOCUMENT_ROOT'] . '/greenEye/') or die(errMsg("Project Base Folder 'greenEye' Not Found On Document Root &nbsp;'<span style='#ff0062'>" . $_SERVER['DOCUMENT_ROOT'] . "</span>'."));
 
-defined('DB_HOST') or die(msg("Please Define Database host"));
-defined('DB_TYPE') or die(msg("Please Define Database Type"));
-defined('DB_USER') or die(msg("Please Define Database Username"));
-defined('DB_PASS') or die(msg("Please Define Database Password"));
-defined('DB_NAME') or die(msg("Please Define Database Name"));
+defined('DB_HOST') or die(errMsg("Please Define Database host"));
+defined('DB_TYPE') or die(errMsg("Please Define Database Type"));
+defined('DB_USER') or die(errMsg("Please Define Database Username"));
+defined('DB_PASS') or die(errMsg("Please Define Database Password"));
+defined('DB_NAME') or die(errMsg("Please Define Database Name"));
 
 if (!session_id()) @session_start();
 
