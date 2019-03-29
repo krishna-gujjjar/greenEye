@@ -216,8 +216,8 @@
 </section>
 <!-- ***** About Us Area End ***** -->
 
-<!-- ***** Cool Facts Area Start ***** -->
-<section class="greeneye-cool-facts-area section-padding-100-0">
+<!-- ***** Doctor Area Start ***** -->
+<div class="section-padding-0-100">
     <div class="container">
         <div class="row">
             <!-- Single Cool Fact-->
