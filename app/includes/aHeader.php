@@ -1,3 +1,4 @@
+<?php use GreenEye\App\Functions\getself; ?>
 <!DOCTYPE html>
 <html lang="en" class="loading">
 
@@ -31,9 +32,11 @@
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/prism.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/chartist.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/toastr.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/sweetalert2.min.css">
+    <link rel="stylesheet" href="app-assets/vendors/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/app.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/sweetalert2.min.css">
+
 
     <script src="app-assets/vendors/js/sweetalert2.min.js"></script>
     <script src="app-assets/vendors/js/core/jquery-3.3.1.min.js"></script>
@@ -553,7 +556,7 @@
                                             <span>Settings</span>
                                         </a>
                                         <div class="dropdown-divider"></div>
-                                        <a href="javascript:;" class="dropdown-item">
+                                        <a href="<?php getself::delIndex(); ?>?logout" class="dropdown-item">
                                             <i class="ft-power mr-2"></i>
                                             <span>Logout</span>
                                         </a>

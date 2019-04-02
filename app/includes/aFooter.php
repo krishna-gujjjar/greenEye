@@ -1,4 +1,6 @@
+<?php use GreenEye\App\Validators\Validate; ?>
 <?php if ('login' !== self::getName()) : ?>
+<?php Validate::logOut(); ?>
 </div>
 </div>
 <footer class="footer footer-static footer-light">
@@ -237,9 +239,7 @@
 <script src="app-assets/vendors/js/jquery.matchHeight-min.js"></script>
 <script src="app-assets/vendors/js/screenfull.min.js"></script>
 <script src="app-assets/vendors/js/pace/pace.min.js"></script>
-<?php  ?>
 <script src="app-assets/vendors/js/jqBootstrapValidation.js"></script>
-<?php  ?>
 <script src="app-assets/vendors/js/chartist.min.js"></script>
 
 <script src="app-assets/js/app-sidebar.js"></script>

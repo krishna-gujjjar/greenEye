@@ -13,9 +13,16 @@ trait getself
         return print(htmlspecialchars(str_replace('.php', '', str_replace('/public', '', $_SERVER['PHP_SELF']))));
     }
 
-
     public static function delIndex()
     {
-        return print(htmlspecialchars(str_replace('.php', '', str_replace('index', '', str_replace('/public', '', $_SERVER['PHP_SELF'])))));
+        echo htmlspecialchars(str_replace('.php', '', str_replace('index', '', str_replace('/public', '', $_SERVER['PHP_SELF']))));
+    }
+
+    public static function Path(string $location = null)
+    {
+        is_null($location) and $location = htmlspecialchars(str_replace('.php', '', str_replace('index', '', str_replace('/public', '', $_SERVER['PHP_SELF']))));
+        // if(strpos($_SERVER['PHP_SELF'], 'admin/') and !is_null($location)) { $location = htmlspecialchars(ADMIN . $location);}
+        // (!strpos($_SERVER['PHP_SELF'], 'admin/') and !is_null($location)) and $location = htmlspecialchars(PUBLIC_PATH . $location);
+        return $location;
     }
 }
