@@ -24,6 +24,7 @@ defined('DB_USER') or die(errMsg("Please Define Database Username"));
 defined('DB_PASS') or die(errMsg("Please Define Database Password"));
 defined('DB_NAME') or die(errMsg("Please Define Database Name"));
 
+session_save_path($_SERVER['DOCUMENT_ROOT'] . '/greenEye/app/sessions');
 if (!session_id()) @session_start();
 
 ini_set('display_errors', 1); //Show Errors
@@ -47,6 +48,7 @@ defined('ROOT') or define('ROOT', $_SERVER['DOCUMENT_ROOT'] . DS . BASE_FOLDER);
 defined('CONFIG') or define('CONFIG', ROOT . 'app/config/');
 defined('INC') or define('INC', ROOT . 'app/includes/');
 defined('PUBLIC') or define('PUBLIC', ROOT . 'public/');
+defined('PUBLIC_PATH') or define('PUBLIC_PATH', ROOT . 'public/');
 
 /** URL Constants */
 defined('ROOT_URL') or define('ROOT_URL', 'http://test.io/greenEye/'); //For ME
