@@ -12,4 +12,10 @@ trait getself
     {
         return print(htmlspecialchars(str_replace('.php', '', str_replace('/public', '', $_SERVER['PHP_SELF']))));
     }
+
+
+    public static function delIndex()
+    {
+        return print(htmlspecialchars(str_replace('.php', '', str_replace('index', '', str_replace('/public', '', $_SERVER['PHP_SELF'])))));
+    }
 }
