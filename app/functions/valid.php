@@ -29,11 +29,21 @@ trait Valid
     }
 
     /** Check Container is Empty or not
-     * @param string|null $str1
-     * @param string|null $str2
+     * @param string $str1 First String
+     * @param string $str2 Second String
      * @return true|false */
-    public function notEmp($str1, $str2)
+    public function notEmp(string $str1 = null, string $str2 = null)
     {
         return !empty($str1) && isset($str1) && !empty($str2) && isset($str2);
+    }
+
+    /** reDirect Function
+     * Javascript base Page Redirection
+     * @param string $location
+     * @return void */
+    public function reDirect(string $location = null)
+    {
+        is_null($location) and $location = getself::getName();
+        return !is_null($location) and print('<script>window.location="' . $location . '"</script>');
     }
 }
