@@ -2,9 +2,9 @@
 <?php use GreenEye\App \{
     Config\Import,
     Functions\getSelf,
-    Validators\Validate,
+    Functions\Valid,
     Helper\Flash,
-    Functions\Valid
+    Validators\Validate
 }; ?>
 <?php if (!Valid::user()) : ?>
 <?php Import::getHeader(); ?>
@@ -24,19 +24,19 @@
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                     </p>
 
-                    <form action="<?php getSelf::delPublic() ?>" novalidate>
+                    <form action="<?php getSelf::delPublic() ?>" novalidate autocomplete="off">
                         <div class="form-group">
                             <h5>Username</h5>
                             <div class="controls">
-                                <input type="text" name="loginName" class="form-control" required autocomplete="off" data-validation-required-message="Hey ! Your Username is Importent for me, Please tell me." data-validation-regex-regex="([a-zA-Z-_@.])*" data-validation-regex-message="Oops! You Mistyped, Please Type Valid Username." minlength="5" data-validation-minlength-message="Oops! It's too short.">
+                                <input type="text" name="loginName" class="form-control form-control-lg rounded-pill" required data-validation-required-message="Hey ! Your Username is Importent for me, Please tell me." data-validation-regex-regex="([a-zA-Z-_@.])*" data-validation-regex-message="Oops! You Mistyped, Please Type Valid Username." minlength="5" data-validation-minlength-message="Oops! It's too short.">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <h5>Repeat Username</h5>
                             <div class="controls">
-                                <input type="text" data-validation-match-match="loginName" class="form-control" required autocomplete="off" data-validation-required-message="Oops! You missed this." data-validation-match-message="Look Like It's Defferent, Please Type Same Username." data-validation-regex-regex="([a-zA-Z-_@.])*" data-validation-regex-message="Oops! You Mistyped, Please Type Valid Username." minlength="5" data-validation-minlength-message="Oops! It's too short.">
+                                <input type="text" data-validation-match-match="loginName" class="form-control" required data-validation-required-message="Oops! You missed this." data-validation-match-message="Look Like It's Defferent, Please Type Same Username." data-validation-regex-regex="([a-zA-Z-_@.])*" data-validation-regex-message="Oops! You Mistyped, Please Type Valid Username." minlength="5" data-validation-minlength-message="Oops! It's too short.">
                             </div>
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <div class="row">
                                 <div class="col">
@@ -47,10 +47,10 @@
                                 </div>
                             </div>
                             <div class="controls">
-                                <input type="password" name="loginPass" class="form-control" required autocomplete="off" data-validation-required-message="Your Password is a Secret, Please Tell me" minlength="5" data-validation-minlength-message="Oops! It's too short.">
+                                <input type="password" name="loginPass" class="form-control form-control-lg rounded-pill" required data-validation-required-message="Your Password is a Secret, Please Tell me" minlength="5" data-validation-minlength-message="Oops! It's too short.">
                             </div>
                         </div>
-                        <button name="login" type="submit" class="btn btn-lg btn-block btn-primary mb-3" value="login">Sign in</button>
+                        <button name="login" type="submit" class="btn btn-lg rounded-pill btn-block btn-primary mb-3" value="login">Sign in</button>
                     </form>
                 </div>
                 <footer class="footer footer-light pl-0 pt-md-5">
