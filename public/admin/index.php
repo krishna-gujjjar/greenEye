@@ -7,7 +7,6 @@
 <?php if (Valid::user()) : ?>
 <?php Import::getHeader(); ?>
 <?php Flash::display(); ?>
-<?php Import::getHeader(); ?>
 <div class="container-fluid">
     <!--Statistics cards Starts-->
     <div class="row">
