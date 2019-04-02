@@ -219,7 +219,7 @@
             <div class="col-md-6 col-lg-3">
                 <div class="greenEye-blocks">
                     <div class="flipper">
-                        <div class="front" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/d4.jpg);">
+                        <div class="front" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/doctor4.jpg);">
                             <div class="box">
                                 <h2>Lisa Ray</h2>
                                 <p>Neurologist</p>
@@ -234,7 +234,7 @@
                             </blockquote>
                             <div class="author d-flex">
                                 <div class="image mr-3 align-self-center">
-                                    <div class="img bg-img" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/d4.jpg);"></div>
+                                    <div class="img bg-img" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/doctor4.jpg);"></div>
                                 </div>
                                 <div class="name align-self-center">Lisa Ray <span class="position">Neurologist</span></div>
                             </div>
@@ -245,7 +245,7 @@
             <div class="col-md-6 col-lg-3">
                 <div class="greenEye-blocks">
                     <div class="flipper">
-                        <div class="front" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/d5.jpg);">
+                        <div class="front" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/doctor3.jpg);">
                             <div class="box">
                                 <h2>Lee Hied</h2>
                                 <p>Pediatrician</p>
@@ -260,7 +260,7 @@
                             </blockquote>
                             <div class="author d-flex">
                                 <div class="image mr-3 align-self-center">
-                                    <div class="img bg-img" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/d5.jpg);"></div>
+                                    <div class="img bg-img" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/doctor3.jpg);"></div>
                                 </div>
                                 <div class="name align-self-center">Lee Hied <span class="position">Pediatrician</span></div>
                             </div>
@@ -271,7 +271,7 @@
             <div class="col-md-6 col-lg-3">
                 <div class="greenEye-blocks">
                     <div class="flipper">
-                        <div class="front" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/d1.jpg);">
+                        <div class="front" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/doctor2.jpg);">
                             <div class="box">
                                 <h2>Prakash Rao</h2>
                                 <p>Ophthalmologist</p>
@@ -286,7 +286,7 @@
                             </blockquote>
                             <div class="author d-flex">
                                 <div class="image mr-3 align-self-center">
-                                    <div class="img bg-img" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/d1.jpg);"></div>
+                                    <div class="img bg-img" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/doctor2.jpg);"></div>
                                 </div>
                                 <div class="name align-self-center">Prakash Rao <span class="position">Ophthalmologist</span></div>
                             </div>
@@ -297,7 +297,7 @@
             <div class="col-md-6 col-lg-3">
                 <div class="greenEye-blocks">
                     <div class="flipper">
-                        <div class="front" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/7.jpg);">
+                        <div class="front" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/doctor1.jpg);">
                             <div class="box">
                                 <h2>Aldin Powell</h2>
                                 <p>Pulmonologist</p>
@@ -312,7 +312,7 @@
                             </blockquote>
                             <div class="author d-flex">
                                 <div class="image mr-3 align-self-center">
-                                    <div class="img bg-img" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/7.jpg);"></div>
+                                    <div class="img bg-img" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/doctor1.jpg);"></div>
                                 </div>
                                 <div class="name align-self-center">Aldin Powell <span class="position">Pulmonologist</span></div>
                             </div>
