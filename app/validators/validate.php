@@ -10,6 +10,7 @@ use GreenEye\App \{
 class Validate extends GreenEyeDatabase
 {
     use Valid;
+    use getself;
 
     protected $loginName;
     protected $loginPass;
@@ -49,6 +50,17 @@ class Validate extends GreenEyeDatabase
                     Flash::setMsg('Something Went Wrong', 'error');
                 }
             }
+        }
+    }
+
+    public static function logOut()
+    {
+        if (isset($_REQUEST['logout']) && isset($_SESSION['gReeneye']) && !empty($_SESSION['gReeneye']) && isset($_SESSION['uSer_namE']) && !empty($_SESSION['uSer_namE'])) {
+            session_destroy();
+            Flash::setMsg('Logout Successfully', 'success');
+            // header('location: login');
+            Valid::reDirect('login');
+            exit();
         }
     }
 }
