@@ -41,31 +41,8 @@ class Flash
                     "','',{closeButton: true}",
                     ");",
                     "</script>";
-                //echo '<div class="alert alert-danfer">' . $_SESSION['error'] . '</div>';
                 unset($_SESSION[$type]);
             }
         }
     }
-
-
-
-    // public function printMessage()
-    // {
-    //     $type = array("success", "error", "warning", "info");
-    //     foreach ($type as $type) {
-    //         if (isset($_SESSION[$type]) && !empty($_SESSION[$type]) && is_array($_SESSION[$type])) {
-    //             foreach ($_SESSION[$type] as $msg) {
-    //                 echo "<script>",
-    //                     "toastr.",
-    //                     $type,
-    //                     "('",
-    //                     $msg,
-    //                     "','',{closeButton: true}",
-    //                     ");",
-    //                     "</script>";
-    //             }
-    //             unset($_SESSION[$type]);
-    //         }
-    //     }
-    // }
 }

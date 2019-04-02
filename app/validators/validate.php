@@ -1,6 +1,7 @@
 <?php namespace GreenEye\App\Validators;
 
 use GreenEye\App \{
+    Functions\getself,
     Functions\Valid,
     Helper\Flash,
     Libs\Database as GreenEyeDatabase
@@ -40,11 +41,11 @@ class Validate extends GreenEyeDatabase
                         $_SESSION['gReeneye'] = rand(0000, 9999);
                         Flash::setMsg($row['gReeneye_unamE'] . ' Login Successfull.', 'success');
                         header('location:' . ADMIN);
-                        // $_SESSION['success'] = array();
-                        //
+                        exit();
                     } else {
                         Flash::setMsg('Invalid Login Details', 'warning');
-                        // echo '<script>window.location.href="login"</script>';
+                        header('location:' . $this->Path());
+                        exit();
                     }
                 } else {
                     Flash::setMsg('Something Went Wrong', 'error');
