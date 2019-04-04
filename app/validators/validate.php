@@ -54,6 +54,70 @@ class Validate extends GreenEyeDatabase
         }
     }
 
+    public function createAdmin()
+    {
+        if (isset($_POST['aUname'])) {
+            if ($this->notEmp($_POST['aUname'], $_POST['aPass'])) {
+                // $adminName = $this->cleanStr($_POST['aName']);
+                $adminUname = $this->cleanStr($_POST['aUname']);
+                $adminPass = $this->enc($_POST['aPass']);
+                if ($_SESSION['uSer_lvL'] > 1) {
+                    $lvl = $_SESSION['uSer_lvL'] + 1;
+                } else {
+                    $lvl = 2;
+                }
+
+                if ($this->notEmp($adminUname, $adminPass, $lvl)) {
+                    $this->query('INSERT INTO `gReeneye_uSer`(`gReeneye_unamE`, `gReeneye_upasS`, `gReeneye_uriD`, `gReeneye_ulvL`) VALUES (:name, :pass, :rid, :lvl)');
+                    $this->bind(':name', $adminUname);
+                    $this->bind(':pass', $adminPass);
+                    $this->bind(':rid', $_SESSION['uSer_iD']);
+                    $this->bind(':lvl', $lvl);
+                    $this->execute();
+                    return print($adminUname . ' Created Successfully');
+                    exit();
+                } else {
+                    return print('Fields Are Empty, Please Fill All Field.');
+                    exit();
+                }
+            } else {
+                return print('Fields Are Empty, Please Fill All Field.');
+                exit();
+            }
+        }
+    }
+
+    public function showAdmin()
+    {
+        if ($_POST['sHow_admiN']) {
+            $this->query('SELECT * FROM `gReeneye_uSer` WHERE `gReeneye_uiD` > 1 AND `gReeneye_uriD` = :rid');
+            $this->bind(':rid', $_SESSION['uSer_iD']);
+            $result = $this->resultset();
+            if ($this->rowCount() > 0) {
+                foreach ($result as $data) {
+                    if (is_null($data['gReeneye_upiC'])) {
+                        $pic = 'assets/img/avatar.png';
+                    } else {
+                        $pic = $data['gReeneye_upiC'];
+                    }
+                    echo '<div class="col-md-6 col-lg-4 mt-3">',
+                        '<div class="rounded position-relative">',
+                        '<i id="admin_' . $data['gReeneye_uiD'] . '" class="fa fa-times-circle text-success fa-2x position-absolute bg-light rounded-circle" style="right:-5%; top: -5%"></i>',
+                        '<img class="img-thumbnail" src="' . $pic . '" alt="">',
+                        '<h3 class="text-center pt-2">' . $data['gReeneye_unamE'] . '</h3>',
+                        '</div>',
+                        '</div>';
+                }
+            } else {
+                echo '<div class="col-sm-12">',
+                    '<h1 class="text-center">',
+                    "No Admin's Created Yet.",
+                    '</h1>',
+                    '</div>';
+            }
+        }
+    }
+
     public static function logOut()
     {
         if (isset($_REQUEST['logout']) && isset($_SESSION['gReeneye']) && !empty($_SESSION['gReeneye']) && isset($_SESSION['uSer_namE']) && !empty($_SESSION['uSer_namE'])) {
