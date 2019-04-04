@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Title  -->
-    <title>GreenEye | <?php Config::getPageTitle(); ?></title>
+    <title><?php Config::getPageTitle(); ?> | GreenEye</title>
 
     <!-- Favicon  -->
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo ASSETS; ?>img/core-img/favicon.ico">
@@ -72,7 +72,7 @@
                         <div class="main-menu h-100">
                             <nav class="navbar h-100 navbar-expand-lg navbar-dark">
                                 <!-- Logo Area  -->
-                                <a class="navbar-brand" href="index">
+                                <a class="navbar-brand" href="<?php echo ROOT_URL; ?>">
                                     <img src="<?php echo ASSETS; ?>img/core-img/logo.png" alt="Logo" />
                                 </a>
 
@@ -84,19 +84,19 @@
                                     <!-- Menu Area -->
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item <?php Config::Title('index'); ?>">
-                                            <a class="nav-link" href="index">Home</a>
+                                            <a class="nav-link" href="<?php echo ROOT_URL; ?>">Home</a>
                                         </li>
                                         <li class="nav-item <?php Config::Title('our-doctors'); ?>">
-                                            <a class="nav-link" href="about-us">Our Doctors</a>
+                                            <a class="nav-link" href="<?php echo ROOT_URL; ?>about-us">Our Doctors</a>
                                         </li>
                                         <li class="nav-item <?php Config::Title('about-us'); ?>">
-                                            <a class="nav-link" href="about-us">About Us</a>
+                                            <a class="nav-link" href="<?php echo ROOT_URL; ?>about-us">About Us</a>
                                         </li>
                                         <li class="nav-item <?php Config::Title('services'); ?>">
-                                            <a class="nav-link" href="services">Services</a>
+                                            <a class="nav-link" href="<?php echo ROOT_URL; ?>services">Services</a>
                                         </li>
                                         <li class="nav-item <?php Config::Title('contact-us'); ?>">
-                                            <a class="nav-link" href="contact-us">Contact</a>
+                                            <a class="nav-link" href="<?php echo ROOT_URL; ?>contact-us">Contact</a>
                                         </li>
                                     </ul>
                                     <!-- Appointment Button -->

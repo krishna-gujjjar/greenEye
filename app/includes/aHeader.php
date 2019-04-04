@@ -1,4 +1,7 @@
-<?php use GreenEye\App\Functions\getself; ?>
+<?php use GreenEye\App \{
+    Functions\getself,
+    Config\Config
+}; ?>
 <!DOCTYPE html>
 <html lang="en" class="loading">
 
@@ -6,10 +9,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="Convex admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords" content="admin template, Convex admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="PIXINVENT">
-    <title><?php echo SITENAME; ?> | Dashboard</title>
+    <meta name="description" content="GreenEye's Dashborad for Executing And Display Database Requests.">
+    <meta name="keywords" content="Hospital, Hospital Website, Doctor Website, Medical Website, web app">
+    <meta name="author" content="GURJJJARSPROTECH">
+    <title><?php echo SITENAME; ?> | <?php Config::getPageTitle(); ?></title>
 
     <link rel="apple-touch-icon" sizes="120x120" href="app-assets/img/ico/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="app-assets/img/ico/favicon-32x32.png">
@@ -30,18 +33,18 @@
     <link rel="stylesheet" type="text/css" href="app-assets/fonts/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/perfect-scrollbar.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/prism.min.css">
+
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/chartist.min.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/toastr.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/sweetalert2.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pace-minimal.css">
     <link rel="stylesheet" href="app-assets/vendors/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendors/snackbar/snackbar.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/app.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/style.css">
 
-
     <script src="app-assets/vendors/js/sweetalert2.min.js"></script>
     <script src="app-assets/vendors/js/core/jquery-3.3.1.min.js"></script>
-    <script src="app-assets/vendors/js/toastr.min.js"></script>
-
+    <script src="vendors/snackbar/snackbar.min.js"></script>
     <!-- <link rel="stylesheet" type="text/css" href="../vendors/bootstrap/css/bootstrap.min.css"> -->
 </head>
 
@@ -52,92 +55,40 @@
         <div data-active-color="white" data-background-color="primary" data-image="" class="app-sidebar">
             <div class="sidebar-header">
                 <div class="logo clearfix">
-                    <a href="index.html" class="logo-text float-left">
+                    <a href="<?php echo ADMIN; ?>" class="logo-text float-left">
                         <div class="logo-img">
                             <img src="app-assets/img/logo.png" alt="GreenEye Logo" />
                         </div>
                         <span class="text align-middle"><?php echo SITENAME; ?></span>
                     </a>
-                    <!-- <a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block">
-                        <i data-toggle="collapsed" class="ft-circle toggle-icon"></i>
-                    </a> -->
-                    <!-- <a id="sidebarClose" href="javascript:;" class="nav-close d-block d-md-block d-lg-none d-xl-none">
-                        <i class="ft-circle"></i>
-                    </a> -->
                 </div>
             </div>
             <div class="sidebar-content">
                 <div class="nav-container">
                     <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
-                        <li class="has-sub nav-item">
-                            <a href="#">
+                        <li class="nav-item <?php Config::Title('index') ?>">
+                            <a href="<?php echo ADMIN; ?>">
                                 <i class="icon-home"></i>
                                 <span data-i18n="" class="menu-title">Dashboard</span>
-                                <span class="tag badge badge-pill badge-danger mt-1">2</span>
+                                <!-- <span class="tag badge badge-pill badge-danger mt-1">2</span> -->
+                                <!-- New Things Notification -->
                             </a>
-                            <ul class="menu-content">
-                                <li class="active">
-                                    <a href="dashboard-ecommerce.html" class="menu-item">eCommerce</a>
-                                </li>
-                                <li>
-                                    <a href="dashboard-analytics.html" class="menu-item">Analytics</a>
-                                </li>
-                            </ul>
                         </li>
-                        <li class="has-sub nav-item">
+                        <li class="has-sub nav-item ">
                             <a href="#">
-                                <i class="icon-screen-desktop"></i>
-                                <span data-i18n="" class="menu-title">Apps</span>
+                                <i class="icon-plus"></i>
+                                <span data-i18n="" class="menu-title">Create</span>
                             </a>
                             <ul class="menu-content">
-                                <li>
-                                    <a href="chat.html" class="menu-item">Chat</a>
+                                <li class="<?php Config::Title('create-admin') ?>">
+                                    <a href="<?php echo ADMIN ?>create-admin">
+                                        <span data-i18n="" class="menu-title">Admins</span>
+                                    </a>
                                 </li>
-                                <li>
-                                    <a href="taskboard.html" class="menu-item">Taskboard</a>
-                                </li>
-                                <li>
-                                    <a href="calendar.html" class="menu-item">Calendar</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="has-sub nav-item">
-                            <a href="#">
-                                <i class="icon-magnet"></i>
-                                <span data-i18n="" class="menu-title">UI Kit</span>
-                            </a>
-                            <ul class="menu-content">
-                                <li>
-                                    <a href="color-palette.html" class="menu-item">Color Palette</a>
-                                </li>
-                                <li>
-                                    <a href="grids.html" class="menu-item">Grid</a>
-                                </li>
-                                <li>
-                                    <a href="typography.html" class="menu-item">Typography</a>
-                                </li>
-                                <li>
-                                    <a href="syntax-highlighter.html" class="menu-item">Syntax Highlighter</a>
-                                </li>
-                                <li>
-                                    <a href="helper-classes.html" class="menu-item">Helper Classes</a>
-                                </li>
-                                <li>
-                                    <a href="text-utilities.html" class="menu-item">Text Utilities</a>
-                                </li>
-                                <li class="has-sub">
-                                    <a href="#" class="menu-item">Icons</a>
-                                    <ul class="menu-content">
-                                        <li>
-                                            <a href="feather.html" class="menu-item">Feather</a>
-                                        </li>
-                                        <li>
-                                            <a href="font-awesome.html" class="menu-item">Font Awesome</a>
-                                        </li>
-                                        <li>
-                                            <a href="simple-line.html" class="menu-item">Simple Line</a>
-                                        </li>
-                                    </ul>
+                                <li class="<?php Config::Title('create-doctor') ?>">
+                                    <a href="<?php echo ADMIN ?>create-doctor">
+                                        <span data-i18n="" class="menu-title">Doctors</span>
+                                    </a>
                                 </li>
                             </ul>
                         </li>

@@ -33,14 +33,25 @@ class Flash
         $type = array('success', 'error', 'warning', 'info');
         foreach ($type as $type) {
             if (isset($_SESSION[$type]) && !empty($_SESSION[$type])) {
-                echo "<script>",
-                    "toastr.",
-                    $type,
-                    "('",
+
+                echo '<script>',
+                    'Snackbar.show({
+                    text: "',
                     $_SESSION[$type],
-                    "','',{closeButton: true}",
-                    ");",
-                    "</script>";
+                    '",
+                    pos: "top-right",
+                    actionTextColor: "var(--primary)",
+                    backgroundColor: "var(--dark)"
+                });',
+                    '</script>';
+                // echo "<script>",
+                //     "toastr.",
+                //     $type,
+                //     "('",
+                //     $_SESSION[$type],
+                //     "','',{closeButton: true}",
+                //     ");",
+                //     "</script>";
                 unset($_SESSION[$type]);
             }
         }
