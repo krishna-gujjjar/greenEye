@@ -34,6 +34,7 @@ class Validate extends GreenEyeDatabase
                     $this->bind(':name', $this->loginName);
                     $this->bind(':pass', $this->loginPass);
                     $row = $this->single();
+
                     if ($this->rowCount() > 0) {
                         $_SESSION['uSer_namE'] = $row['gReeneye_unamE'];
                         $_SESSION['uSer_iD'] = $row['gReeneye_uiD'];
@@ -49,7 +50,13 @@ class Validate extends GreenEyeDatabase
                     }
                 } else {
                     Flash::setMsg('Something Went Wrong', 'error');
+                    header('location:' . $this->Path());
+                    exit();
                 }
+            } else {
+                Flash::setMsg('Fields Are Empty, Please Fill All Field.', 'error');
+                header('location:' . $this->Path());
+                exit();
             }
         }
     }
@@ -124,7 +131,7 @@ class Validate extends GreenEyeDatabase
             session_destroy();
             Flash::setMsg('Logout Successfully', 'success');
             // header('location: login');
-            Valid::reDirect('login');
+            Valid::reDirect(LOGIN);
             exit();
         }
     }

@@ -31,10 +31,20 @@ trait Valid
     /** Check Container is Empty or not
      * @param string $str1 First String
      * @param string $str2 Second String
+     * @param string $str3 Third String
+     * @param mixed $str4 Fourth String
      * @return true|false */
-    public function notEmp(string $str1 = null, string $str2 = null)
+    public function notEmp($str1 = null, $str2 = null, $str3 = null, $str4 = null)
     {
-        return !empty($str1) && isset($str1) && !empty($str2) && isset($str2);
+        if (!empty($str1) && !is_null($str1) && !empty($str2) && !is_null($str2) && !empty($str3) && !is_null($str3) && !empty($str4) && !is_null($str4)) {
+            return !empty($str1) && isset($str1) && !empty($str2) && isset($str2) && !empty($str3) && isset($str3) && !empty($str4) && isset($str4);
+        } elseif (!empty($str1) && !is_null($str1) && !empty($str2) && !is_null($str2) && !empty($str3) && !is_null($str3)) {
+            return !empty($str1) && isset($str1) && !empty($str2) && isset($str2) && !empty($str3) && isset($str3);
+        } elseif (!empty($str1) && !is_null($str1) && !empty($str2) && !is_null($str2)) {
+            return !empty($str1) && isset($str1) && !empty($str2) && isset($str2);
+        } elseif (!empty($str1) && !is_null($str1)) {
+            return !empty($str1) && isset($str1);
+        }
     }
 
     /** reDirect Function
