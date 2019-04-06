@@ -2,7 +2,7 @@
  * @Author: GurjarsPro
  * @Date: 2019-03-17 11:53:46
  * @Last Modified by: krishna_gujjjar
- * @Last Modified time: 2019-04-04 17:25:24
+ * @Last Modified time: 2019-04-06 10:41:31
  */
 
 (function (window, document, $) {
@@ -11,7 +11,6 @@
     // $("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
 
     $(window).on("load", function () {
-
         /** Pace JS */
         $(document).ajaxStart(function () {
             Pace.restart();
@@ -33,14 +32,14 @@
                         data: $form.serialize(),
                         success: function (response) {
                             console.log(response);
-                            Snackbar.show({
+                            Snackbar.show({ // Show Notification
                                 text: response,
                                 pos: "top-right",
                                 actionTextColor: "var(--primary)",
                                 backgroundColor: "var(--dark)"
                             });
-                            $("#cAdmin").find("input").val("");
-                            getAdminData();
+                            $("#cAdmin").find("input").val(""); // Empty Form Value
+                            getAdminData(); // Load Admin's Data
                         }
                     });
                     event.preventDefault();
@@ -54,12 +53,96 @@
                 $.ajax({
                     type: "POST",
                     url: $("#cAdmin").attr("action"),
+                    cache: false,
                     data: {
                         sHow_admiN: "admin"
                     },
                     success: function (response) {
-                        $('#sHow_adminS').html(response);
-                        // console.log("Show Updated Response -> " + response);
+
+                        /** Parsing `Ajax response`  to ResponseData
+                         * @type {object} */
+                        const ResponseData = JSON.parse(response);
+
+                        /** Admin's Rows
+                         * @type {object} */
+                        const adminResponseData = ResponseData.data;
+
+                        /** Admin's Total Rows Count
+                         * @type {number} */
+                        const adminResponseCount = ResponseData.myRows;
+
+                        if (adminResponseData.length !== 0) { // Check adminResponseData Not Empty
+
+                            /** Admin's Data to Show on Page
+                             * @type {string} */
+                            let adminShowData;
+
+                            /** Set Length of Data to Show on Page
+                             * @type {number} */
+                            let htmlLenght = adminResponseCount;
+                            adminResponseCount > 6 && (htmlLenght = 6);
+
+                            for (let i = 0; i < htmlLenght; i++) { // Extract adminResponseData
+
+                                /** Admin's Row Data
+                                 * @type {object} */
+                                const adminData = adminResponseData[i];
+
+                                /** Admin's ID
+                                 * @type {number} */
+                                let adminDataID = adminData.gReeneye_uiD;
+
+                                /** Admin's Name
+                                 * @type {string} */
+                                let adminDataName = adminData.gReeneye_unamE;
+
+                                /** Admin's Profile Pic
+                                 * @type  {string} */
+                                let adminDataImg = adminData.gReeneye_upiC;
+
+                                /** HTML Div Container */
+                                let htmlContainer =
+                                    '<div class="col-md-6 col-lg-4 mt-3">' +
+                                    '<div class="rounded position-relative">' +
+                                    '<i id="admin_';
+
+                                /** HTML Image Container */
+                                let htmlImg =
+                                    '" class="fa fa-times-circle text-success fa-2x position-absolute bg-light rounded-circle" style="right:-5%; top: -5%"></i>' +
+                                    '<img class="img-thumbnail" src="';
+
+                                /** HTML Head Name Container */
+                                let htmlName =
+                                    '" alt="">' + '<h3 class="text-center pt-2">';
+
+                                /** HTML Container End */
+                                let htmlEnd = "</h3>" + "</div>" + "</div>";
+
+                                adminDataImg === null && (adminDataImg = "assets/img/avatar.png"); // Default Profile Pic
+
+                                adminShowData += // Create HTML Continer for Display
+                                    htmlContainer +
+                                    adminDataID +
+                                    htmlImg +
+                                    adminDataImg +
+                                    htmlName +
+                                    adminDataName +
+                                    htmlEnd;
+                            } // End For Loop
+
+                            /** Show More Button Container */
+                            let showMoreBtn = "";
+                            adminResponseCount > 6 && // Check If Row More Than 6
+                                (showMoreBtn =
+                                    '<div class="col-12 mt-5 text-center">' +
+                                    '<button class="btn btn-lg rounded-pill btn-block btn-secondary">Show More</button>' +
+                                    "</div>");
+
+                            /** Check `adminShowData` is not Empty */
+                            (typeof (adminShowData) !== "undefined") && (adminShowData = adminShowData.replace("undefined", ""));
+
+                            $("#sHow_adminS").html(adminShowData + showMoreBtn); // Write HTML Data in `#sHow_adminS`
+                        }
                     }
                 });
             }
@@ -119,25 +202,20 @@
         widgetlineChart.on("created", function (data) {
             const defs = data.svg.elem("defs");
             defs.elem("linearGradient", {
-                    id: "wGradient",
-                    x1: 0,
-                    y1: 1,
-                    x2: 0,
-                    y2: 0
-                })
-                .elem("stop", {
-                    offset: 0,
-                    "stop-color": "rgba(130,73,232, 1)"
-                })
-                .parent()
-                .elem("stop", {
-                    offset: 1,
-                    "stop-color": "rgba(41,123,249, 1)"
-                });
+                id: "wGradient",
+                x1: 0,
+                y1: 1,
+                x2: 0,
+                y2: 0
+            }).elem("stop", {
+                offset: 0,
+                "stop-color": "rgba(130,73,232, 1)"
+            }).parent().elem("stop", {
+                offset: 1,
+                "stop-color": "rgba(41,123,249, 1)"
+            });
             const targetLineX =
-                data.chartRect.x1 +
-                (data.chartRect.width() -
-                    data.chartRect.width() / data.bounds.step);
+                data.chartRect.x1 + (data.chartRect.width() - data.chartRect.width() / data.bounds.step);
 
             data.svg.elem(
                 "line", {
@@ -145,9 +223,7 @@
                     x2: targetLineX,
                     y1: data.chartRect.y1,
                     y2: data.chartRect.y2
-                },
-                data.options.targetLine.class
-            );
+                }, data.options.targetLine.class);
         });
         widgetlineChart.on("draw", function (data) {
             const circleRadius = 10;
@@ -156,8 +232,7 @@
                     cx: data.x,
                     cy: data.y,
                     r: circleRadius,
-                    class: data.value.y === 30 ?
-                        "ct-point-circle" : "ct-point-circle-transperent"
+                    class: data.value.y === 30 ? "ct-point-circle" : "ct-point-circle-transperent"
                 });
                 data.element.replace(circle);
             }
@@ -169,11 +244,7 @@
                     d: {
                         begin: 2000 * data.index,
                         dur: 2000,
-                        from: data.path
-                            .clone()
-                            .scale(1, 0)
-                            .translate(0, data.chartRect.height())
-                            .stringify(),
+                        from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
                         to: data.path.clone().stringify(),
                         easing: Chartist.Svg.Easing.easeOutQuint
                     }
@@ -219,25 +290,20 @@
         widgetlineChart.on("created", function (data) {
             const defs = data.svg.elem("defs");
             defs.elem("linearGradient", {
-                    id: "wGradient1",
-                    x1: 0,
-                    y1: 0,
-                    x2: 0,
-                    y2: 1
-                })
-                .elem("stop", {
-                    offset: 0,
-                    "stop-color": "rgba(252,157,48, 1)"
-                })
-                .parent()
-                .elem("stop", {
-                    offset: 1,
-                    "stop-color": "rgba(250,91,76, 1)"
-                });
+                id: "wGradient1",
+                x1: 0,
+                y1: 0,
+                x2: 0,
+                y2: 1
+            }).elem("stop", {
+                offset: 0,
+                "stop-color": "rgba(252,157,48, 1)"
+            }).parent().elem("stop", {
+                offset: 1,
+                "stop-color": "rgba(250,91,76, 1)"
+            });
             const targetLineX =
-                data.chartRect.x1 +
-                (data.chartRect.width() -
-                    data.chartRect.width() / data.bounds.step);
+                data.chartRect.x1 + (data.chartRect.width() - data.chartRect.width() / data.bounds.step);
 
             data.svg.elem(
                 "line", {
@@ -256,8 +322,7 @@
                     cx: data.x,
                     cy: data.y,
                     r: circleRadius,
-                    class: data.value.y === 30 ?
-                        "ct-point-circle" : "ct-point-circle-transperent"
+                    class: data.value.y === 30 ? "ct-point-circle" : "ct-point-circle-transperent"
                 });
                 data.element.replace(circle);
             }
@@ -268,11 +333,7 @@
                     d: {
                         begin: 2000 * data.index,
                         dur: 2000,
-                        from: data.path
-                            .clone()
-                            .scale(1, 0)
-                            .translate(0, data.chartRect.height())
-                            .stringify(),
+                        from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
                         to: data.path.clone().stringify(),
                         easing: Chartist.Svg.Easing.easeOutQuint
                     }
@@ -318,25 +379,20 @@
         widgetlineChart.on("created", function (data) {
             const defs = data.svg.elem("defs");
             defs.elem("linearGradient", {
-                    id: "wGradient2",
-                    x1: 0,
-                    y1: 0,
-                    x2: 0,
-                    y2: 1
-                })
-                .elem("stop", {
-                    offset: 0,
-                    "stop-color": "#55efc4"
-                })
-                .parent()
-                .elem("stop", {
-                    offset: 1,
-                    "stop-color": "#00cec9"
-                });
+                id: "wGradient2",
+                x1: 0,
+                y1: 0,
+                x2: 0,
+                y2: 1
+            }).elem("stop", {
+                offset: 0,
+                "stop-color": "#55efc4"
+            }).parent().elem("stop", {
+                offset: 1,
+                "stop-color": "#00cec9"
+            });
             const targetLineX =
-                data.chartRect.x1 +
-                (data.chartRect.width() -
-                    data.chartRect.width() / data.bounds.step);
+                data.chartRect.x1 + (data.chartRect.width() - data.chartRect.width() / data.bounds.step);
 
             data.svg.elem(
                 "line", {
@@ -355,8 +411,7 @@
                     cx: data.x,
                     cy: data.y,
                     r: circleRadius,
-                    class: data.value.y === 30 ?
-                        "ct-point-circle" : "ct-point-circle-transperent"
+                    class: data.value.y === 30 ? "ct-point-circle" : "ct-point-circle-transperent"
                 });
                 data.element.replace(circle);
             }
@@ -367,11 +422,7 @@
                     d: {
                         begin: 2000 * data.index,
                         dur: 2000,
-                        from: data.path
-                            .clone()
-                            .scale(1, 0)
-                            .translate(0, data.chartRect.height())
-                            .stringify(),
+                        from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
                         to: data.path.clone().stringify(),
                         easing: Chartist.Svg.Easing.easeOutQuint
                     }
@@ -383,16 +434,7 @@
         // Line with Area Chart Starts
         const lineArea = new Chartist.Line(
             "#line-chart", {
-                labels: [
-                    "1st",
-                    "2nd",
-                    "3rd",
-                    "4th",
-                    "5th",
-                    "6th",
-                    "7th",
-                    "8th"
-                ],
+                labels: ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th"],
                 series: [
                     [0, 4500, 2600, 6100, 2600, 6500, 3200, 6800]
                 ]
@@ -406,9 +448,7 @@
                 axisY: {
                     low: 0,
                     scaleMinSpace: 60,
-                    labelInterpolationFnc: function labelInterpolationFnc(
-                        value
-                    ) {
+                    labelInterpolationFnc: function labelInterpolationFnc(value) {
                         return value / 1000 + "K";
                     }
                 },
@@ -424,21 +464,18 @@
         lineArea.on("created", function (data) {
             const defs = data.svg.elem("defs");
             defs.elem("linearGradient", {
-                    id: "linear1",
-                    x1: 1,
-                    y1: 0,
-                    x2: 0,
-                    y2: 0
-                })
-                .elem("stop", {
-                    offset: 0,
-                    "stop-color": "rgba(185,168,231, 1)"
-                })
-                .parent()
-                .elem("stop", {
-                    offset: 1,
-                    "stop-color": "rgba(118,74,233, 1)"
-                });
+                id: "linear1",
+                x1: 1,
+                y1: 0,
+                x2: 0,
+                y2: 0
+            }).elem("stop", {
+                offset: 0,
+                "stop-color": "rgba(185,168,231, 1)"
+            }).parent().elem("stop", {
+                offset: 1,
+                "stop-color": "rgba(118,74,233, 1)"
+            });
         });
 
         lineArea.on("draw", function (data) {
@@ -461,11 +498,7 @@
                     d: {
                         begin: 2000 * data.index,
                         dur: 2000,
-                        from: data.path
-                            .clone()
-                            .scale(0.3, 0)
-                            .translate(0, data.chartRect.height())
-                            .stringify(),
+                        from: data.path.clone().scale(0.3, 0).translate(0, data.chartRect.height()).stringify(),
                         to: data.path.clone().stringify(),
                         easing: Chartist.Svg.Easing.easeOutQuint
                     }
@@ -477,20 +510,7 @@
         // Stack bar Chart Starts
         const Stackbarchart = new Chartist.Bar(
             "#Stack-bar-chart", {
-                labels: [
-                    "J",
-                    "F",
-                    "M",
-                    "A",
-                    "M",
-                    "J",
-                    "J",
-                    "A",
-                    "S",
-                    "O",
-                    "N",
-                    "D"
-                ],
+                labels: ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
                 series: [
                     [7, 4, 2, -2, -4, -7, -7, -4, -2, 2, 4, 7]
                 ]
@@ -511,21 +531,18 @@
         Stackbarchart.on("created", function (data) {
             const defs = data.svg.elem("defs");
             defs.elem("linearGradient", {
-                    id: "StackbarGradient",
-                    x1: 0,
-                    y1: 1,
-                    x2: 0,
-                    y2: 0
-                })
-                .elem("stop", {
-                    offset: 0,
-                    "stop-color": "rgba(0, 201, 255,1)"
-                })
-                .parent()
-                .elem("stop", {
-                    offset: 1,
-                    "stop-color": "rgba(17,228,183, 1)"
-                });
+                id: "StackbarGradient",
+                x1: 0,
+                y1: 1,
+                x2: 0,
+                y2: 0
+            }).elem("stop", {
+                offset: 0,
+                "stop-color": "rgba(0, 201, 255,1)"
+            }).parent().elem("stop", {
+                offset: 1,
+                "stop-color": "rgba(17,228,183, 1)"
+            });
         });
 
         Stackbarchart.on("draw", function (data) {
@@ -573,8 +590,7 @@
                 high: 60
             },
             [
-                [
-                    "screen and (max-width: 640px)",
+                ["screen and (max-width: 640px)",
                     {
                         seriesBarDistance: 5,
                         axisX: {
