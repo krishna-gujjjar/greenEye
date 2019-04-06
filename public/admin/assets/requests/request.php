@@ -9,6 +9,8 @@
         $admin->createAdmin();
     elseif ($admin->isCreatePost('sHow_admiN')) :
         $admin->showAdmin();
+    elseif ($admin->isCreatePost('dEl_admiN')) :
+        $admin->delAdmin();
     endif;
 else :
     print('Something Went Wrong');

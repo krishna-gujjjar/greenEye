@@ -48,6 +48,38 @@
 
             getAdminData();
 
+
+            /** Delete Admins */
+            $("#sHow_adminS").on("click", ".delAdmin", function (e) {
+                e.preventDefault();
+
+                /** Admin's Id
+                 * @type {number|array} */
+                let adminID;
+                adminID = $(this).attr('id').split('_'); // Getting Admin's uID from id Attribute
+                adminID = adminID[1]; // Set Admin's ID
+
+                $.ajax({
+                    type: "POST",
+                    url: $("#cAdmin").attr("action"),
+                    data: {
+                        dEl_admiN: adminID
+                    },
+                    cache: false,
+                    success: function (response) {
+                        console.log(response);
+                        Snackbar.show({ // Show Notification
+                            text: response,
+                            pos: "top-right",
+                            actionTextColor: "var(--primary)",
+                            backgroundColor: "var(--dark)"
+                        });
+                        getAdminData();
+                    }
+                });
+            });
+
+
             /** Show Admin's Data */
             function getAdminData() {
                 $.ajax({

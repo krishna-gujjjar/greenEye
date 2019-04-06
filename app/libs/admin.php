@@ -119,6 +119,37 @@ class Admin extends GreenEyeDatabase
             $this->showAdminResult = $this->resultset();
             $this->showAdminCount = $this->rowCount();
             return print(json_encode(['data' => $this->showAdminResult, 'myRows' => $this->showAdminCount]));
+            } else {
+                return print("Something Went Wrong.");
+            }
+        } else {
+            return print("Something Went Wrong.");
+        }
+    }
+
+    /** `delAdmin Function`
+     *
+     * Execute Delete Admin's `Delete Query`
+     * @return mixed */
+    public function delAdmin()
+    {
+        if ($this->isCreatePost('dEl_admiN') && self::User() && !empty($_POST['dEl_admiN'])) {
+            if ($_SESSION["uSer_lvL"] === '1' || $_SESSION["uSer_lvL"] === '2') {
+
+                ($_SESSION["uSer_lvL"] === '2') and
+                    $Query = "`gReeneye_uSer`.`gReeneye_uiD` = :delID AND `gReeneye_uSer`.`gReeneye_uriD` = " . $_SESSION["uSer_iD"];
+                ($_SESSION["uSer_lvL"] === '1') and
+                    $Query = "`gReeneye_uSer`.`gReeneye_uiD` = :delID";
+
+                $this->query("DELETE FROM `gReeneye_uSer` WHERE $Query ");
+                $this->bind(":delID", $_POST['dEl_admiN']);
+                $this->execute();
+                return print("Admin Deleted Successfully.");
+            } else {
+                return print("Sorry, You Can't Delete Any Admin.");
+            }
+        } else {
+            return print("Something went wrong.");
         }
     }
 }
