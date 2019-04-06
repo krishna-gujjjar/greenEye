@@ -72,7 +72,7 @@ trait Valid
      * Javascript base Page Redirection
      * @param string $location
      * @return void */
-    public function reDirect(string $location = null)
+    public static function reDirect(string $location = null)
     {
         is_null($location) and $location = getself::getName();
         return !is_null($location) and print('<script>window.location="' . $location . '"</script>');
