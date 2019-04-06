@@ -2,7 +2,7 @@
  * @Author: GurjarsPro
  * @Date: 2019-03-17 11:53:46
  * @Last Modified by: krishna_gujjjar
- * @Last Modified time: 2019-04-06 10:41:31
+ * @Last Modified time: 2019-04-06 19:27:20
  */
 
 (function (window, document, $) {
@@ -91,94 +91,108 @@
                     },
                     success: function (response) {
 
-                        /** Parsing `Ajax response`  to ResponseData
-                         * @type {object} */
-                        const ResponseData = JSON.parse(response);
+                        if (response.length !== 0) {
 
-                        /** Admin's Rows
-                         * @type {object} */
-                        const adminResponseData = ResponseData.data;
+                            /** Parsing `Ajax response`  to ResponseData
+                             * @type {object} */
+                            const ResponseData = JSON.parse(response);
 
-                        /** Admin's Total Rows Count
-                         * @type {number} */
-                        const adminResponseCount = ResponseData.myRows;
+                            /** Admin's Rows
+                             * @type {object} */
+                            const adminResponseData = ResponseData.data;
 
-                        if (adminResponseData.length !== 0) { // Check adminResponseData Not Empty
-
-                            /** Admin's Data to Show on Page
-                             * @type {string} */
-                            let adminShowData;
-
-                            /** Set Length of Data to Show on Page
+                            /** Admin's Total Rows Count
                              * @type {number} */
-                            let htmlLenght = adminResponseCount;
-                            adminResponseCount > 6 && (htmlLenght = 6);
+                            const adminResponseCount = ResponseData.myRows;
 
-                            for (let i = 0; i < htmlLenght; i++) { // Extract adminResponseData
+                            if (adminResponseData.length !== 0) { // Check adminResponseData Not Empty
 
-                                /** Admin's Row Data
-                                 * @type {object} */
-                                const adminData = adminResponseData[i];
-
-                                /** Admin's ID
-                                 * @type {number} */
-                                let adminDataID = adminData.gReeneye_uiD;
-
-                                /** Admin's Name
+                                /** Admin's Data to Show on Page
                                  * @type {string} */
-                                let adminDataName = adminData.gReeneye_unamE;
+                                let adminShowData;
 
-                                /** Admin's Profile Pic
-                                 * @type  {string} */
-                                let adminDataImg = adminData.gReeneye_upiC;
+                                /** Set Length of Data to Show on Page
+                                 * @type {number} */
+                                let htmlLenght = adminResponseCount;
+                                adminResponseCount > 6 && (htmlLenght = 6);
 
-                                /** HTML Div Container */
-                                let htmlContainer =
-                                    '<div class="col-md-6 col-lg-4 mt-3">' +
-                                    '<div class="rounded position-relative">' +
-                                    '<i id="admin_';
+                                for (let i = 0; i < htmlLenght; i++) { // Extract adminResponseData
 
-                                /** HTML Image Container */
-                                let htmlImg =
-                                    '" class="fa fa-times-circle text-success fa-2x position-absolute bg-light rounded-circle" style="right:-5%; top: -5%"></i>' +
-                                    '<img class="img-thumbnail" src="';
+                                    /** Admin's Row Data
+                                     * @type {object} */
+                                    const adminData = adminResponseData[i];
 
-                                /** HTML Head Name Container */
-                                let htmlName =
-                                    '" alt="">' + '<h3 class="text-center pt-2">';
+                                    /** Admin's ID
+                                     * @type {number} */
+                                    let adminDataID = adminData.gReeneye_uiD;
 
-                                /** HTML Container End */
-                                let htmlEnd = "</h3>" + "</div>" + "</div>";
+                                    /** Admin's Name
+                                     * @type {string} */
+                                    let adminDataName = adminData.gReeneye_unamE;
 
-                                adminDataImg === null && (adminDataImg = "assets/img/avatar.png"); // Default Profile Pic
+                                    /** Admin's Profile Pic
+                                     * @type  {string} */
+                                    let adminDataImg = adminData.gReeneye_upiC;
 
-                                adminShowData += // Create HTML Continer for Display
-                                    htmlContainer +
-                                    adminDataID +
-                                    htmlImg +
-                                    adminDataImg +
-                                    htmlName +
-                                    adminDataName +
-                                    htmlEnd;
-                            } // End For Loop
+                                    /** HTML Div Container */
+                                    let htmlContainer =
+                                        '<div class="col-md-6 col-lg-4 mt-3">' +
+                                        '<div class="rounded position-relative">' +
+                                        '<i id="admin_';
 
-                            /** Show More Button Container */
-                            let showMoreBtn = "";
-                            adminResponseCount > 6 && // Check If Row More Than 6
-                                (showMoreBtn =
-                                    '<div class="col-12 mt-5 text-center">' +
-                                    '<button class="btn btn-lg rounded-pill btn-block btn-secondary">Show More</button>' +
-                                    "</div>");
+                                    /** HTML Image Container */
+                                    let htmlImg =
+                                        '" class="delAdmin ft-trash-2 btn text-success position-absolute bg-light rounded-circle" style="right:-10%; top: -10%"></i>' +
+                                        '<img class="img-thumbnail" src="';
 
-                            /** Check `adminShowData` is not Empty */
-                            (typeof (adminShowData) !== "undefined") && (adminShowData = adminShowData.replace("undefined", ""));
+                                    /** HTML Head Name Container */
+                                    let htmlName =
+                                        '" alt="">' + '<h3 class="text-center xs-h5 text-capitalize pt-2">';
 
-                            $("#sHow_adminS").html(adminShowData + showMoreBtn); // Write HTML Data in `#sHow_adminS`
+                                    /** HTML Container End */
+                                    let htmlEnd = "</h3>" + "</div>" + "</div>";
+
+                                    adminDataImg === null && (adminDataImg = "assets/img/avatar.png"); // Default Profile Pic
+
+                                    adminShowData += // Create HTML Continer for Display
+                                        htmlContainer +
+                                        adminDataID +
+                                        htmlImg +
+                                        adminDataImg +
+                                        htmlName +
+                                        adminDataName +
+                                        htmlEnd;
+                                } // End For Loop
+
+                                /** Show More Button Container */
+                                let showMoreBtn = "";
+                                adminResponseCount > 6 && // Check If Row More Than 6
+                                    (showMoreBtn =
+                                        '<div class="col-12 mt-5 text-center">' +
+                                        '<button class="btn btn-lg rounded-pill btn-block btn-secondary">Show More</button>' +
+                                        "</div>");
+
+                                /** Check `adminShowData` is not Empty */
+                                (typeof (adminShowData) !== "undefined") && (adminShowData = adminShowData.replace("undefined", ""));
+
+                                $("#sHow_adminS").html(adminShowData + showMoreBtn); // Write HTML Data in `#sHow_adminS`
+                            }
+                        } else {
+                            console.log(response);
+                            Snackbar.show({ // Show Notification
+                                text: response,
+                                pos: "top-right",
+                                actionTextColor: "var(--primary)",
+                                backgroundColor: "var(--dark)"
+                            });
                         }
                     }
                 });
             }
         }
+
+
+
 
         /** Charts */
         if (typeof Chartist === "undefined") return;

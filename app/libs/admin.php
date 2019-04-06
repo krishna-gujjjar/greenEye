@@ -42,7 +42,8 @@
 use GreenEye\App \{
     Functions\getself,
     Functions\Valid,
-    Libs\Database as GreenEyeDatabase
+    Libs\Database as GreenEyeDatabase,
+    Helper\Flash
 };
 
 /** `Admin Class`
@@ -68,33 +69,38 @@ class Admin extends GreenEyeDatabase
      * @return string */
     public function createAdmin()
     {
-        if (isset($_POST['aUname'])) {
+        if ($this->isCreatePost('aUname', 'aPass') && self::User()) {
             if ($this->notEmp($_POST["aUname"], $_POST["aPass"])) {
-                /** Admin's Username
-                * @var string $adminUname */
-                $adminUname = $this->cleanStr($_POST["aUname"]);
+                if (($_SESSION["uSer_lvL"] < 3) && ($_SESSION["uSer_lvL"] > 0)) {
 
-                /** Admin's Password
-                 * @var int $adminPass */
-                $adminPass = $this->enc($_POST["aPass"]);
+                    /** Admin's Username
+                    * @var string $adminUname */
+                    $adminUname = $this->cleanStr($_POST["aUname"]);
 
-                /** Current Admin's Level
-                * @var int $lvl */
-                $lvl = ($_SESSION["uSer_lvL"] > 1 and
-                    $_SESSION["uSer_lvL"] + 1) or
-                    2;
+                    /** Admin's Password
+                    * @var int $adminPass */
+                    $adminPass = $this->enc($_POST["aPass"]);
 
-                if ($this->notEmp($adminUname, $adminPass, $lvl)) {
-                    $this->query("INSERT INTO `gReeneye_uSer`(`gReeneye_unamE`, `gReeneye_upasS`, `gReeneye_uriD`, `gReeneye_ulvL`) VALUES (:name, :pass, :rid, :lvl)");
-                    $this->bind(":name", $adminUname);
-                    $this->bind(":pass", $adminPass);
-                    $this->bind(":rid", $_SESSION["uSer_iD"]);
-                    $this->bind(":lvl", $lvl);
-                    $this->execute();
-                    return print(ucfirst($adminUname) . " Created Successfully");
-                    exit();
+                    /** Current Admin's Level
+                    * @var int $lvl */ ($_SESSION["uSer_lvL"] > 1 and
+                        $lvl = $_SESSION["uSer_lvL"] + 1) or
+                        $lvl = 2;
+
+                    if ($this->notEmp($adminUname, $adminPass, $lvl)) {
+                        $this->query("INSERT INTO `gReeneye_uSer`(`gReeneye_unamE`, `gReeneye_upasS`, `gReeneye_uriD`, `gReeneye_ulvL`) VALUES (:name, :pass, :rid, :lvl)");
+                        $this->bind(":name", $adminUname);
+                        $this->bind(":pass", $adminPass);
+                        $this->bind(":rid", $_SESSION["uSer_iD"]);
+                        $this->bind(":lvl", $lvl);
+                        $this->execute();
+                        return print(ucfirst($adminUname) . " Created Successfully");
+                        exit();
+                    } else {
+                        return print("Fields Are Empty, Please Fill All Field.");
+                        exit();
+                    }
                 } else {
-                    return print("Fields Are Empty, Please Fill All Field.");
+                    return print("Sorry, You Can't Create New Admins.");
                     exit();
                 }
             } else {
@@ -110,15 +116,15 @@ class Admin extends GreenEyeDatabase
      * @return object */
     public function showAdmin()
     {
-        if ($_POST['sHow_admiN'] && self::User()) {
-            (($_SESSION["uSer_iD"] == 1) and
-                $Query = "`gReeneye_uSer`.`gReeneye_uiD` > 1") or
-                $Query = "`gReeneye_uSer`.`gReeneye_uiD` > 1 AND `gReeneye_uSer`.`gReeneye_uriD` = :rid";
-            $this->query("SELECT * FROM `gReeneye_uSer` WHERE $Query ORDER BY `gReeneye_uSer`.`gReeneye_ucdatE` DESC");
-            $this->bind(":rid", $_SESSION["uSer_iD"]);
-            $this->showAdminResult = $this->resultset();
-            $this->showAdminCount = $this->rowCount();
-            return print(json_encode(['data' => $this->showAdminResult, 'myRows' => $this->showAdminCount]));
+        if ($this->isCreatePost('sHow_admiN') && self::User()) {
+            if (($_SESSION["uSer_lvL"] <= 3) && ($_SESSION["uSer_lvL"] > 0)) {
+                (($_SESSION["uSer_iD"] == 1) and
+                    $Query = "`gReeneye_uSer`.`gReeneye_uiD` > 1") or
+                    $Query = "`gReeneye_uSer`.`gReeneye_uiD` > 1 AND `gReeneye_uSer`.`gReeneye_uriD` = " . $_SESSION["uSer_iD"];
+                $this->query("SELECT * FROM `gReeneye_uSer` WHERE $Query ORDER BY `gReeneye_uSer`.`gReeneye_ucdatE` DESC");
+                $this->showAdminResult = $this->resultset();
+                $this->showAdminCount = $this->rowCount();
+                return print(json_encode(['data' => $this->showAdminResult, 'myRows' => $this->showAdminCount]));
             } else {
                 return print("Something Went Wrong.");
             }

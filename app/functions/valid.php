@@ -10,6 +10,26 @@ trait Valid
         return isset($_SESSION["gReeneye"]) && !empty($_SESSION["gReeneye"]) && isset($_SESSION["uSer_namE"]) && !empty($_SESSION["uSer_namE"]);
     }
 
+    /** Encrpting String
+     * @param string $string
+     * @return string */
+    public function enc(string $string)
+    {
+        $salt = '-_$Krishna!@#$%&*(GurjaRproTech)*(*&^^%%$%$#!Krishna_-';
+        return $string = hash('sha256', md5($string, '!@###$' .  $salt . '!@#$%$@'));
+    }
+
+    /** Clean Specials Characters
+     * @param string $string
+     * @return string|null */
+    public function cleanStr(string $string)
+    {
+        /** Special Characters
+         * @var array $spcl */
+        $spcl = ["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "=", "+", "[", "]", "{", "}", ";", ":", "'", '"', "\\", "|", ",", ".", "<", ">", "/", "?"];
+        return trim(strtolower(preg_replace("/[^a-zA-Z0-9_-]/", "", str_replace($spcl, "", $string))));
+    }
+
     /** `isCreatePost`
      *
      * Check `$_POST` Variable Create or Not
@@ -29,24 +49,6 @@ trait Valid
         } elseif (!empty($var1) && empty($var2) && empty($var3) && empty($var4)) {
             return isset($_POST[$var1]);
         }
-    }
-
-    /** Encrpting String
-     * @param string $string
-     * @return string */
-    public function enc(string $string)
-    {
-        $salt = '-_$Krishna!@#$%&*(GurjaRproTech)*(*&^^%%$%$#!Krishna_-';
-        return $string = hash('sha256', md5($string, '!@###$' .  $salt . '!@#$%$@'));
-    }
-
-    /** Clean Specials Characters
-     * @param string $string
-     * @return string|null */
-    public function cleanStr(string $string)
-    {
-        $spcl = ['`', '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '=', '+', '[', ']', '{', '}', ';', ':', '"', "'", '\\', '|', ',', '.', '<', '>', '/', '?'];
-        return trim(strtolower(preg_replace('/[^a-zA-Z0-9]/', '', str_replace($spcl, '', $string))));
     }
 
     /** Check Container is Empty or not
