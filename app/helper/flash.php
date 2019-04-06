@@ -7,7 +7,10 @@ class Flash
         if (!session_id()) @session_start();
     }
 
-    public static function setMsg(string $text, string $type = null)
+    /** `setMsg Function`
+     * @param string $text Display Message End
+     * @return void */
+    public static function setMsg(string $text)
     {
         switch ($type) {
             case 'success':

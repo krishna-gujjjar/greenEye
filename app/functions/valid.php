@@ -5,7 +5,20 @@ trait Valid
 {
     /** Check User is Login or Not
      * @return true|false */
-    public static function user()
+    public static function User()
+    {
+        return isset($_SESSION["gReeneye"]) && !empty($_SESSION["gReeneye"]) && isset($_SESSION["uSer_namE"]) && !empty($_SESSION["uSer_namE"]);
+    }
+
+    /** `isCreatePost`
+     *
+     * Check `$_POST` Variable Create or Not
+     * @param string $var1
+     * @param string $var2
+     * @param string $var3
+     * @param string $var4
+     * @return bool */
+    public static function isCreatePost(string $var1 = null, string $var2 = null, string $var3 = null, string $var4 = null)
     {
         return isset($_SESSION['gReeneye']) && !empty($_SESSION['gReeneye']) && isset($_SESSION['uSer_namE']) && !empty($_SESSION['uSer_namE']);
     }
