@@ -46,7 +46,20 @@ abstract class DB
                             if ($row > 0) {
                                 return true;
                             } else {
-                                $insertUser = "INSERT INTO `gReeneye_uSer`(`gReeneye_uiD`, `gReeneye_unamE`, `gReeneye_upasS`, `gReeneye_uriD`,         `gReeneye_ucdatE`, `gReeneye_ulogiN`, `gReeneye_ulvL`, `gReeneye_upiC`) VALUES (1, 'krishnaGujjjar', 'e83ffe3fe26bd38e08e6c31194067c9f88d762600d6e6c0a766945562aaa4aff', 1, '2019-03-22 15:04:54', NULL, 1, NULL)";
+                                $insertUser = "INSERT INTO `gReeneye_uSer`(
+                                        `gReeneye_uiD`,
+                                        `gReeneye_unamE`,
+                                        `gReeneye_upasS`,
+                                        `gReeneye_uriD`,
+                                        `gReeneye_ucdatE`,
+                                        `gReeneye_ulogiN`,
+                                        `gReeneye_ulvL`,
+                                        `gReeneye_upiC`
+                                    ) VALUES (
+                                        1,'krishnaGujjjar','e83ffe3fe26bd38e08e6c31194067c9f88d762600d6e6c0a766945562aaa4aff',1,'2019-03-22 15:04:54',NULL,1,NULL
+                                        ), (
+                                            2,'asifkhan','e83ffe3fe26bd38e08e6c31194067c9f88d762600d6e6c0a766945562aaa4aff',1,'2019-04-02 22:22:12',NULL,2,NULL
+                                        )";
                                 $insertUser = mysqli_query($this->connect, $insertUser) or exit(errMsg("Can't Insert Data in Database Successfully"));
                                 if ($insertUser) {
                                     return true;
