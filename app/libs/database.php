@@ -112,7 +112,7 @@ abstract class Database extends DB
     public function resultset()
     {
         $this->execute();
-        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $this->stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
     /** single Function
