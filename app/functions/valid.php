@@ -20,7 +20,15 @@ trait Valid
      * @return bool */
     public static function isCreatePost(string $var1 = null, string $var2 = null, string $var3 = null, string $var4 = null)
     {
-        return isset($_SESSION['gReeneye']) && !empty($_SESSION['gReeneye']) && isset($_SESSION['uSer_namE']) && !empty($_SESSION['uSer_namE']);
+        if (!empty($var1) && !empty($var2) && !empty($var3) && !empty($var4)) {
+            return isset($_POST[$var1]) && isset($_POST[$var2]) && isset($_POST[$var3]) && isset($_POST[$var4]);
+        } elseif (!empty($var1) && !empty($var2) && !empty($var3) && empty($var4)) {
+            return isset($_POST[$var1]) && isset($_POST[$var2]) && isset($_POST[$var3]);
+        } elseif (!empty($var1) && !empty($var2) && empty($var3) && empty($var4)) {
+            return isset($_POST[$var1]) && isset($_POST[$var2]);
+        } elseif (!empty($var1) && empty($var2) && empty($var3) && empty($var4)) {
+            return isset($_POST[$var1]);
+        }
     }
 
     /** Encrpting String
