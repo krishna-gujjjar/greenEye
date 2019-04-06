@@ -12,51 +12,33 @@ class Flash
      * @return void */
     public static function setMsg(string $text)
     {
-        switch ($type) {
-            case 'success':
-                $_SESSION['success'] = $text;
-                break;
-
-            case 'error':
-                $_SESSION['error'] = $text;
-                break;
-
-            case 'warning':
-                $_SESSION['warning'] = $text;
-                break;
-
-            case 'info':
-                $_SESSION['info'] = $text;
-                break;
-        }
+        $_SESSION['Message'] = $text;
     }
 
     public static function display()
     {
-        $type = array('success', 'error', 'warning', 'info');
-        foreach ($type as $type) {
-            if (isset($_SESSION[$type]) && !empty($_SESSION[$type])) {
 
-                echo '<script>',
-                    'Snackbar.show({
+        if (isset($_SESSION['Message']) && !empty($_SESSION['Message'])) {
+
+            echo '<script>',
+                'Snackbar.show({
                     text: "',
-                    $_SESSION[$type],
-                    '",
+                $_SESSION['Message'],
+                '",
                     pos: "top-right",
                     actionTextColor: "var(--primary)",
                     backgroundColor: "var(--dark)"
                 });',
-                    '</script>';
-                // echo "<script>",
-                //     "toastr.",
-                //     $type,
-                //     "('",
-                //     $_SESSION[$type],
-                //     "','',{closeButton: true}",
-                //     ");",
-                //     "</script>";
-                unset($_SESSION[$type]);
-            }
+                '</script>';
+            // echo "<script>",
+            //     "toastr.",
+            //     'Message',
+            //     "('",
+            //     $_SESSION['Message'],
+            //     "','',{closeButton: true}",
+            //     ");",
+            //     "</script>";
+            unset($_SESSION['Message']);
         }
     }
 }
