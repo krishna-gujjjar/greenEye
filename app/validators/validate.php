@@ -69,38 +69,38 @@ class Validate extends GreenEyeDatabase
      * @return void */
     public function checkLogin()
     {
-        if (isset($_GET['login'])) {
-            if ($this->notEmp($_GET['loginName'], $_GET['loginPass'])) {
-                $this->loginName = $this->cleanStr($_GET['loginName']);
-                $this->loginPass = $this->enc($_GET['loginPass']);
+        if (isset($_GET["login"])) {
+            if ($this->notEmp($_GET["loginName"], $_GET["loginPass"])) {
+                $this->loginName = $this->cleanStr($_GET["loginName"]);
+                $this->loginPass = $this->enc($_GET["loginPass"]);
 
                 if ($this->notEmp($this->loginName, $this->loginPass)) {
-                    $this->query('SELECT * FROM gReenEye_uSer WHERE gReeneye_unamE = :name AND gReeneye_upasS = :pass');
-                    $this->bind(':name', $this->loginName);
-                    $this->bind(':pass', $this->loginPass);
+                    $this->query("SELECT * FROM gReenEye_uSer WHERE gReeneye_unamE = :name AND gReeneye_upasS = :pass");
+                    $this->bind(":name", $this->loginName);
+                    $this->bind(":pass", $this->loginPass);
                     $row = $this->single();
 
                     if ($this->rowCount() > 0) {
-                        $_SESSION['uSer_namE'] = $row['gReeneye_unamE'];
-                        $_SESSION['uSer_iD'] = $row['gReeneye_uiD'];
-                        $_SESSION['uSer_lvL'] = $row['gReeneye_ulvL'];
-                        $_SESSION['gReeneye'] = rand(0000, 9999);
-                        Flash::setMsg($row['gReeneye_unamE'] . ' Login Successfull.', 'success');
-                        header('location:' . ADMIN);
+                        $_SESSION["uSer_namE"] = $row["gReeneye_unamE"];
+                        $_SESSION["uSer_iD"] = $row["gReeneye_uiD"];
+                        $_SESSION["uSer_lvL"] = $row["gReeneye_ulvL"];
+                        $_SESSION["gReeneye"] = rand(0000, 9999);
+                        Flash::setMsg($row["gReeneye_unamE"] . " Login Successfull.");
+                        header("location:" . ADMIN);
                         exit();
                     } else {
-                        Flash::setMsg('Invalid Login Details', 'warning');
-                        header('location:' . $this->Path());
+                        Flash::setMsg("Invalid Login Details");
+                        header("location:" . $this->Path());
                         exit();
                     }
                 } else {
-                    Flash::setMsg('Something Went Wrong', 'error');
-                    header('location:' . $this->Path());
+                    Flash::setMsg("Something Went Wrong");
+                    header("location:" . $this->Path());
                     exit();
                 }
             } else {
-                Flash::setMsg('Fields Are Empty, Please Fill All Field.', 'error');
-                header('location:' . $this->Path());
+                Flash::setMsg("Fields Are Empty, Please Fill All Field.");
+                header("location:" . $this->Path());
                 exit();
             }
         }
@@ -112,11 +112,10 @@ class Validate extends GreenEyeDatabase
      * @return void */
     public static function logOut()
     {
-        if (isset($_REQUEST['logout']) && isset($_SESSION['gReeneye']) && !empty($_SESSION['gReeneye']) && isset($_SESSION['uSer_namE']) && !empty($_SESSION['uSer_namE'])) {
+        if (isset($_REQUEST["logout"]) && self::User()) {
             session_destroy();
-            Flash::setMsg('Logout Successfully', 'success');
-            // header('location: login');
-            Valid::reDirect(LOGIN);
+            Flash::setMsg("Logout Successfully");
+            self::reDirect(LOGIN);
             exit();
         }
     }
