@@ -6,7 +6,7 @@
     Helper\Flash,
     Validators\Validate
 }; ?>
-<?php if (!Valid::user()) : ?>
+<?php if (!Valid::User()) : ?>
 <?php Import::getHeader(); ?>
 <?php $valid = new Validate; ?>
 <?php Flash::display(); ?>

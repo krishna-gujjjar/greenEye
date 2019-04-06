@@ -4,7 +4,7 @@
     Functions\Valid,
     Helper\Flash
 }; ?>
-<?php if (Valid::user()) : ?>
+<?php if (Valid::User()) : ?>
 <?php Import::getHeader(); ?>
 <?php Flash::display(); ?>
 <div class="container-fluid">
