@@ -240,6 +240,11 @@
 <script src="app-assets/vendors/js/jquery.matchHeight-min.js"></script>
 <script src="app-assets/vendors/js/jqBootstrapValidation.js"></script>
 <script src="app-assets/vendors/js/chartist.min.js"></script>
+<!-- <script src="app-assets/vendors/js/dropzone.min.js"></script> -->
+<script src="vendors/filepond/filepond.min.js"></script>
+<script src="vendors/filepond/filepond-plugin-image-preview.min.js"></script>
+<script src="vendors/filepond/filepond.jquery.js"></script>
+
 
 <script src="app-assets/js/app-sidebar.js"></script>
 <script src="app-assets/js/notification-sidebar.js"></script>

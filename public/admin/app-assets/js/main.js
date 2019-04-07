@@ -2,7 +2,7 @@
  * @Author: GurjarsPro
  * @Date: 2019-03-17 11:53:46
  * @Last Modified by: krishna_gujjjar
- * @Last Modified time: 2019-04-06 19:27:20
+ * @Last Modified time: 2019-04-07 09:24:38
  */
 
 (function (window, document, $) {
@@ -192,6 +192,54 @@
         }
 
 
+        if ($(document).attr("title").search("Create Doctor") !== -1) {
+            // $("#cDoctor").find("input").not("[type=submit]").jqBootstrapValidation();
+
+            $(function () {
+
+                // First register any plugins
+                $.fn.filepond.registerPlugin(FilePondPluginImagePreview);
+
+                // Turn input element into a pond
+                $('#dPic').filepond();
+
+                // Set allowMultiple property to true
+                $('#dPic').filepond('allowMultiple', false);
+
+                // Listen for addfile event
+                $('#dPic').on('FilePond:addfile', function (e) {
+                    console.log('file added event ', e.detail);
+                });
+
+                FilePond.setOptions({
+                    allowDrop: false,
+                    allowReplace: false,
+                    instantUpload: false,
+                    // server: {
+                    //     url: 'http://test.io/greenEye/admin/assets/requests/',
+                    //     // process: './process.php',
+                    //     // revert: './revert.php',
+                    //     // restore: './restore.php?id=',
+                    //     // fetch: './fetch.php?data='
+                    // }
+                });
+
+                // Manually add a file using the addfile method
+                // $('#dPic').first().filepond('addFile', 'index.html').then(function (file) {
+                //     console.log('file added', file);
+                // });
+
+            });
+
+
+
+
+            // $("#cDoctor").find('#dPicCnt').dropzone({
+            //     url: $('#cDoctor').attr('action')
+            // });
+
+
+        }
 
 
         /** Charts */

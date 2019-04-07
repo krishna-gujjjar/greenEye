@@ -33,12 +33,17 @@
     <link rel="stylesheet" type="text/css" href="app-assets/fonts/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/perfect-scrollbar.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/prism.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/dropzone.min.css"> -->
 
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/chartist.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/sweetalert2.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pace-minimal.css">
     <link rel="stylesheet" href="app-assets/vendors/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendors/snackbar/snackbar.min.css">
+    <link rel="stylesheet" href="vendors/filepond/filepond.min.css">
+    <link rel="stylesheet" href="vendors/filepond/filepond-plugin-image-preview.min.css">
+
+
     <link rel="stylesheet" type="text/css" href="app-assets/css/app.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/style.css">
 

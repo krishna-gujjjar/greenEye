@@ -18,21 +18,27 @@
                 </div>
                 <div class="card-body">
                     <div class="container px-5 pb-5">
-                        <form id="cDoctor" method="POST" action="<?php getPath::Request(); ?>" novalidate autocomplete="off">
+                        <form id="cDoctor" method="POST" action="<?php getPath::Request(); ?>" novalidate autocomplete="off" enctype="multipart/form-data">
                             <div class="form-group pt-3">
-                                <label for="aUname" class="h5 font-weight-bold">Doctor's Name</label>
+                                <label for="dPic" class="h5 font-weight-bold">Doctor's Profile Pic</label>
+                                <input id="dPic" name="dPic" type="file">
+                            </div>
+                            <div class="form-group pt-3">
+                                <label for="dName" class="h5 font-weight-bold">Doctor's Name</label>
                                 <div class="controls">
-                                    <input id="aUname" name="aUname" class="form-control form-control-lg rounded-pill" type="text" required data-validation-required-message="Hey ! Admin's Username is Importent for me, Please tell me." data-validation-regex-regex="([a-zA-Z-_@.])*" data-validation-regex-message="Oops! You Mistyped, Please Type Valid Username." minlength="5" data-validation-minlength-message="Oops! It's too short.">
+                                    <input id="dName" name="dName" class="form-control form-control-lg rounded-pill" type="text" required data-validation-required-message="Hey ! Doctor's Name is Importent for me, Please tell me." data-validation-regex-regex="([a-zA-Z-_])*" data-validation-regex-message="Oops! You Mistyped, Please Type Valid Username." minlength="5" data-validation-minlength-message="Oops! It's too Short.">
                                 </div>
                             </div>
                             <div class="form-group pt-3">
-                                <label for="aPass" class="h5 font-weight-bold">Doctor's Password</label>
+                                <label for="dspl" class="h5 font-weight-bold">Doctor's Speciality</label>
                                 <div class="controls">
-                                    <input id="aPass" name="aPass" class="form-control form-control-lg rounded-pill" type="password" required data-validation-required-message="Hey ! Admin's Password is Importent for me, Please tell me." minlength="5" data-validation-minlength-message="Oops! It's too short.">
+                                    <input id="dspl" name="dspl" class="form-control form-control-lg rounded-pill" type="text" required data-validation-required-message="Hey ! Doctor's Speciality is Importent for me, Please tell me." data-validation-regex-regex="([a-zA-Z-_])*" data-validation-regex-message="Oops! You Mistyped, Please Type Valid Username." minlength="5" data-validation-minlength-message="Oops! It's too Short.">
                                 </div>
                             </div>
+
+
                             <div class="form-group pt-4">
-                                <button name="aCreate" id="dCreate" value="doctor" class="btn btn-lg rounded-pill btn-block btn-primary mb-3" type="submit">Create Doctor</button>
+                                <button name="dCreate" id="dCreate" value="doctor" class="btn btn-lg rounded-pill btn-block btn-primary mb-3" type="submit">Create Doctor</button>
                             </div>
                         </form>
                     </div>

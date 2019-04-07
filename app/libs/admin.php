@@ -42,8 +42,7 @@
 use GreenEye\App \{
     Functions\getself,
     Functions\Valid,
-    Libs\Database as GreenEyeDatabase,
-    Helper\Flash
+    Libs\Database as GreenEyeDatabase
 };
 
 /** `Admin Class`

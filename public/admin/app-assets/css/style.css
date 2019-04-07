@@ -2,7 +2,7 @@
  * @Author: GurjarsPro
  * @Date: 2019-03-16 18:25:52
  * @Last Modified by: krishna_gujjjar
- * @Last Modified time: 2019-04-03 22:32:06
+ * @Last Modified time: 2019-04-07 09:19:59
  */
 
 :root {
@@ -125,4 +125,9 @@
     background: linear-gradient(90deg, transparent, var(--valid));
     height: 3px;
     border-radius: 20%;
+}
+
+.filepond--panel,
+.filepond--root {
+    border-radius: 99999rem !important;
 }

@@ -85,7 +85,7 @@ class Validate extends GreenEyeDatabase
                         $_SESSION["uSer_iD"] = $row["gReeneye_uiD"];
                         $_SESSION["uSer_lvL"] = $row["gReeneye_ulvL"];
                         $_SESSION["gReeneye"] = rand(0000, 9999);
-                        Flash::setMsg($row["gReeneye_unamE"] . " Login Successfull.");
+                        Flash::setMsg(ucfirst($row["gReeneye_unamE"]) . " Login Successfull.");
                         header("location:" . ADMIN);
                         exit();
                     } else {
