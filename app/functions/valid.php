@@ -10,6 +10,27 @@ trait Valid
         return isset($_SESSION["gReeneye"]) && !empty($_SESSION["gReeneye"]) && isset($_SESSION["uSer_namE"]) && !empty($_SESSION["uSer_namE"]);
     }
 
+    /** `userShow Function`
+     * @param string $param
+     * @return string */
+    public static function userShow(string $param)
+    {
+        if (self::User()) {
+            return print($_SESSION[$param]);
+        }
+    }
+
+    public static function userImg()
+    {
+        if (self::User()) {
+            if (isset($_SESSION['uSer_piC'])) {
+                return print($_SESSION['uSer_piC']);
+            } else {
+                return print("assets/img/avatar.png");
+            }
+        }
+    }
+
     /** Encrpting String
      * @param string $string
      * @return string */
