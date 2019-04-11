@@ -39,7 +39,7 @@
  * @license         MIT
  * @version         1.0.0 */
 
-use GreenEye\App \{
+use GreenEye\App \ {
     Functions\getself,
     Functions\Valid,
     Libs\Database as GreenEyeDatabase
@@ -69,19 +69,21 @@ class Admin extends GreenEyeDatabase
     public function createAdmin()
     {
         if ($this->isCreatePost('aUname', 'aPass') && self::User()) {
+
             if ($this->notEmp($_POST["aUname"], $_POST["aPass"])) {
+
                 if (($_SESSION["uSer_lvL"] < 3) && ($_SESSION["uSer_lvL"] > 0)) {
 
                     /** Admin's Username
-                    * @var string $adminUname */
+                     * @var string $adminUname */
                     $adminUname = $this->cleanStr($_POST["aUname"]);
 
                     /** Admin's Password
-                    * @var int $adminPass */
+                     * @var int $adminPass */
                     $adminPass = $this->enc($_POST["aPass"]);
 
                     /** Current Admin's Level
-                    * @var int $lvl */ ($_SESSION["uSer_lvL"] > 1 and
+                     * @var int $lvl */ ($_SESSION["uSer_lvL"] > 1 and
                         $lvl = $_SESSION["uSer_lvL"] + 1) or
                         $lvl = 2;
 

@@ -39,7 +39,7 @@
  * @license         MIT
  * @version         1.0.0 */
 
-use GreenEye\App \{
+use GreenEye\App \ {
     Functions\getself,
     Functions\Valid,
     Helper\Flash,
@@ -69,10 +69,10 @@ class Validate extends GreenEyeDatabase
      * @return void */
     public function checkLogin()
     {
-        if (isset($_GET["login"])) {
-            if ($this->notEmp($_GET["loginName"], $_GET["loginPass"])) {
-                $this->loginName = $this->cleanStr($_GET["loginName"]);
-                $this->loginPass = $this->enc($_GET["loginPass"]);
+        if ($this->isCreatePost('login')) {
+            if ($this->notEmp($_POST["loginName"], $_POST["loginPass"])) {
+                $this->loginName = $this->cleanStr($_POST["loginName"]);
+                $this->loginPass = $this->enc($_POST["loginPass"]);
 
                 if ($this->notEmp($this->loginName, $this->loginPass)) {
                     $this->query("SELECT * FROM gReenEye_uSer WHERE gReeneye_unamE = :name AND gReeneye_upasS = :pass");
@@ -81,11 +81,12 @@ class Validate extends GreenEyeDatabase
                     $row = $this->single();
 
                     if ($this->rowCount() > 0) {
-                        $_SESSION["uSer_namE"] = $row["gReeneye_unamE"];
+                        $_SESSION["uSer_namE"] = ucwords($row["gReeneye_unamE"]);
                         $_SESSION["uSer_iD"] = $row["gReeneye_uiD"];
                         $_SESSION["uSer_lvL"] = $row["gReeneye_ulvL"];
+                        is_null($row["gReeneye_upiC"]) or $_SESSION["uSer_piC"] = $row["gReeneye_upiC"];
                         $_SESSION["gReeneye"] = rand(0000, 9999);
-                        Flash::setMsg(ucfirst($row["gReeneye_unamE"]) . " Login Successfull.");
+                        Flash::setMsg("Welcome Back, " . $_SESSION["uSer_namE"]);
                         header("location:" . ADMIN);
                         exit();
                     } else {
