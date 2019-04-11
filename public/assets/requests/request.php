@@ -11,7 +11,7 @@
 
         <?php for ($i = 0; $i < 3; $i++) : ?>
             <div class="col-md-4 my-1">
-                <button class="btnDate btn w-100 btn-outline-success rounded-pill" type="button" id="<?php echo strtolower($date->format('Md')); ?>">
+                <button class="btnDate btn w-100 btn-outline-success rounded-pill" type="button" id="<?php echo strtolower($date->format('F d, Y')); ?>">
                     <?php echo $date->format('F d, Y'); ?>
                 </button>
                 <?php $date->modify('+1 day'); ?>
@@ -21,7 +21,7 @@
         <?php $date->setTime(10, 00); ?>
         <?php for ($i = 0; $i < 4; $i++) : ?>
             <div class="col-md-3 my-1">
-                <button class="btnTime btn w-100 btn-outline-success rounded-pill" type="button" id="<?php echo strtolower($date->format('H:i')); ?>">
+                <button class="btnTime btn w-100 btn-outline-success rounded-pill" type="button" id="<?php echo strtolower($date->format('H : i A')); ?>">
                     <?php echo $date->format('h : i A'); ?>
                 </button>
                 <?php $date->modify('+30 minutes'); ?>
@@ -30,7 +30,7 @@
         <?php $date->setTime(17, 00); ?>
         <?php for ($i = 0; $i < 4; $i++) : ?>
             <div class="col-md-3 my-1">
-                <button class="btnTime btn w-100 btn-outline-success rounded-pill" type="button" id="<?php echo strtolower($date->format('H:i')); ?>">
+                <button class="btnTime btn w-100 btn-outline-success rounded-pill" type="button" id="<?php echo strtolower($date->format('H : i A')); ?>">
                     <?php echo $date->format('h : i A'); ?>
                 </button>
                 <?php $date->modify('+30 minutes'); ?>
@@ -45,7 +45,7 @@
                 </span> at <?php echo $_POST['formDate']; ?></button>
         </div>
         <div class="col-md-6 my-1">
-            <button class="btn btn-lg btn-secondary w-100 rounded-pill" type="button">Cancel Time</button>
+            <button class="btnCancel btn btn-lg btn-secondary w-100 rounded-pill" type="button">Cancel Time</button>
         </div>
     <?php endif; ?>
 <?php endif; ?>

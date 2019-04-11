@@ -26,19 +26,15 @@
             <form id="gReeneyeForm" method="GET" action="assets/requests/request" class="container px-5" novalidate autocomplete="off">
                 <div class="form-group">
                     <label for="pnamE" class="h5">Patient's Name :</label>
-                    <div class="controls">
-                        <input name="pnamE" id="pnamE" class="font-weight-bold form-control rounded-pill" type="text" required data-validation-required-message="Hey ! Your Name is Importent for me, Please tell me.">
-                    </div>
+                    <input name="pnamE" id="pnamE" class="font-weight-bold form-control rounded-pill" type="text" data-require-msg="Hey ! Your Name is Importent for us, Please tell us.">
                 </div>
                 <div class="form-group">
                     <label for="pnuM" class="h5">Patient's Mobile Number :</label>
-                    <div class="controls">
-                        <input name="pnuM" id="pnuM" class="font-weight-bold form-control rounded-pill" type="text" required data-validation-required-message="Hey ! Your Number is Importent for me, Please tell me.">
-                    </div>
+                    <input name="pnuM" id="pnuM" class="font-weight-bold form-control rounded-pill" type="text" data-require-msg="Hey ! Your Number is Importent for us, Please tell us.">
                 </div>
                 <div class="form-group clearfix w-50">
                     <label for="pgeN" class="h5">Patient's Gender :</label>
-                    <select name="pgeN" id="pgeN" class="form-control text-dark rounded-pill" required>
+                    <select name="pgeN" id="pgeN" class="form-control text-dark rounded-pill" data-require-msg="Please Tell us Your Gender.">
                         <option selected disabled> Select </option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
@@ -99,11 +95,16 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <button name="gReeneyeBook" value="appointment" class="btn btn-lg btn-success w-100 rounded-pill" type="submit">Book Appointment</button>
+                    <button name="gReeneyeBook" id="gReeneyeBook" value="appointment" class="btn btn-lg btn-success w-100 rounded-pill" type="button">Book Appointment</button>
                 </div>
             </form>
             <!-- </div> -->
         </div>
     </div>
 </section>
+<div style="text-align: right;position: fixed;z-index:9999999;bottom: 0;width: auto;right: 1%;cursor: pointer;line-height: 0;display:block !important;">
+    <a title="Hosted on free web hosting 000webhost.com. Host your own website for FREE." target="_blank" href="https://www.000webhost.com/?utm_source=000webhostapp&amp;utm_campaign=000_logo&amp;utm_medium=website&amp;utm_content=footer_img">
+        <img src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png" alt="www.000webhost.com">
+    </a>
+</div>
 <?php Import::Footer(); ?>
