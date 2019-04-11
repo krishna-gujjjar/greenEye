@@ -2,7 +2,7 @@
  * @Author: GurjarsPro
  * @Date: 2019-03-10 12:32:49
  * @Last Modified by: krishna_gujjjar
- * @Last Modified time: 2019-03-29 19:52:53
+ * @Last Modified time: 2019-04-09 10:47:56
  */
 
 * {
@@ -17,6 +17,8 @@
 }
 
 :root {
+    --invalid: #FF9149;
+    --valid: #00d88c;
     --primary: #21a32f;
     --secondary: #727f86;
     --success: #ff0062;
@@ -97,4 +99,116 @@
 
 .bg-primary {
     background-color: var(--primary) !important;
+}
+
+.ajaxLoader {
+    border-top: 2px solid var(--primary);
+    border-left: 2px solid var(--primary);
+    /* border-right: 2px solid var(--primary); */
+    border-radius: 50%;
+    width: 3%;
+    height: 3%;
+    padding: 3%;
+    animation: play 1s linear infinite;
+    margin: 3% auto;
+}
+
+/* Typeahead Ends */
+.form-group.issue .help-block,
+.form-group.issue .help-inline {
+    font-weight: 500;
+    color: var(--invalid);
+}
+
+.form-group.issue input,
+.form-group.issue select,
+.form-group.issue textarea {
+    color: var(--invalid);
+    border-color: var(--invalid);
+}
+
+.form-group.issue input:focus,
+.form-group.issue select:focus,
+.form-group.issue textarea:focus {
+    border-color: var(--success);
+    -webkit-box-shadow: 0 0 6px var(--successS);
+    box-shadow: 0 0 6px var(--successS);
+}
+
+.form-group.issue .input-prepend .add-on,
+.form-group.issue .input-append .add-on {
+    color: var(--invalid);
+    background-color: var(--successS);
+    border-color: var(--invalid);
+}
+
+.form-group.error .help-block,
+.form-group.error .help-inline {
+    font-weight: 500;
+    color: var(--success);
+}
+
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+    color: var(--success);
+    border-color: var(--success);
+}
+
+.form-group.error input:focus,
+.form-group.error select:focus,
+.form-group.error textarea:focus {
+    border-color: var(--success);
+    -webkit-box-shadow: 0 0 6px var(--successS);
+    box-shadow: 0 0 6px var(--successS);
+}
+
+.form-group.error .input-prepend .add-on,
+.form-group.error .input-append .add-on {
+    color: var(--success);
+    background-color: var(--successS);
+    border-color: var(--success);
+}
+
+.form-group.validate .help-block,
+.form-group.validate .help-inline {
+    font-weight: 500;
+    color: var(--valid);
+}
+
+.form-group.validate input,
+.form-group.validate select,
+.form-group.validate textarea {
+    color: var(--valid);
+    border-color: var(--valid);
+}
+
+.form-group.validate input:focus,
+.form-group.validate select:focus,
+.form-group.validate textarea:focus {
+    border-color: var(--valid) !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.form-group.validate .input-prepend .add-on,
+.form-group.validate .input-append .add-on {
+    color: var(--valid);
+    background-color: var(--valid);
+    border-color: var(--valid);
+}
+
+.form-group .help-block ul {
+    padding-left: 1.5rem;
+    font-weight: 500;
+}
+
+.modal {
+    top: 25% !important;
+}
+
+@keyframes play {
+    to {
+        transform: rotate(360deg);
+    }
 }

@@ -100,15 +100,16 @@
 <!-- Feather js -->
 <script src="<?php echo VENDORS; ?>feather/feather.min.js"></script>
 <!-- jQuery js-->
-<script src="<?php echo VENDORS; ?>jquery/jquery-2.2.4.min.js"></script>
-<!-- <script src="<?php echo VENDORS; ?>jquery/jquery-3.3.1.min.js"></script> -->
+<!-- <script src="<?php echo VENDORS; ?>jquery/jquery-2.2.4.min.js"></script> -->
+<script src="<?php echo VENDORS; ?>jquery/jquery-3.3.1.min.js"></script>
 <!-- Popper js -->
 <script src="<?php echo VENDORS; ?>popperjs/popper.min.js"></script>
 <!-- Bootstrap js -->
 <script src="<?php echo VENDORS; ?>bootstrap/js/bootstrap.min.js"></script>
-<!-- Counter Plugin js -->
-<script src="<?php echo VENDORS; ?>counterup/plugins.js"></script>
-<!-- Active js -->
+<!-- Plugins js -->
+<script src="<?php echo VENDORS; ?>plugins/plugins.js"></script>
+<script src="<?php echo VENDORS; ?>jqueryvalidation/jqBootstrapValidation.js"></script>
+<!-- Main js -->
 <script src="<?php echo ASSETS; ?>js/main.js"></script>
 <script>
     // Get Current Year for Copyright

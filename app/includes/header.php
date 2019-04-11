@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="<?php echo ASSETS; ?>css/greeneye-icons.css">
     <link rel="stylesheet" href="<?php echo ASSETS; ?>css/nice-select.css">
     <!-- <link rel="stylesheet" href="<?php echo ASSETS; ?>style/main.min.css"> -->
-    <link rel="stylesheet" href="<?php echo ASSETS; ?>/css/main.css" />
+    <link rel="stylesheet" href="<?php echo ASSETS; ?>css/main.css" />
 </head>
 
 <body>
@@ -100,7 +100,7 @@
                                         </li>
                                     </ul>
                                     <!-- Appointment Button -->
-                                    <a href="#" class="btn greeneye-appoint-btn ml-30">For <span>emergencies</span> Click here</a>
+                                    <a href="<?php echo ROOT_URL; ?>book-appointment" class="text-uppercase btn greeneye-appoint-btn ml-30">book appointment</a>
                                 </div>
                             </nav>
                         </div>
