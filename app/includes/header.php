@@ -44,7 +44,6 @@
     </div>
 
 
-
     <!-- ***** Header Area Start ***** -->
     <header class="header-area">
         <!-- Top Header Area -->

@@ -3,6 +3,10 @@
 #  * @Last Modified by:   krishna_gujjjar
 #  * @Last Modified time: 2019-04-03 10:08:32
 
+# HTID:9095500: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+# php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:9095500:
+
 <IfModule mod_rewrite.c>
 	RewriteEngine on
 
@@ -15,7 +19,7 @@
 </IfModule>
 
 # Errors
-ErrorDocument 500 "Houston, we have a problem."
+ErrorDocument 500 "Server is Down, we have a problem."
 ErrorDocument 401 /greenEye/error/401.php
 ErrorDocument 403 /greenEye/error/404.php
 ErrorDocument 404 /greenEye/error/404.php
