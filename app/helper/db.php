@@ -43,7 +43,19 @@ abstract class DB
                                         INDEX `createID` (`gReeneye_dcrT`)
                                     ) ENGINE = InnoDB DEFAULT CHARSET=utf8 COMMENT = 'Doctor\'s Table'";
                     $createDoctor = mysqli_query($this->connect, $createDoctor) or exit(errMsg('Oops, `gReeneye_dOctor` Table Not Created'));
-                    if ($createUser && $createDoctor) {
+                    $createAppoint = "CREATE TABLE IF NOT EXISTS `gReeneye`.`gReeneye_bOok` (
+                                `gReeneye_biD` INT NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT 'Booking ID' ,
+                                `gReeneye_brefiD` VARCHAR(255) NOT NULL COMMENT 'Patient\'s RefID',
+                                `gReeeneye_bnamE` TEXT NOT NULL COMMENT 'Patient\'s Name' ,
+                                `gReeneye_bnuM` INT NOT NULL COMMENT 'Patient\'s Number' ,
+                                `gReeneye_bgeN` VARCHAR(255) NOT NULL COMMENT 'Patient\'s Gender' ,
+                                `gReeneye_bdatE` VARCHAR(255) NOT NULL COMMENT 'Patient\'s Appointment Date' ,
+                                `gReeneye_btimE` VARCHAR(255) NOT NULL COMMENT 'Patient\'s Appointment Time' ,
+                                `gReeneye_bcrT` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Booking Time' ,
+                                `gReeneye_bstS` INT(2) NOT NULL DEFAULT '1' COMMENT 'Booking Status'
+                                ) ENGINE = InnoDB COMMENT = 'Patient\'s Booking Data';";
+                    $createAppoint = mysqli_query($this->connect, $createAppoint) or exit(errMsg('Oops, `gReeneye_bOok` Table Not Created'));
+                    if ($createUser && $createDoctor && $createAppoint) {
                         $checkData = "SELECT * FROM `gReeneye_uSer` WHERE `gReeneye_uiD` = 1";
                         $checkData = mysqli_query($this->connect, $checkData) or exit(errMsg("Sorry, Can't Find Any Data in Database"));
                         if ($checkData) {
