@@ -2,7 +2,7 @@
  * @Author: GurjarsPro
  * @Date: 2019-04-11 17:39:27
  * @Last Modified by: krishna_gujjjar
- * @Last Modified time: 2019-04-12 08:25:40
+ * @Last Modified time: 2019-04-12 23:08:06
  */
 
 /** Remove Banner from Document */
@@ -515,12 +515,46 @@ if (document.querySelector('div>a>img') !== null) {
 
             /** Check Form Value Not Empty */
             if (validInput('#pnamE') && validInput('#pnuM') && validInput('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '' && typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
+                let $form;
+                console.log($form = JSON.stringify($('#gReeneyeForm').serializeArray()));
+
+                // let Patientname = $form[0];
+                // let Patientnum = $form[1];
+                // let Patientgen = $form[2];
+
+                console.log(getFormData($('#gReeneyeForm')));
+
+                ajaxLoading();
+                $.ajax({
+                    type: "POST",
+                    url: $('#gReeneyeForm').attr('action'),
+                    cache: false,
+                    data: {
+                        getForm: "Booked",
+                        formData: getFormData($('#gReeneyeForm')),
+                        formDate: btnDate,
+                        formTime: btnTime
+                    },
+                    success: function (response) {
+                        $('#appointment').before(response + ' Appointment Booked');
+                        getDate();
+                    }
+                });
                 console.log('Form Submit');
             } else {
                 console.log('Empty Form');
             }
         });
 
+        function getFormData($form) {
+            var un_array = $form.serializeArray();
+            var in_arry = {};
+
+            $.map(un_array, function (elementOrValue) {
+                in_arry[elementOrValue['name']] = elementOrValue['value'];
+            });
+            return in_arry;
+        }
 
 
         /** Validate Form */
