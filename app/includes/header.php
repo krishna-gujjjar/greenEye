@@ -75,11 +75,11 @@
                                     <img src="<?php echo ASSETS; ?>img/core-img/logo.png" alt="Logo" />
                                 </a>
 
-                                <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation">
+                                <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#gReeneyeNavMenu" aria-controls="gReeneyeNavMenu" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
 
-                                <div class="collapse navbar-collapse" id="medilifeMenu">
+                                <div class="collapse navbar-collapse" id="gReeneyeNavMenu">
                                     <!-- Menu Area -->
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item <?php Config::Title('index'); ?>">
