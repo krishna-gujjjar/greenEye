@@ -53,7 +53,7 @@ class Config
      * Add Active Class on Current Page
      * @param string    $title                              Name Of Current Page Title
      * @uses            getSelf::getName()                  Getting Name of Current Page Title
-     * @return string */
+     * @return string|bool */
     public static function Title($title)
     {
         return ($title === self::getName()) and print('active');
@@ -63,7 +63,7 @@ class Config
      *
      * Getting Current Page's Name
      * @uses            getSelf::getName()                  Getting Name of Current Page Title
-     * @return          string */
+     * @return          string|bool */
     public static function getPageTitle()
     {
         /** @var string $title `Title` of Current Page */

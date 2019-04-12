@@ -86,9 +86,6 @@
                                         <li class="nav-item <?php Config::Title('index'); ?>">
                                             <a class="nav-link" href="<?php echo ROOT_URL; ?>">Home</a>
                                         </li>
-                                        <li class="nav-item <?php Config::Title('our-doctors'); ?>">
-                                            <a class="nav-link" href="<?php echo ROOT_URL; ?>about-us">Our Doctors</a>
-                                        </li>
                                         <li class="nav-item <?php Config::Title('about-us'); ?>">
                                             <a class="nav-link" href="<?php echo ROOT_URL; ?>about-us">About Us</a>
                                         </li>

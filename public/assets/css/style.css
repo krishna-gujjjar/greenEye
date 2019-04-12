@@ -2,7 +2,7 @@
  * @Author: GurjarsPro
  * @Date: 2019-03-10 12:32:49
  * @Last Modified by: krishna_gujjjar
- * @Last Modified time: 2019-04-09 10:47:56
+ * @Last Modified time: 2019-04-11 20:30:10
  */
 
 * {
@@ -150,7 +150,8 @@
 
 .form-group.error input,
 .form-group.error select,
-.form-group.error textarea {
+.form-group.error textarea,
+.form-group.error ul {
     color: var(--success);
     border-color: var(--success);
 }
