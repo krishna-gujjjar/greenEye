@@ -2,14 +2,16 @@
  * @Author: GurjarsPro
  * @Date: 2019-04-11 17:39:27
  * @Last Modified by: krishna_gujjjar
- * @Last Modified time: 2019-04-11 22:19:01
+ * @Last Modified time: 2019-04-12 08:25:40
  */
 
 /** Remove Banner from Document */
-document.onreadystatechange = () => {
-    if (document.readyState === 'interactive') {
-        let el = document.querySelector('[alt="www.000webhost.com"]').parentNode.parentNode;
-        el.parentNode.removeChild(el);
+if (document.querySelector('div>a>img') !== null) {
+    document.onreadystatechange = () => {
+        if (document.readyState === 'interactive') {
+            let el = document.querySelector('[alt="www.000webhost.com"]').parentNode.parentNode;
+            el.parentNode.removeChild(el);
+        }
     }
 }
 
