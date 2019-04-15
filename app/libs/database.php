@@ -107,12 +107,22 @@ abstract class Database extends DB
 
     /** resultset Function
      *
-     * Execute Query & Return All Result as Associated Array
+     * Execute Query & Return All Result as Associated Object
      * @return array */
     public function resultset()
     {
         $this->execute();
         return $this->stmt->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    /** resultArray Function
+     *
+     * Execute Query & Return All Result as Associated Array
+     * @return array */
+    public function resultArray()
+    {
+        $this->execute();
+        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /** single Function
