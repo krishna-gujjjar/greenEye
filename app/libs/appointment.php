@@ -83,13 +83,51 @@ class Appointment extends Database
         }
     }
 
-    // function checkRefID()
-    // {
+    function getAppointment($value = null)
+    {
+        if (!is_null($value) && !empty($value)) {
+            $this->query("SELECT * FROM `gReeneye_bOok` WHERE `gReeneye_bOok`.`gReeneye_bdatE` = :data ORDER BY `gReeneye_bOok`.`gReeneye_bdatE` DESC");
+            $this->bind(':data', $value);
+        } else {
+            $this->query("SELECT * FROM `gReeneye_bOok` ORDER BY `gReeneye_bOok`.`gReeneye_bdatE` DESC");
+        }
 
-    //     $this->query("SELECT * FROM `gReeneye_bOok` WHERE `gReeneye_brefiD` = :refID");
-    //     $this->bind(':refID', $id);
-    //     if ($this->rowCount() > 0) {
-    //         return $id = 'REF' . mt_rand(000000, 999999);
-    //     }
-    // }
+        return ['Appointments' => $this->resultset(), 'AppointmentRows' => $this->rowCount()];
+    }
+
+
+    function showAppointment($value = null)
+    {
+        return $this->getAppointment($value)['Appointments'];
+    }
+
+    function countAppointment($value = null)
+    {
+        return $this->getAppointment($value)['AppointmentRows'];
+    }
+
+    public function getBookedDate($date)
+    {
+        // return json_decode($this->showAppointment())->Appointments[0]->gReeneye_bdatE;
+        // $result = $this->getAppointment($date);
+
+        if ($this->countAppointment($date) > 0) {
+            foreach ($this->showAppointment($date) as $appointmentData) {
+                $AppointmentDates[] = $appointmentData->gReeneye_bdatE . ' ' . $appointmentData->gReeneye_btimE;
+            }
+        } else {
+            $AppointmentDates = array();
+        }
+        return $AppointmentDates;
+    }
+
+    public function getBookedTime()
+    {
+        // return json_decode($this->showAppointment())->Appointments[0]->gReeneye_bdatE;
+
+        foreach ($this->showAppointment() as $appointmentData) {
+            $AppointmentTimes[] = $appointmentData->gReeneye_bdatE . ' ' . $appointmentData->gReeneye_btimE;
+        }
+        return $AppointmentTimes;
+    }
 }

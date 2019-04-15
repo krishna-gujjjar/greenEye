@@ -442,7 +442,8 @@ if (document.querySelector('div>a>img') !== null) {
                     url: $('#gReeneyeForm').attr('action'),
                     cache: false,
                     data: {
-                        getForm: "Time"
+                        getForm: "Time",
+                        formDate: btnDate
                     },
                     success: function (response) {
                         $('#appointment').html(response); // Show Time
