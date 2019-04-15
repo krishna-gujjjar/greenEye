@@ -124,10 +124,12 @@ class Appointment extends Database
     public function getBookedTime()
     {
         // return json_decode($this->showAppointment())->Appointments[0]->gReeneye_bdatE;
-
+if($this->countAppointment()>0){
         foreach ($this->showAppointment() as $appointmentData) {
             $AppointmentTimes[] = $appointmentData->gReeneye_bdatE . ' ' . $appointmentData->gReeneye_btimE;
-        }
+        }}else{
+    $AppointmentTimes = array();
+}
         return $AppointmentTimes;
     }
 }
