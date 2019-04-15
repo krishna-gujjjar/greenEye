@@ -2,7 +2,10 @@
 <?php use GreenEye\App\Config \ {
     Import,
     Config
-}; ?>
+};
+use GreenEye\App\Libs\Appointment;
+
+?>
 <?php Import::Header(); ?>
 <!-- ***** Breadcumb Area Start ***** -->
 <section class="breadcumb-area bg-img gradient-background-overlay" style="background-image: url(<?php echo ASSETS; ?>img/bg-img/breadcumb1.jpg);">

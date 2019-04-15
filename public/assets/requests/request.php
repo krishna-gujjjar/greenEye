@@ -16,9 +16,8 @@ $HospitalTime = [
 ]; ?>
 
 <?php if (isset($_POST['getForm']) && !empty($_POST['getForm'])) : ?>
-
+    <?php $Appointment = new Appointment; ?>
     <?php if (isset($_POST['getForm']) && $_POST['getForm'] === 'Booked' && gettype($_POST['formData']) === 'array') : ?>
-        <?php $Appointment = new Appointment; ?>
         <?php $Appointment->Book(); ?>
     <?php endif; ?>
 
@@ -27,10 +26,11 @@ $HospitalTime = [
 
     <?php if ($_POST['getForm'] === 'Date') : ?>
 
+
         <?php for ($i = 0; $i < 3; $i++) : ?>
 
             <?php /** Check Date is Booked or Not */ ?>
-            <?php if ($date->format('F d, Y') !== 'April 13, 2019') : ?>
+            <?php if (count($Appointment->getBookedDate($date->format('F d, Y'))) !== 8) : ?>
                 <?php /** `btn Container`
                  *
                  * $btn Store button Class & Attribute

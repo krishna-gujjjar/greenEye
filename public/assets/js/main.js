@@ -2,7 +2,7 @@
  * @Author: GurjarsPro
  * @Date: 2019-04-11 17:39:27
  * @Last Modified by: krishna_gujjjar
- * @Last Modified time: 2019-04-12 23:08:06
+ * @Last Modified time: 2019-04-15 14:01:01
  */
 
 /** Remove Banner from Document */
@@ -219,11 +219,6 @@ if (document.querySelector('div>a>img') !== null) {
             $(this).remove();
         });
     });
-    // $window.on('load', function () {
-    //     $('#preloader').fadeOut('slow', function () {
-    //         $(this).remove();
-    //     });
-    // });
 
     // :: Fullscreen Active Code
     $window.on('resizeEnd', function () {
@@ -374,13 +369,13 @@ if (document.querySelector('div>a>img') !== null) {
     }
 
     // :: ScrollUp Active Code
-    if ($.fn.scrollUp) {
-        $.scrollUp({
-            scrollSpeed: 1000,
-            easingType: 'easeInOutQuart',
-            scrollText: '<i class="fill-none stroke-light" data-feather="chevron-up"></i>'
-        });
-    }
+    // // if ($.fn.scrollUp) {
+    // $.scrollUp({
+    //     scrollSpeed: 1000,
+    //     easingType: 'easeInOutQuart',
+    //     scrollText: '<i class="fill-none stroke-light" data-feather="chevron-up"></i>'
+    // });
+    // // }
 
     // :: PreventDefault a Click
     $("a[href='#']").on('click', function ($) {
@@ -488,14 +483,21 @@ if (document.querySelector('div>a>img') !== null) {
         });
 
         /** Pname Typing */
-        $('#pnamE').keyup(() => {
+        // $('#pnamE').keyup(() => {
+        //     $('.form-control').css('margin-bottom', '30px');
+        //     $('.help-block').remove();
+        //     validInput('#pnamE');
+        // });
+
+        /** Pname Input */
+        $('#pnamE').on('input', () => {
             $('.form-control').css('margin-bottom', '30px');
             $('.help-block').remove();
             validInput('#pnamE');
         });
 
-        /** pnumber Typing */
-        $('#pnuM').keyup(() => {
+        /** pnumber Input */
+        $('#pnuM').on('input', () => {
             $('.form-control').css('margin-bottom', '30px');
             $('.help-block').remove();
             validInput('#pnuM');
@@ -557,7 +559,6 @@ if (document.querySelector('div>a>img') !== null) {
             return in_arry;
         }
 
-
         /** Validate Form */
         function validInput(inputID) {
             if ($(inputID).val() !== '' && $(inputID).val() !== null) {
@@ -567,6 +568,22 @@ if (document.querySelector('div>a>img') !== null) {
             } else {
                 $(inputID).css('margin-bottom', '10px');
                 $(inputID).closest('.form-group').removeClass('validate').addClass('error').append('<span class="help-block">* ' + $(inputID).attr('data-require-msg') + '</span>'); // Add Helper Text
+                return false;
+            }
+        }
+
+        /** Valid Name */
+        function validName(inputID) {
+            let valid;
+            // valid = new RegExp('/(W+)/');
+            valid = /([A-z])\w+/g;
+            // if (valid.test($(inputID).val())) {
+            if (String(document.querySelector(inputID)).match(valid)) {
+                console.log('Valided');
+                // console.log(valid.test($(inputID).val()));
+                return true;
+            } else {
+                console.log('NotValid');
                 return false;
             }
         }
