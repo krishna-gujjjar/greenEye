@@ -54,8 +54,8 @@
                         <div class="h-100 d-md-flex justify-content-between align-items-center">
                             <p>Welcome to <span><?php echo SITENAME ?></span></p>
                             <p>
-                                Opening Hours : Monday to Saturday - 8am to
-                                10pm Contact : <span>+91-123-456-7890</span>
+                                Opening Hours : Monday to Sunday - 10am to
+                                12pm & 05pm to 07pm Contact : <span>+91-123-456-7890</span>
                             </p>
                         </div>
                     </div>

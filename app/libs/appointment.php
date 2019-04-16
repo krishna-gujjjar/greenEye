@@ -55,31 +55,39 @@ class Appointment extends Database
 
     public function Book()
     {
-        $pname = $_POST['formData']['pnamE'];
-        $pnum = $_POST['formData']['pnuM'];
-        $pgen = $_POST['formData']['pgeN'];
-        $pdate = $_POST['formDate'];
-        $ptime = $_POST['formTime'];
-        $id = 'REF' . mt_rand(000000, 999999);
+        $id     = $_SESSION['refID'];
+        $pname  = $_SESSION['name'];
+        $pnum   = $_SESSION['number'];
+        $pgen   = $_POST['formData']['pgeN'];
+        $pdate  = $_POST['formDate'];
+        $ptime  = $_POST['formTime'];
 
-        $this->query("INSERT INTO `gReeneye_bOok`(
-            `gReeneye_brefiD`,
-            `gReeeneye_bnamE`,
-            `gReeneye_bnuM`,
-            `gReeneye_bgeN`,
-            `gReeneye_bdatE`,
-            `gReeneye_btimE`
+        if (!empty($id) && !empty($pname) && !empty($pnum) && !empty($pgen) && !empty($pdate) && !empty($ptime)) {
+            $this->query("INSERT INTO `gReeneye_bOok`(
+                `gReeneye_brefiD`,
+                `gReeeneye_bnamE`,
+                `gReeneye_bnuM`,
+                `gReeneye_bgeN`,
+                `gReeneye_bdatE`,
+                `gReeneye_btimE`
             ) VALUES (:ref, :name, :num, :gen, :date, :time)");
-        $this->bind(':ref', $id);
-        $this->bind(':name', $pname);
-        $this->bind(':num', $pnum);
-        $this->bind(':gen', $pgen);
-        $this->bind(':date', $pdate);
-        $this->bind(':time', $ptime);
-        if ($this->execute()) {
-            echo 'Succees';
+            $this->bind(':ref', $id);
+            $this->bind(':name', $pname);
+            $this->bind(':num', $pnum);
+            $this->bind(':gen', $pgen);
+            $this->bind(':date', $pdate);
+            $this->bind(':time', $ptime);
+
+            if ($this->execute()) {
+                return true;
+                session_destroy();
+            } else {
+                echo 'Something Went Wrong';
+                return false;
+            }
         } else {
-            echo 'Something Went Wrong';
+            echo 'Data is Empty';
+            return false;
         }
     }
 
@@ -124,12 +132,13 @@ class Appointment extends Database
     public function getBookedTime()
     {
         // return json_decode($this->showAppointment())->Appointments[0]->gReeneye_bdatE;
-if($this->countAppointment()>0){
-        foreach ($this->showAppointment() as $appointmentData) {
-            $AppointmentTimes[] = $appointmentData->gReeneye_bdatE . ' ' . $appointmentData->gReeneye_btimE;
-        }}else{
-    $AppointmentTimes = array();
-}
+        if ($this->countAppointment() > 0) {
+            foreach ($this->showAppointment() as $appointmentData) {
+                $AppointmentTimes[] = $appointmentData->gReeneye_bdatE . ' ' . $appointmentData->gReeneye_btimE;
+            }
+        } else {
+            $AppointmentTimes = array();
+        }
         return $AppointmentTimes;
     }
 }

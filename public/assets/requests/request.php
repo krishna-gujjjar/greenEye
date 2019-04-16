@@ -1,5 +1,8 @@
 <?php require_once '../../../__constants.php'; ?>
-<?php use GreenEye\App\Libs\Appointment; ?>
+<?php use GreenEye\App\Libs \ {
+    Appointment,
+    Message
+}; ?>
 
 <?php /** @var array $startHour Hospital's Start Time */
 $startHour = [
@@ -17,10 +20,6 @@ $HospitalTime = [
 
 <?php if (isset($_POST['getForm']) && !empty($_POST['getForm'])) : ?>
     <?php $Appointment = new Appointment; ?>
-    <?php if (isset($_POST['getForm']) && $_POST['getForm'] === 'Booked' && gettype($_POST['formData']) === 'array') : ?>
-        <?php $Appointment->Book(); ?>
-    <?php endif; ?>
-
     <?php $date = new DateTime; ?>
     <?php $date->setTimezone(new DateTimeZone('Asia/Kolkata')); ?>
 
@@ -90,7 +89,7 @@ $HospitalTime = [
     <?php elseif ($_POST['getForm'] === 'Set') : ?>
 
         <div class="col-md-6 my-1">
-            <button class="btn btn-lg btn-success w-100 rounded-pill" type="button">
+            <button class="btn btnSet btn-lg btn-success w-100 rounded-pill" type="button">
                 <span class="font-weight-bold">
                     <?php echo $_POST['formTime']; ?>
                 </span> at <?php echo $_POST['formDate']; ?>
@@ -99,6 +98,73 @@ $HospitalTime = [
         <div class="col-md-6 my-1">
             <button class="btnCancel btn btn-lg btn-secondary w-100 rounded-pill" type="button">Cancel Time</button>
         </div>
+
+    <?php elseif ($_POST['getForm'] === 'OTP' && gettype($_POST['formData']) === 'array') : ?>
+        <?php $sms = new Message; ?>
+        <?php $_SESSION['refID'] = 'REF' . $sms->genrateOTP(); ?>
+        <?php $_SESSION['name'] = $_POST['formData']['pnamE'] ?>
+        <?php $_SESSION['number'] = $_POST['formData']['pnuM'] ?>
+        <?php $bookDate = $_POST['formDate'] . ' At ' . $_POST['formTime']; ?>
+        <?php $sms->send($_SESSION['name'], $_SESSION['refID'], $_SESSION['number'], $bookDate); ?>
+
+    <?php elseif ($_POST['getForm'] === 'CheckOTP' && !empty($_POST['getOTP'])) : ?>
+        <?php if (base64_decode($_COOKIE['gReeneye']) === $_POST['getOTP']) : ?>
+            <?php $Appointment->Book(); ?>
+
+            <div class="my-3 text-right mb-5">
+                <img src="<?php echo ASSETS; ?>img/core-img/logo.png" alt="Logo" />
+                <p class="pt-2 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p class=""><?php echo date('F d, Y h : i A', time()); ?></p>
+                <hr class="w-100 border-secondary">
+            </div>
+
+            <div class="my-4">
+                <label for="pgeN" class="h4">Patient's Reference ID :</label>
+                <h6 class="text-secondary"><?php echo $_SESSION['refID'] ?></h6>
+            </div>
+
+            <div class="my-4">
+                <label for="pnamE" class="h4">Patient's Name :</label>
+                <h6 class="text-secondary"><?php echo $_SESSION['name']; ?></h6>
+            </div>
+
+            <div class="my-4">
+                <label for="pnuM" class="h4">Patient's Mobile Number :</label>
+                <h6 class="text-secondary">+91 <?php echo $_SESSION['number']; ?></h6>
+            </div>
+
+            <div class="my-4">
+                <label for="pnuM" class="h4">Booking Date :</label>
+                <h6 class="text-secondary"><?php echo $_POST['formDate']; ?> At <?php echo $_POST['formTime']; ?></h6>
+            </div>
+
+            <div class="my-5 py-5 text-center">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus incidunt, molestias totam qui ullam sapiente id eius numquam quaerat deserunt corporis eum ad sed earum dolor expedita, aut libero nemo.
+                </p>
+                <p>
+                    Thanks For Your Patience.
+                </p>
+            </div>
+
+            <div class="mt-5">
+                <p class="lead">
+                    <span class="text-danger">* </span>
+                    Please Remember <span class="text-danger">Reference Id</span>, It's use for Check Your Appointment Status And Cancelation Your Appointment Booking in Future.
+                </p>
+            </div>
+
+            <div class="form-group my-5">
+                <a href="<?php echo ROOT_URL; ?>"><button id="goBack" class="btn btn-lg btn-success w-100 rounded-pill" type="button">Go Back</button></a>
+            </div>
+
+            <?php return true; ?>
+        <?php else : ?>
+            <?php echo 'Not Match'; ?>
+            <?php return false; ?>
+        <?php endif; ?>
+
+    <?php elseif ($_POST['getForm'] === 'Booked' && gettype($_POST['formData']) === 'array') : ?>
 
     <?php endif; ?>
 <?php endif; ?>

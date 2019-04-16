@@ -2,7 +2,7 @@
  * @Author: GurjarsPro
  * @Date: 2019-04-11 17:39:27
  * @Last Modified by: krishna_gujjjar
- * @Last Modified time: 2019-04-15 14:01:01
+ * @Last Modified time: 2019-04-17 00:00:03
  */
 
 /** Remove Banner from Document */
@@ -400,23 +400,15 @@ if (document.querySelector('div>a>img') !== null) {
         /** Create Time Container */
         let btnTime;
 
-        /** Click btnDate, Change Color & Get ID of btn */
+        /** Click btnDate, Get ID of btn */
         $("#appointment").on('click', '.btnDate', e => {
             btnDate = e.target.id; // Set Selected btn ID
-            $('.btnDate').removeClass('btn-dark').addClass('btn-outline-success');
-            e.target.classList.remove('btn-outline-success');
-            e.target.classList.add('btn-dark');
-
             console.log('clicked ' + btnDate);
         });
 
-        /** Click btnTime, Change Color & Get ID of btn */
+        /** Click btnTime, Get ID of btn */
         $("#appointment").on('click', '.btnTime', e => {
             btnTime = e.target.id; // Set Selected btn ID
-            $('.btnTime').removeClass('btn-dark').addClass('btn-outline-success');
-            e.target.classList.remove('btn-outline-success');
-            e.target.classList.add('btn-dark');
-
             console.log('clicked ' + btnTime);
         });
 
@@ -493,14 +485,14 @@ if (document.querySelector('div>a>img') !== null) {
         $('#pnamE').on('input', () => {
             $('.form-control').css('margin-bottom', '30px');
             $('.help-block').remove();
-            validInput('#pnamE');
+            validName('#pnamE');
         });
 
         /** pnumber Input */
         $('#pnuM').on('input', () => {
             $('.form-control').css('margin-bottom', '30px');
             $('.help-block').remove();
-            validInput('#pnuM');
+            validNum('#pnuM');
         });
 
         /** Click On pGender */
@@ -510,6 +502,42 @@ if (document.querySelector('div>a>img') !== null) {
             validInput('#pgeN');
         });
 
+        /** Click On btnSet */
+        $('#appointment').on('click', '.btnSet', function (e) {
+            e.preventDefault();
+            genrateOTP();
+        });
+
+        let successOTP;
+
+        /** Click on Verify */
+        $('.btnVerify').click(function (e) {
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: $('#gReeneyeForm').attr('action'),
+                cache: false,
+                data: {
+                    getForm: "CheckOTP",
+                    formData: getFormData($('#gReeneyeForm')),
+                    formDate: btnDate,
+                    formTime: btnTime,
+                    getOTP: $('#otp').val()
+                },
+                success: function (response) {
+                    console.log('OTP is Checking ' + response);
+                    successOTP = '7894540547';
+                    $('#messageModal').modal('toggle');
+                    $('#pnamE').val('');
+                    $('#pnuM').val('');
+                    $('#pgeN').val('');
+                    btnDate = '';
+                    btnTime = '';
+                    $('#gReeneyeForm').html(response);
+                }
+            });
+        });
+
 
         /** Click on Submit */
         $('#gReeneyeBook').click(function (e) {
@@ -517,38 +545,72 @@ if (document.querySelector('div>a>img') !== null) {
             $('.help-block').remove(); // Remove Helper Class
 
             /** Check Form Value Not Empty */
-            if (validInput('#pnamE') && validInput('#pnuM') && validInput('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '' && typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
-                let $form;
-                console.log($form = JSON.stringify($('#gReeneyeForm').serializeArray()));
+            if (typeof (successOTP) != "undefined" && validInput('#pnamE') && validInput('#pnuM') && validInput('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '' && typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
 
-                // let Patientname = $form[0];
-                // let Patientnum = $form[1];
-                // let Patientgen = $form[2];
+                $('#pnamE').val('');
+                $('#pnuM').val('');
+                $('#pgeN').val('');
+                btnDate = '';
+                btnTime = '';
 
-                console.log(getFormData($('#gReeneyeForm')));
+                // console.log(JSON.stringify($('#gReeneyeForm').serializeArray()));
 
-                ajaxLoading();
-                $.ajax({
-                    type: "POST",
-                    url: $('#gReeneyeForm').attr('action'),
-                    cache: false,
-                    data: {
-                        getForm: "Booked",
-                        formData: getFormData($('#gReeneyeForm')),
-                        formDate: btnDate,
-                        formTime: btnTime
-                    },
-                    success: function (response) {
-                        $('#appointment').before(response + ' Appointment Booked');
-                        getDate();
-                    }
-                });
+                // console.log(getFormData($('#gReeneyeForm')));
+
+                // ajaxLoading();
+                // $.ajax({
+                //     type: "POST",
+                //     url: $('#gReeneyeForm').attr('action'),
+                //     cache: false,
+                //     data: {
+                //         getForm: "Booked",
+                //         formData: getFormData($('#gReeneyeForm')),
+                //         formDate: btnDate,
+                //         formTime: btnTime
+                //     },
+                //     success: function (response) {
+                //         $('#appointment').before(response + ' Appointment Booked');
+                //         getDate();
+                //     }
+                // });
                 console.log('Form Submit');
             } else {
+                genrateOTP();
                 console.log('Empty Form');
             }
         });
 
+        /** Show Number on Message */
+        $("#messageModal").on("show.bs.modal", function (e) {
+            ;
+            $('#messageModal').find('#yourNum').html('+91 ' + $('#pnuM').val());
+        });
+
+        /** Genrating OTP & Send SMS */
+        function genrateOTP() {
+            $('#messageModal').modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+
+            ajaxLoading();
+            $.ajax({
+                type: "POST",
+                url: $('#gReeneyeForm').attr('action'),
+                data: {
+                    getForm: "OTP",
+                    formData: getFormData($('#gReeneyeForm')),
+                    formDate: btnDate,
+                    formTime: btnTime
+                },
+                cache: false,
+                success: function (response) {
+                    console.log(response);
+                }
+            });
+        }
+
+        /** Getting Form Data & Store in Array */
         function getFormData($form) {
             var un_array = $form.serializeArray();
             var in_arry = {};
@@ -571,19 +633,30 @@ if (document.querySelector('div>a>img') !== null) {
                 return false;
             }
         }
+        /** Valid Number */
+        function validNum(inputID) {
+            if (/^[0-9]+$/.test($(inputID).val()) && $(inputID).val().length == 10) {
+                $(inputID).css('margin-bottom', '30px');
+                $(inputID).closest('.form-group').removeClass('error').addClass('validate');
+                return true;
+            } else {
+                $(inputID).css('margin-bottom', '10px');
+                $(inputID).closest('.form-group').removeClass('validate').addClass('error').append('<span class="help-block">* ' +
+                    "Don't Be Kidding, Tell me Your Valid Mobile Number." + '</span>'); // Add Helper Text
+                return false;
+            }
+        }
 
         /** Valid Name */
         function validName(inputID) {
-            let valid;
-            // valid = new RegExp('/(W+)/');
-            valid = /([A-z])\w+/g;
-            // if (valid.test($(inputID).val())) {
-            if (String(document.querySelector(inputID)).match(valid)) {
-                console.log('Valided');
-                // console.log(valid.test($(inputID).val()));
+            if (/^[A-z]+$/.test($(inputID).val()) && $(inputID).val().length > 2) {
+                $(inputID).css('margin-bottom', '30px');
+                $(inputID).closest('.form-group').removeClass('error').addClass('validate');
                 return true;
             } else {
-                console.log('NotValid');
+                $(inputID).css('margin-bottom', '10px');
+                $(inputID).closest('.form-group').removeClass('validate').addClass('error').append('<span class="help-block">* ' +
+                    "Don't Be Kidding, Tell me Your Name." + '</span>'); // Add Helper Text
                 return false;
             }
         }

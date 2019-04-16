@@ -1,7 +1,7 @@
 <?php require_once '../__constants.php'; ?>
 <?php use GreenEye\App\Config\Import; ?>
 <?php Import::Header(); ?>
-<?php include('top-cache.php'); ?> 
+<?php /**  include('top-cache.php');*/ ?>
 <!-- ***** Hero Area Start ***** -->
 <section class="hero-area">
     <div class="hero-slides owl-carousel">
@@ -467,5 +467,5 @@
     </div>
 </div>
 <!-- ***** Emergency Area End ***** -->
-<?php include('bottom-cache.php'); ?>
+<?php /** include('bottom-cache.php'); */ ?>
 <?php Import::Footer(); ?>

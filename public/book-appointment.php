@@ -2,10 +2,7 @@
 <?php use GreenEye\App\Config \ {
     Import,
     Config
-};
-use GreenEye\App\Libs\Appointment;
-
-?>
+}; ?>
 <?php Import::Header(); ?>
 <!-- ***** Breadcumb Area Start ***** -->
 <section class="breadcumb-area bg-img gradient-background-overlay" style="background-image: url(<?php echo ASSETS; ?>img/bg-img/breadcumb1.jpg);">
@@ -25,8 +22,8 @@ use GreenEye\App\Libs\Appointment;
 <section class="section-padding-100 bg-light">
     <div class="container">
         <div class="container shadow-sm bg-white p-3 pt-5 rounded-lg">
-            <!-- <div class="card-body"> -->
             <form id="gReeneyeForm" method="GET" action="assets/requests/request" class="container px-5" novalidate autocomplete="off">
+
                 <div class="form-group">
                     <label for="pnamE" class="h5">Patient's Name :</label>
                     <input name="pnamE" id="pnamE" class="font-weight-bold form-control rounded-pill" type="text" data-require-msg="Hey ! Your Name is Importent for us, Please tell us.">
@@ -44,70 +41,51 @@ use GreenEye\App\Libs\Appointment;
                     </select>
                 </div>
 
-
-
                 <div class="mb-5 text-center">
                     <div class="mb-3 text-left">
                         <h5>Appointment Date :</h5>
                     </div>
                     <div id="appointment" class="row text-center">
-
-
-
-
-                        <!-- <div class="col-md-3 my-1">
-                        <button class="btn w-100 btn-outline-success rounded-pill" type="button">10 : 00 AM
-                        </button>
-                    </div>
-                    <div class="col-md-3 my-1">
-                        <button class="btn w-100 btn-outline-success rounded-pill" type="button">10 : 30 AM
-                        </button>
-                    </div>
-                    <div class="col-md-3 my-1">
-                        <button class="btn w-100 btn-danger rounded-pill" type="button">11 : 00 AM
-                        </button>
-                    </div>
-                    <div class="col-md-3 my-1">
-                        <button class="btn w-100 btn-outline-success rounded-pill" type="button">11 : 30 AM
-                        </button>
-                    </div>
-                    <div class="col-md-3 my-1">
-                        <button class="btn w-100 btn-outline-success rounded-pill" type="button">05 : 00 PM
-                        </button>
-                    </div>
-                    <div class="col-md-3 my-1">
-                        <button class="btn w-100 btn-danger rounded-pill" type="button">05 : 30 PM
-                        </button>
-                    </div>
-                    <div class="col-md-3 my-1">
-                        <button class="btn w-100 btn-outline-success rounded-pill" type="button">06 : 00 PM
-                        </button>
-                    </div>
-                    <div class="col-md-3 my-1">
-                        <button class="btn w-100 btn-outline-success rounded-pill" type="button">06 : 30 PM
-                        </button>
-                    </div> -->
-
-                        <!-- <div class="col-md-6 my-1">
-                        <button class="btn btn-lg btn-success w-100 rounded-pill" type="button">
-                            <span class="font-weight-bold">06 : 00 PM</span> at April 07, 2019</button>
-                    </div>
-                    <div class="col-md-6 my-1">
-                        <button class="btn btn-lg btn-secondary w-100 rounded-pill" type="button">Cancel Time</button>
-                    </div> -->
                     </div>
                 </div>
                 <div class="form-group">
                     <button name="gReeneyeBook" id="gReeneyeBook" value="appointment" class="btn btn-lg btn-success w-100 rounded-pill" type="button">Book Appointment</button>
                 </div>
+
             </form>
-            <!-- </div> -->
         </div>
     </div>
 </section>
-<div style="text-align: right;position: fixed;z-index:9999999;bottom: 0;width: auto;right: 1%;cursor: pointer;line-height: 0;display:block !important;">
-    <a title="Hosted on free web hosting 000webhost.com. Host your own website for FREE." target="_blank" href="https://www.000webhost.com/?utm_source=000webhostapp&amp;utm_campaign=000_logo&amp;utm_medium=website&amp;utm_content=footer_img">
-        <img src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png" alt="www.000webhost.com">
-    </a>
+
+
+<!-- Modal -->
+<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="container-fluid p-3">
+                    <div class="row">
+                        <div class="col-12 pt-3 form-group">
+                            <div class="pb-3 text-left">
+                                <h1>Your Number :</h1>
+                                <h3 id="yourNum"></h3>
+                            </div>
+                            <p class="lead">OTP send on Your Number...</p>
+                            <input type="text" id="otp" name="otp" class="form-control rounded-pill text-dark" autocomplete="off">
+                        </div>
+                        <div class="col-6">
+                            <button type="button" class="btn btnVerify btn-primary w-100 rounded-pill">Verify</button>
+                        </div>
+                        <div class="col-6">
+                            <button type="button" class="btn btn-secondary w-100 rounded-pill" disabled>Resend</button>
+                        </div>
+                        <div class="col-12 pt-3">
+                            <button type="button" class="btn btn-danger w-100 rounded-pill" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <?php Import::Footer(); ?>
