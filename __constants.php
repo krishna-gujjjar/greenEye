@@ -107,10 +107,10 @@ defined('ROOT_URL') or define('ROOT_URL', 'http://test.io/greenEye/'); //For ME
 defined('PUBLIC_URL') or define('PUBLIC_URL', ROOT_URL . 'public/');
 
 /** Project Assets Url */
-defined('ASSETS') or define('ASSETS', PUBLIC_URL . 'assets/');
+defined('ASSETS') or define('ASSETS', str_replace('/public', '', PUBLIC_URL . 'assets/'));
 
 /** Project Vendors Url */
-defined('VENDORS') or define('VENDORS', PUBLIC_URL . 'vendors/');
+defined('VENDORS') or define('VENDORS', str_replace('/public', '', PUBLIC_URL . 'vendors/'));
 
 /** Project Admin Url */
 defined('ADMIN') or define('ADMIN', str_replace('/public', '', PUBLIC_URL . 'admin/'));

@@ -22,7 +22,7 @@
 <section class="section-padding-100 bg-light">
     <div class="container">
         <div class="container shadow-sm bg-white p-3 pt-5 rounded-lg">
-            <form id="gReeneyeForm" method="GET" action="assets/requests/request" class="container px-5" novalidate autocomplete="off">
+            <form id="gReeneyeForm" method="POST" action="<?php echo ASSETS; ?>requests/request" class="container px-5" novalidate autocomplete="off">
 
                 <div class="form-group">
                     <label for="pnamE" class="h5">Patient's Name :</label>
