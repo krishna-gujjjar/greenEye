@@ -96,7 +96,8 @@
                                         </li>
                                     </ul>
                                     <!-- Appointment Button -->
-                                    <a href="<?php echo ROOT_URL; ?>book-appointment" class="text-uppercase btn greeneye-appoint-btn ml-30">book appointment</a>
+                                    <a href="<?php echo ROOT_URL; ?>check-status" class="text-uppercase btn greeneye-appoint-btn mr-3">check status</a>
+                                    <a href="<?php echo ROOT_URL; ?>book-appointment" class="text-uppercase btn greeneye-appoint-btn  ml-3">book appointment</a>
                                 </div>
                             </nav>
                         </div>
