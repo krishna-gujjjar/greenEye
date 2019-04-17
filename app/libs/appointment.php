@@ -91,17 +91,54 @@ class Appointment extends Database
         }
     }
 
+    function checkAppointment()
+    {
+        if (gettype($_POST['formData']) === 'array') {
+            $this->query("SELECT * FROM `gReeneye_bOok` WHERE `gReeneye_bOok`.`gReeneye_brefiD` = :refID AND `gReeneye_bOok`.`gReeneye_bnuM` = :num AND `gReeneye_bOok`.`gReeneye_bstS` = 1");
+            $this->bind(':refID', $_POST['formData']['ureF']);
+            $this->bind(':num', $_POST['formData']['unumbeR']);
+            $result = $this->single();
+            if ($this->rowCount() === 1) {
+                return $result;
+            } else {
+                return false;
+            }
+        } else {
+            echo 'Something Went Wrong';
+            return false;
+        }
+    }
+
+    function cancelBooking()
+    {
+        if (!empty($_POST['formData'])) {
+            $this->query("UPDATE `gReeneye_bOok` SET `gReeneye_bOok`.`gReeneye_bstS` = 0 WHERE `gReeneye_bOok`.`gReeneye_biD` = :ID");
+            $this->bind(':ID', $_POST['formData']);
+            if ($this->execute()) {
+                return 'Your Appointment is Successfully Canceled.';
+            } else {
+                echo 'Not Well DB';
+                return false;
+            }
+        } else {
+            echo 'Something Went Wrong';
+            return false;
+        }
+    }
+
+
     function getAppointment($value = null)
     {
         if (!is_null($value) && !empty($value)) {
-            $this->query("SELECT * FROM `gReeneye_bOok` WHERE `gReeneye_bOok`.`gReeneye_bdatE` = :data ORDER BY `gReeneye_bOok`.`gReeneye_bdatE` DESC");
+            $this->query("SELECT * FROM `gReeneye_bOok` WHERE `gReeneye_bOok`.`gReeneye_bdatE` = :data AND `gReeneye_bOok`.`gReeneye_bstS` = 1 ORDER BY `gReeneye_bOok`.`gReeneye_bdatE` DESC");
             $this->bind(':data', $value);
         } else {
-            $this->query("SELECT * FROM `gReeneye_bOok` ORDER BY `gReeneye_bOok`.`gReeneye_bdatE` DESC");
+            $this->query("SELECT * FROM `gReeneye_bOok` WHERE `gReeneye_bOok`.`gReeneye_bstS` = 1 ORDER BY `gReeneye_bOok`.`gReeneye_bdatE` DESC");
         }
 
         return ['Appointments' => $this->resultset(), 'AppointmentRows' => $this->rowCount()];
     }
+
 
 
     function showAppointment($value = null)

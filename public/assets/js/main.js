@@ -2,7 +2,7 @@
  * @Author: GurjarsPro
  * @Date: 2019-04-11 17:39:27
  * @Last Modified by: krishna_gujjjar
- * @Last Modified time: 2019-04-17 18:58:08
+ * @Last Modified time: 2019-04-18 01:06:28
  */
 
 /** Remove Banner from Document */
@@ -405,9 +405,10 @@ if (document.querySelector('div>a>img') !== null) {
             validNum('#unumbeR');
         });
 
-        /** Click on Login */
+        /** Click on CheckStatus */
         $('#gReeneyeUser').click(e => {
             e.preventDefault();
+
             $('.help-block').remove(); // Remove Helper Text
             validInput('#ureF'); // Valid Input ureF
             validInput('#unumbeR'); // Valid Input unumbeR
@@ -415,27 +416,47 @@ if (document.querySelector('div>a>img') !== null) {
 
             /** Check Form not Empty */
             if (validInput('#ureF') && validInput('#unumbeR') && validREF('#ureF') && validNum('#unumbeR')) {
+                let myForm;
+                console.log(myForm = getFormData($('#gReeneyeUserForm')));
 
                 ajaxLoading('#gReeneyeUserForm'); // Show Loader
-                // $.ajax({
-                //     type: "POST",
-                //     url: $('#gReeneyeForm').attr('action'),
-                //     cache: false,
-                //     data: {
-                //         getForm: "Time",
-                //         formDate: btnDate
-                //     },
-                //     success: function (response) {
-                //         $('#appointment').html(response); // Show Time
-                //     }
-                // });
+                $.ajax({
+                    type: "POST",
+                    url: $('#gReeneyeUserForm').attr('action'),
+                    cache: false,
+                    data: {
+                        getForm: "CheckStatus",
+                        formData: myForm
+                    },
+                    success: response => {
+                        $('#gReeneyeUserForm').html(response); // Show Time
+                    }
+                });
 
             } else {
                 console.log('Empty Form');
             }
         });
 
+        /** Click on btnDelete */
+        $('#gReeneyeUserForm').on('click', '.btnDelete', () => {
+            let delID;
+            delID = $('.btnDelete').attr('id');
 
+            ajaxLoading('#gReeneyeUserForm');
+            $.ajax({
+                type: "POST",
+                url: $('#gReeneyeUserForm').attr('action'),
+                cache: false,
+                data: {
+                    getForm: 'btnDelete',
+                    formData: delID
+                },
+                success: response => {
+                    $('#gReeneyeUserForm').html(response);
+                }
+            });
+        });
     }
 
     /** Book Appointment */
@@ -453,13 +474,13 @@ if (document.querySelector('div>a>img') !== null) {
         /** Click btnDate, Get ID of btn */
         $("#appointment").on('click', '.btnDate', e => {
             btnDate = e.target.id; // Set Selected btn ID
-            console.log('clicked ' + btnDate);
+            // console.log('clicked ' + btnDate);
         });
 
         /** Click btnTime, Get ID of btn */
         $("#appointment").on('click', '.btnTime', e => {
             btnTime = e.target.id; // Set Selected btn ID
-            console.log('clicked ' + btnTime);
+            // console.log('clicked ' + btnTime);
         });
 
         /** Click on btnDate */
@@ -469,9 +490,10 @@ if (document.querySelector('div>a>img') !== null) {
             validInput('#pnamE'); // Valid Input pnamE
             validInput('#pnuM'); // Valid Input pnuM
             validInput('#pgeN'); // Valid Input pgeN
+            $('.help-block').remove(); // Remove Helper Text
 
             /** Check Form not Empty */
-            if (validInput('#pnamE') && validName('#pnamE') && validInput('#pnuM') && validInput('#pnuM') && validInput('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '') {
+            if (validInput('#pnamE') && validName('#pnamE') && validInput('#pnuM') && validNum('#pnuM') && validInput('#pgeN') && validName('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '') {
 
                 ajaxLoading('#appointment'); // Show Loader
                 $.ajax({
@@ -482,7 +504,7 @@ if (document.querySelector('div>a>img') !== null) {
                         getForm: "Time",
                         formDate: btnDate
                     },
-                    success: function (response) {
+                    success: response => {
                         $('#appointment').html(response); // Show Time
                     }
                 });
@@ -502,14 +524,13 @@ if (document.querySelector('div>a>img') !== null) {
                                 formDate: btnDate,
                                 formTime: btnTime
                             },
-                            success: function (response) {
+                            success: response => {
                                 $('#appointment').html(response); // Show Confirm & Cancel
                             }
                         });
 
                         /** Cancel Button is Clicked */
-                        $('#appointment').on('click', '.btnCancel', function () {
-
+                        $('#appointment').on('click', '.btnCancel', () => {
                             btnDate = ''; // Empty Date Value
                             btnTime = ''; // Empty Time Value
                             getDate();
@@ -555,7 +576,7 @@ if (document.querySelector('div>a>img') !== null) {
         });
 
         /** Click On btnSet */
-        $('#appointment').on('click', '.btnSet', function (e) {
+        $('#appointment').on('click', '.btnSet', e => {
             e.preventDefault();
             if (validInput('#pnamE') && validInput('#pnuM') && validInput('#pgeN') && validName('#pnamE') && validNum('#pnuM') && validName('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '' && typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
                 genrateOTP();
@@ -567,7 +588,18 @@ if (document.querySelector('div>a>img') !== null) {
         /** Click on Verify */
         $('.btnVerify').click(e => {
             e.preventDefault();
-            if (validInput('#pnamE') && validInput('#pnuM') && validInput('#pgeN') && validName('#pnamE') && validNum('#pnuM') && validName('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '' && typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
+
+            $('#otp').on('input', () => {
+                $('.form-control').css('margin-bottom', '30px');
+                $('.help-block').remove();
+                validOTP('#otp');
+            });
+
+            let otpValue;
+            otpValue = $('#otp').val();
+            $('.help-block').remove();
+
+            if (validOTP('#otp') && otpValue !== '' && validInput('#pnamE') && validInput('#pnuM') && validInput('#pgeN') && validName('#pnamE') && validNum('#pnuM') && validName('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '' && typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
 
                 ajaxLoading('#appointment');
                 $.ajax({
@@ -579,10 +611,10 @@ if (document.querySelector('div>a>img') !== null) {
                         formData: getFormData($('#gReeneyeForm')),
                         formDate: btnDate,
                         formTime: btnTime,
-                        getOTP: $('#otp').val()
+                        getOTP: otpValue
                     },
-                    success: function (response) {
-                        console.log('OTP is Checking ' + response);
+                    success: response => {
+                        // console.log('OTP is Checking ' + response);
                         successOTP = '7894540547';
                         $('#messageModal').modal('toggle');
                         $('#pnamE').val('');
@@ -595,6 +627,7 @@ if (document.querySelector('div>a>img') !== null) {
                 });
             }
         });
+
 
         /** Cancel Button on Modal is Clicked */
         $('.btnClose').click(e => {
@@ -613,7 +646,7 @@ if (document.querySelector('div>a>img') !== null) {
             $('.help-block').remove(); // Remove Helper Class
 
             /** Check Form Value Not Empty */
-            if (typeof (successOTP) != "undefined" && validInput('#pnamE') && validInput('#pnuM') && validInput('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '' && typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
+            if (typeof (successOTP) != "undefined" && validInput('#pnamE') && validInput('#pnuM') && validInput('#pgeN') && validName('#pnamE') && validNum('#pnuM') && validName('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '' && typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
 
                 $('#pnamE').val('');
                 $('#pnuM').val('');
@@ -636,15 +669,15 @@ if (document.querySelector('div>a>img') !== null) {
                 //         formDate: btnDate,
                 //         formTime: btnTime
                 //     },
-                //     success: function (response) {
+                //     success: response =>{
                 //         $('#appointment').before(response + ' Appointment Booked');
                 //         getDate();
                 //     }
                 // });
-                console.log('Form Submit');
+                // console.log('Form Submit');
             } else {
                 genrateOTP();
-                console.log('Empty Form');
+                // console.log('Empty Form');
             }
         });
 
@@ -660,41 +693,35 @@ if (document.querySelector('div>a>img') !== null) {
                 keyboard: false
             });
 
-            ajaxLoading('#appointment');
-            $.ajax({
-                type: "POST",
-                url: $('#gReeneyeForm').attr('action'),
-                data: {
-                    getForm: "OTP",
-                    formData: getFormData($('#gReeneyeForm')),
-                    formDate: btnDate,
-                    formTime: btnTime
-                },
-                cache: false,
-                success: function (response) {
-                    console.log(response);
-                }
-            });
+            if (validInput('#pnamE') && validInput('#pnuM') && validInput('#pgeN') && validName('#pnamE') && validNum('#pnuM') && validName('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '' && typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
+
+                ajaxLoading('#appointment');
+                $.ajax({
+                    type: "POST",
+                    url: $('#gReeneyeForm').attr('action'),
+                    data: {
+                        getForm: "OTP",
+                        formData: getFormData($('#gReeneyeForm')),
+                        formDate: btnDate,
+                        formTime: btnTime
+                    },
+                    cache: false,
+                    success: response => {
+                        // console.log(response);
+                    }
+                });
+            }
         }
 
-        /** Getting Form Data & Store in Array */
-        function getFormData($form) {
-            var un_array = $form.serializeArray();
-            var in_arry = {};
 
-            $.map(un_array, function (elementOrValue) {
-                in_arry[elementOrValue['name']] = elementOrValue['value'];
-            });
-            return in_arry;
-        }
 
         // $(".btnDate").click(e => {
-        //     console.log(btnDate = e.target.id); // Value of btnDate's id
+        // console.log(btnDate = e.target.id); // Value of btnDate's id
         // });
         // console.log('Two');
 
         // $(".btnTime").click(e => {
-        //     console.log(btnTime = e.target.id); // Value of btnTime's id
+        // console.log(btnTime = e.target.id); // Value of btnTime's id
         // });
 
 
@@ -702,7 +729,7 @@ if (document.querySelector('div>a>img') !== null) {
         //     submitSuccess: function ($form, event) {
 
         //         if (typeof (btnDate) != "undefined" && btnDate !== null) { //Check btnDate is Clicked
-        //             console.log(btnDate);
+        // console.log(btnDate);
 
         //             ajaxLoading('#appointment');
         //             $.ajax({
@@ -712,14 +739,14 @@ if (document.querySelector('div>a>img') !== null) {
         //                 data: {
         //                     getForm: "Time"
         //                 },
-        //                 success: function (response) {
+        //                 success: response =>{
         //                     $('#appointment').html(response);
         //                 }
         //             });
 
 
         //             if (typeof (btnTime) != "undefined" && btnTime !== null) { //Check btnTime is Clicked
-        //                 console.log(btnTime);
+        // console.log(btnTime);
 
         //                 ajaxLoading('#appointment');
         //                 $.ajax({
@@ -731,7 +758,7 @@ if (document.querySelector('div>a>img') !== null) {
         //                         formDate: btnDate,
         //                         formTime: btnTime
         //                     },
-        //                     success: function (response) {
+        //                     success: response =>{
         //                         $('#appointment').html(response);
         //                     }
         //                 });
@@ -744,20 +771,20 @@ if (document.querySelector('div>a>img') !== null) {
         //                 //     url: $form.attr("action"),
         //                 //     data: $form.serialize(),
         //                 //     cache: false,
-        //                 //     success: function (response) {
-        //                 //         console.log($form.serialize());
-        //                 //         console.log(response);
+        //                 //     success: response =>{
+        // console.log($form.serialize());
+        // console.log(response);
         //                 //     }
         //                 // });
 
         //             } else {
-        //                 console.log('Please Select Time');
-        //                 console.log(btnTime);
+        // console.log('Please Select Time');
+        // console.log(btnTime);
 
         //             }
         //         } else {
-        //             console.log('Please Select Date.');
-        //             console.log(btnDate);
+        // console.log('Please Select Date.');
+        // console.log(btnDate);
 
         //         }
         //         event.preventDefault();
@@ -768,6 +795,7 @@ if (document.querySelector('div>a>img') !== null) {
 
         /** Show Date Buttons */
         function getDate() {
+
             ajaxLoading('#appointment'); // Show Loader
             $.ajax({
                 type: "POST",
@@ -776,7 +804,7 @@ if (document.querySelector('div>a>img') !== null) {
                 data: {
                     getForm: "Date"
                 },
-                success: function (response) {
+                success: response => {
                     $('#appointment').html(response);
                 }
             });
@@ -817,9 +845,23 @@ if (document.querySelector('div>a>img') !== null) {
         }
     }
 
+    /** Valid OTP */
+    function validOTP(inputID) {
+        if (/^[0-9]+$/.test($(inputID).val()) && $(inputID).val().length == 6) {
+            $(inputID).css('margin-bottom', '30px');
+            $(inputID).closest('.form-group').removeClass('error').addClass('validate');
+            return true;
+        } else {
+            $(inputID).css('margin-bottom', '10px');
+            $(inputID).closest('.form-group').removeClass('validate').addClass('error').append('<span class="help-block">* ' +
+                "Don't Be Kidding, Tell me Your Valid OTP." + '</span>'); // Add Helper Text
+            return false;
+        }
+    }
+
     /** Valid Name */
     function validName(inputID) {
-        if (/^[A-z]+$/.test($(inputID).val()) && $(inputID).val().length > 2) {
+        if (/^[A-z ]+$/.test($(inputID).val()) && $(inputID).val().length > 2) {
             $(inputID).css('margin-bottom', '30px');
             $(inputID).closest('.form-group').removeClass('error').addClass('validate');
             return true;
@@ -831,8 +873,7 @@ if (document.querySelector('div>a>img') !== null) {
         }
     }
 
-
-    /** Valid Name */
+    /** Valid Refference */
     function validREF(inputID) {
         if (/^[REF{3}]+[0-9{6}]+$/.test($(inputID).val()) && $(inputID).val().length === 9) {
             $(inputID).css('margin-bottom', '30px');
@@ -846,5 +887,14 @@ if (document.querySelector('div>a>img') !== null) {
         }
     }
 
+    /** Getting Form Data & Store in Array */
+    function getFormData($form) {
+        const formData = $form.serializeArray();
+        let FormValues = {};
+        $.map(formData, Value => {
+            FormValues[Value['name']] = Value['value'];
+        });
+        return FormValues;
+    }
 
 })(jQuery);

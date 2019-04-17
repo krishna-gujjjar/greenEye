@@ -24,12 +24,12 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Google Maps -->
                 <div class="col-12 col-sm-6 col-xl-3">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d461369.30528190744!2d75.78084025401128!3d25.389820465253212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396f9b30c41bb44d%3A0x5f5c103200045588!2sKota%2C+Rajasthan!5e0!3m2!1sen!2sin!4v1552324077362" width="100%" height="350" frameborder="0"></iframe>
+                    <?php if (basename($_SERVER['PHP_SELF'], '.php') != 'index') : ?>
+                        <!-- Google Maps -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d461369.30528190744!2d75.78084025401128!3d25.389820465253212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396f9b30c41bb44d%3A0x5f5c103200045588!2sKota%2C+Rajasthan!5e0!3m2!1sen!2sin!4v1552324077362" width="100%" height="350" frameborder="0"></iframe>
+                    <?php endif; ?>
                 </div>
-
                 <div class="col-12 col-sm-6 col-xl-3">
                     <div class="footer-widget-area">
                         <div class="widget-title">
