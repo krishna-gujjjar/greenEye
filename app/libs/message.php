@@ -52,9 +52,9 @@ class Message
     // protected $useType = 'prod'; // For Live
 
     /** API KEY */
-    protected $apiKey = '6SSVNHKACSG1MGSO3FFX7V377YLKOE9Q'; // Test Key
+    protected $apiKey = 'W8MVKOYL53ZFY2SZVS1N5GMFJWNO2U1N'; // Test Key
     /** API SECRET KEY */
-    protected $secretKey = 'CEBVICLG26DEJHZX'; // Test Key
+    protected $secretKey = 'D74HE2J62E6NX30M'; // Test Key
     /** Type of Uses */
     protected $useType = 'stage'; // For Testing
 
@@ -108,7 +108,8 @@ class Message
         Your Appointment is going to Book. %0a
         Your OTP is ' . $OTP . ' %0a
         Your Ref ID. ' . $refID . ' %0a
-        Team Greeneye';
+      Team Greeneye';
+        
         return $this->message = urlencode($this->message);
     }
 
