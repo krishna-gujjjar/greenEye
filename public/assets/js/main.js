@@ -2,7 +2,7 @@
  * @Author: GurjarsPro
  * @Date: 2019-04-11 17:39:27
  * @Last Modified by: krishna_gujjjar
- * @Last Modified time: 2019-04-17 00:00:03
+ * @Last Modified time: 2019-04-17 18:58:08
  */
 
 /** Remove Banner from Document */
@@ -388,6 +388,56 @@ if (document.querySelector('div>a>img') !== null) {
     }
 
 
+    /** Login User For Check status */
+    if ($(document).attr('title').search('Check Status') != -1) {
+
+        /** Pname Input */
+        $('#ureF').on('input', () => {
+            $('.form-control').css('margin-bottom', '30px');
+            $('.help-block').remove();
+            validREF('#ureF');
+        });
+
+        /** pnumber Input */
+        $('#unumbeR').on('input', () => {
+            $('.form-control').css('margin-bottom', '30px');
+            $('.help-block').remove();
+            validNum('#unumbeR');
+        });
+
+        /** Click on Login */
+        $('#gReeneyeUser').click(e => {
+            e.preventDefault();
+            $('.help-block').remove(); // Remove Helper Text
+            validInput('#ureF'); // Valid Input ureF
+            validInput('#unumbeR'); // Valid Input unumbeR
+            $('.help-block').remove(); // Remove Helper Text
+
+            /** Check Form not Empty */
+            if (validInput('#ureF') && validInput('#unumbeR') && validREF('#ureF') && validNum('#unumbeR')) {
+
+                ajaxLoading('#gReeneyeUserForm'); // Show Loader
+                // $.ajax({
+                //     type: "POST",
+                //     url: $('#gReeneyeForm').attr('action'),
+                //     cache: false,
+                //     data: {
+                //         getForm: "Time",
+                //         formDate: btnDate
+                //     },
+                //     success: function (response) {
+                //         $('#appointment').html(response); // Show Time
+                //     }
+                // });
+
+            } else {
+                console.log('Empty Form');
+            }
+        });
+
+
+    }
+
     /** Book Appointment */
     if ($(document).attr('title').search('Book Appointment') !== -1) {
 
@@ -413,7 +463,7 @@ if (document.querySelector('div>a>img') !== null) {
         });
 
         /** Click on btnDate */
-        $('#appointment').on('click', '.btnDate', function () {
+        $('#appointment').on('click', '.btnDate', () => {
 
             $('.help-block').remove(); // Remove Helper Text
             validInput('#pnamE'); // Valid Input pnamE
@@ -421,9 +471,9 @@ if (document.querySelector('div>a>img') !== null) {
             validInput('#pgeN'); // Valid Input pgeN
 
             /** Check Form not Empty */
-            if (validInput('#pnamE') && validInput('#pnuM') && validInput('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '') {
+            if (validInput('#pnamE') && validName('#pnamE') && validInput('#pnuM') && validInput('#pnuM') && validInput('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '') {
 
-                ajaxLoading(); // Show Loader
+                ajaxLoading('#appointment'); // Show Loader
                 $.ajax({
                     type: "POST",
                     url: $('#gReeneyeForm').attr('action'),
@@ -438,10 +488,11 @@ if (document.querySelector('div>a>img') !== null) {
                 });
 
                 /** Click on btnTime */
-                $('#appointment').on('click', '.btnTime', function () {
-                    if (validInput('#pnamE') && validInput('#pnuM') && validInput('#pgeN') && typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
+                $('#appointment').on('click', '.btnTime', () => {
 
-                        ajaxLoading(); // Show Loader
+                    if (validName('#pnamE') && validInput('#pnamE') && validInput('#pnuM') && validNum('#pnuM') && validInput('#pgeN') && validName('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '' && typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
+
+                        ajaxLoading('#appointment'); // Show Loader
                         $.ajax({
                             type: "POST",
                             url: $('#gReeneyeForm').attr('action'),
@@ -474,6 +525,7 @@ if (document.querySelector('div>a>img') !== null) {
             }
         });
 
+
         /** Pname Typing */
         // $('#pnamE').keyup(() => {
         //     $('.form-control').css('margin-bottom', '30px');
@@ -505,42 +557,58 @@ if (document.querySelector('div>a>img') !== null) {
         /** Click On btnSet */
         $('#appointment').on('click', '.btnSet', function (e) {
             e.preventDefault();
-            genrateOTP();
+            if (validInput('#pnamE') && validInput('#pnuM') && validInput('#pgeN') && validName('#pnamE') && validNum('#pnuM') && validName('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '' && typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
+                genrateOTP();
+            }
         });
 
         let successOTP;
 
         /** Click on Verify */
-        $('.btnVerify').click(function (e) {
+        $('.btnVerify').click(e => {
             e.preventDefault();
-            $.ajax({
-                type: "POST",
-                url: $('#gReeneyeForm').attr('action'),
-                cache: false,
-                data: {
-                    getForm: "CheckOTP",
-                    formData: getFormData($('#gReeneyeForm')),
-                    formDate: btnDate,
-                    formTime: btnTime,
-                    getOTP: $('#otp').val()
-                },
-                success: function (response) {
-                    console.log('OTP is Checking ' + response);
-                    successOTP = '7894540547';
-                    $('#messageModal').modal('toggle');
-                    $('#pnamE').val('');
-                    $('#pnuM').val('');
-                    $('#pgeN').val('');
-                    btnDate = '';
-                    btnTime = '';
-                    $('#gReeneyeForm').html(response);
-                }
-            });
+            if (validInput('#pnamE') && validInput('#pnuM') && validInput('#pgeN') && validName('#pnamE') && validNum('#pnuM') && validName('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '' && typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
+
+                ajaxLoading('#appointment');
+                $.ajax({
+                    type: "POST",
+                    url: $('#gReeneyeForm').attr('action'),
+                    cache: false,
+                    data: {
+                        getForm: "CheckOTP",
+                        formData: getFormData($('#gReeneyeForm')),
+                        formDate: btnDate,
+                        formTime: btnTime,
+                        getOTP: $('#otp').val()
+                    },
+                    success: function (response) {
+                        console.log('OTP is Checking ' + response);
+                        successOTP = '7894540547';
+                        $('#messageModal').modal('toggle');
+                        $('#pnamE').val('');
+                        $('#pnuM').val('');
+                        $('#pgeN').val('');
+                        btnDate = '';
+                        btnTime = '';
+                        $('#gReeneyeForm').html(response);
+                    }
+                });
+            }
         });
 
+        /** Cancel Button on Modal is Clicked */
+        $('.btnClose').click(e => {
+            e.preventDefault();
+            $('#pnamE').val('');
+            $('#pnuM').val('');
+            $('#pgeN').val('');
+            btnDate = ''; // Empty Date Value
+            btnTime = ''; // Empty Time Value
+            getDate();
+        });
 
         /** Click on Submit */
-        $('#gReeneyeBook').click(function (e) {
+        $('#gReeneyeBook').click(e => {
             e.preventDefault();
             $('.help-block').remove(); // Remove Helper Class
 
@@ -557,7 +625,7 @@ if (document.querySelector('div>a>img') !== null) {
 
                 // console.log(getFormData($('#gReeneyeForm')));
 
-                // ajaxLoading();
+                // ajaxLoading('#appointment');
                 // $.ajax({
                 //     type: "POST",
                 //     url: $('#gReeneyeForm').attr('action'),
@@ -581,8 +649,7 @@ if (document.querySelector('div>a>img') !== null) {
         });
 
         /** Show Number on Message */
-        $("#messageModal").on("show.bs.modal", function (e) {
-            ;
+        $("#messageModal").on("show.bs.modal", () => {
             $('#messageModal').find('#yourNum').html('+91 ' + $('#pnuM').val());
         });
 
@@ -593,7 +660,7 @@ if (document.querySelector('div>a>img') !== null) {
                 keyboard: false
             });
 
-            ajaxLoading();
+            ajaxLoading('#appointment');
             $.ajax({
                 type: "POST",
                 url: $('#gReeneyeForm').attr('action'),
@@ -621,46 +688,6 @@ if (document.querySelector('div>a>img') !== null) {
             return in_arry;
         }
 
-        /** Validate Form */
-        function validInput(inputID) {
-            if ($(inputID).val() !== '' && $(inputID).val() !== null) {
-                $(inputID).css('margin-bottom', '30px');
-                $(inputID).closest('.form-group').removeClass('error').addClass('validate');
-                return true;
-            } else {
-                $(inputID).css('margin-bottom', '10px');
-                $(inputID).closest('.form-group').removeClass('validate').addClass('error').append('<span class="help-block">* ' + $(inputID).attr('data-require-msg') + '</span>'); // Add Helper Text
-                return false;
-            }
-        }
-        /** Valid Number */
-        function validNum(inputID) {
-            if (/^[0-9]+$/.test($(inputID).val()) && $(inputID).val().length == 10) {
-                $(inputID).css('margin-bottom', '30px');
-                $(inputID).closest('.form-group').removeClass('error').addClass('validate');
-                return true;
-            } else {
-                $(inputID).css('margin-bottom', '10px');
-                $(inputID).closest('.form-group').removeClass('validate').addClass('error').append('<span class="help-block">* ' +
-                    "Don't Be Kidding, Tell me Your Valid Mobile Number." + '</span>'); // Add Helper Text
-                return false;
-            }
-        }
-
-        /** Valid Name */
-        function validName(inputID) {
-            if (/^[A-z]+$/.test($(inputID).val()) && $(inputID).val().length > 2) {
-                $(inputID).css('margin-bottom', '30px');
-                $(inputID).closest('.form-group').removeClass('error').addClass('validate');
-                return true;
-            } else {
-                $(inputID).css('margin-bottom', '10px');
-                $(inputID).closest('.form-group').removeClass('validate').addClass('error').append('<span class="help-block">* ' +
-                    "Don't Be Kidding, Tell me Your Name." + '</span>'); // Add Helper Text
-                return false;
-            }
-        }
-
         // $(".btnDate").click(e => {
         //     console.log(btnDate = e.target.id); // Value of btnDate's id
         // });
@@ -677,7 +704,7 @@ if (document.querySelector('div>a>img') !== null) {
         //         if (typeof (btnDate) != "undefined" && btnDate !== null) { //Check btnDate is Clicked
         //             console.log(btnDate);
 
-        //             ajaxLoading();
+        //             ajaxLoading('#appointment');
         //             $.ajax({
         //                 type: "POST",
         //                 url: $('#gReeneyeForm').attr('action'),
@@ -694,7 +721,7 @@ if (document.querySelector('div>a>img') !== null) {
         //             if (typeof (btnTime) != "undefined" && btnTime !== null) { //Check btnTime is Clicked
         //                 console.log(btnTime);
 
-        //                 ajaxLoading();
+        //                 ajaxLoading('#appointment');
         //                 $.ajax({
         //                     type: "POST",
         //                     url: $('#gReeneyeForm').attr('action'),
@@ -711,7 +738,7 @@ if (document.querySelector('div>a>img') !== null) {
 
 
 
-        //                 // ajaxLoading();
+        //                 // ajaxLoading('#appointment');
         //                 // $.ajax({
         //                 //     type: "POST",
         //                 //     url: $form.attr("action"),
@@ -741,7 +768,7 @@ if (document.querySelector('div>a>img') !== null) {
 
         /** Show Date Buttons */
         function getDate() {
-            ajaxLoading(); // Show Loader
+            ajaxLoading('#appointment'); // Show Loader
             $.ajax({
                 type: "POST",
                 url: $('#gReeneyeForm').attr('action'),
@@ -754,14 +781,70 @@ if (document.querySelector('div>a>img') !== null) {
                 }
             });
         }
+    }
 
+    /** `ajaxLoading Function`
+     *
+     * Add Pure CSSBase Loading Animation in HTML */
+    function ajaxLoading(Target) {
+        $(Target).html('<div id="ajaxLoading" class="ajaxLoader"></div>');
+    }
 
-        /** `ajaxLoading Function`
-         *
-         * Add Pure CSSBase Loading Animation in HTML */
-        function ajaxLoading() {
-            $('#appointment').html('<div id="ajaxLoading" class="ajaxLoader"></div>');
+    /** Validate Form */
+    function validInput(inputID) {
+        if ($(inputID).val() !== '' && $(inputID).val() !== null) {
+            $(inputID).css('margin-bottom', '30px');
+            $(inputID).closest('.form-group').removeClass('error').addClass('validate');
+            return true;
+        } else {
+            $(inputID).css('margin-bottom', '10px');
+            $(inputID).closest('.form-group').removeClass('validate').addClass('error').append('<span class="help-block">* ' + $(inputID).attr('data-require-msg') + '</span>'); // Add Helper Text
+            return false;
         }
     }
+
+    /** Valid Number */
+    function validNum(inputID) {
+        if (/^[0-9]+$/.test($(inputID).val()) && $(inputID).val().length == 10) {
+            $(inputID).css('margin-bottom', '30px');
+            $(inputID).closest('.form-group').removeClass('error').addClass('validate');
+            return true;
+        } else {
+            $(inputID).css('margin-bottom', '10px');
+            $(inputID).closest('.form-group').removeClass('validate').addClass('error').append('<span class="help-block">* ' +
+                "Don't Be Kidding, Tell me Your Valid Mobile Number." + '</span>'); // Add Helper Text
+            return false;
+        }
+    }
+
+    /** Valid Name */
+    function validName(inputID) {
+        if (/^[A-z]+$/.test($(inputID).val()) && $(inputID).val().length > 2) {
+            $(inputID).css('margin-bottom', '30px');
+            $(inputID).closest('.form-group').removeClass('error').addClass('validate');
+            return true;
+        } else {
+            $(inputID).css('margin-bottom', '10px');
+            $(inputID).closest('.form-group').removeClass('validate').addClass('error').append('<span class="help-block">* ' +
+                "Don't Be Kidding, Tell me Your Name." + '</span>'); // Add Helper Text
+            return false;
+        }
+    }
+
+
+    /** Valid Name */
+    function validREF(inputID) {
+        if (/^[REF{3}]+[0-9{6}]+$/.test($(inputID).val()) && $(inputID).val().length === 9) {
+            $(inputID).css('margin-bottom', '30px');
+            $(inputID).closest('.form-group').removeClass('error').addClass('validate');
+            return true;
+        } else {
+            $(inputID).css('margin-bottom', '10px');
+            $(inputID).closest('.form-group').removeClass('validate').addClass('error').append('<span class="help-block">* ' +
+                "Look Like You Forgot Your Refference ID, " + '<p class="help-block">* ' + "It's Like '" + '<span class="font-weight-bold text-success">REF123456</span>' + "'</p></span>"); // Add Helper Text
+            return false;
+        }
+    }
+
 
 })(jQuery);

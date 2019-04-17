@@ -80,7 +80,7 @@
                             <button type="button" class="btn btn-secondary w-100 rounded-pill" disabled>Resend</button>
                         </div>
                         <div class="col-12 pt-3">
-                            <button type="button" class="btn btn-danger w-100 rounded-pill" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btnClose btn-danger w-100 rounded-pill" data-dismiss="modal">Cancel</button>
                         </div>
                     </div>
                 </div>

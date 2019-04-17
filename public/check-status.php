@@ -25,14 +25,14 @@
             <form id="gReeneyeUserForm" method="GET" action="<?php echo ASSETS; ?>requests/request" class="container px-5" novalidate autocomplete="off">
                 <div class="form-group">
                     <label for="ureF" class="h5">Patient's Refference No. :</label>
-                    <input name="ureF" id="ureF" class="font-weight-bold form-control rounded-pill" type="text" data-require-msg="Hey ! Your Name is Importent for us, Please tell us.">
+                    <input name="ureF" id="ureF" class="font-weight-bold form-control rounded-pill" type="text" data-require-msg="Hey ! Tell us Your Refference Number.">
                 </div>
                 <div class="form-group">
                     <label for="unumbeR" class="h5">Patient's Mobile Number :</label>
                     <input name="unumbeR" id="unumbeR" class="font-weight-bold form-control rounded-pill" type="text" data-require-msg="Hey ! Your Number is Importent for us, Please tell us.">
                 </div>
                 <div class="form-group">
-                    <button name="gReeneyeUser" id="gReeneyeUser" value="logiN" class="btn btn-lg btn-success w-100 rounded-pill" type="button">Login</button>
+                    <button name="gReeneyeUser" id="gReeneyeUser" value="checkStatus" class="btn btn-lg btn-success w-100 rounded-pill" type="button">Check Status</button>
                 </div>
             </form>
         </div>
