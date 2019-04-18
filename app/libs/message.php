@@ -52,9 +52,9 @@ class Message
     // protected $useType = 'prod'; // For Live
 
     /** API KEY */
-    protected $apiKey = 'W8MVKOYL53ZFY2SZVS1N5GMFJWNO2U1N'; // Test Key
+    protected $apiKey = 'FK6JN6F24I5ZFTC1MG82SUN9KAAWQ1JI'; // Test Key
     /** API SECRET KEY */
-    protected $secretKey = 'D74HE2J62E6NX30M'; // Test Key
+    protected $secretKey = 'E329UB149OX0PLVG'; // Test Key
     /** Type of Uses */
     protected $useType = 'stage'; // For Testing
 
@@ -109,7 +109,7 @@ class Message
         Your OTP is ' . $OTP . ' %0a
         Your Ref ID. ' . $refID . ' %0a
       Team Greeneye';
-        
+
         return $this->message = urlencode($this->message);
     }
 
