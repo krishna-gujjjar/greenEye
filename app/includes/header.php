@@ -40,7 +40,7 @@
 <body>
     <!-- Preloader -->
     <div id="preloader">
-        <img src="<?php echo ASSETS; ?>img/core-img/preloader.svg" class="centered" alt="">
+        <img src="https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555559306/preloader.svg" class="centered" alt="">
     </div>
 
 
@@ -72,7 +72,7 @@
                             <nav class="navbar h-100 navbar-expand-lg navbar-dark">
                                 <!-- Logo Area  -->
                                 <a class="navbar-brand" href="<?php echo ROOT_URL; ?>">
-                                    <img src="<?php echo ASSETS; ?>img/core-img/logo.png" alt="Logo" />
+                                    <img src="https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555559219/logo.png" alt="Logo" />
                                 </a>
 
                                 <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#gReeneyeNavMenu" aria-controls="gReeneyeNavMenu" aria-expanded="false" aria-label="Toggle navigation">
