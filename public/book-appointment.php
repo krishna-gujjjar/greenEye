@@ -43,7 +43,7 @@
 
                 <div class="mb-5 text-center">
                     <div class="mb-3 text-left">
-                        <h5>Appointment Date :</h5>
+                        <h5 id="formBooking">Appointment Date :</h5>
                     </div>
                     <div id="appointment" class="row text-center">
                     </div>

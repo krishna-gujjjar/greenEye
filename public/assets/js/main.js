@@ -2,7 +2,7 @@
  * @Author: GurjarsPro
  * @Date: 2019-04-11 17:39:27
  * @Last Modified by: krishna_gujjjar
- * @Last Modified time: 2019-04-18 01:06:28
+ * @Last Modified time: 2019-04-18 15:49:10
  */
 
 /** Remove Banner from Document */
@@ -388,21 +388,31 @@ if (document.querySelector('div>a>img') !== null) {
     }
 
 
+
+    //-------------------------------------------------------------------------------
+    //                          Appointment Code Starts
+    //-------------------------------------------------------------------------------
+
+    const validString = /^[A-z ]+$/;
+    const validNumbers = /^[0-9{10}]+$/;
+    const validOTPs = /^[0-9{6}]+$/;
+    const validREFs = /^[REF{3}]+[0-9{6}]+$/;
+
     /** Login User For Check status */
     if ($(document).attr('title').search('Check Status') != -1) {
 
-        /** Pname Input */
+        /** ureF Input */
         $('#ureF').on('input', () => {
             $('.form-control').css('margin-bottom', '30px');
             $('.help-block').remove();
             validREF('#ureF');
         });
 
-        /** pnumber Input */
+        /** unumbeR Input */
         $('#unumbeR').on('input', () => {
             $('.form-control').css('margin-bottom', '30px');
             $('.help-block').remove();
-            validNum('#unumbeR');
+            checkValid(validNumbers, '#unumbeR', 9, 11, 'Mobile Number');
         });
 
         /** Click on CheckStatus */
@@ -410,12 +420,8 @@ if (document.querySelector('div>a>img') !== null) {
             e.preventDefault();
 
             $('.help-block').remove(); // Remove Helper Text
-            validInput('#ureF'); // Valid Input ureF
-            validInput('#unumbeR'); // Valid Input unumbeR
-            $('.help-block').remove(); // Remove Helper Text
-
             /** Check Form not Empty */
-            if (validInput('#ureF') && validInput('#unumbeR') && validREF('#ureF') && validNum('#unumbeR')) {
+            if (validREF('#ureF') && checkValid(validNumbers, '#unumbeR', 9, 11, 'Mobile Number')) {
                 let myForm;
                 console.log(myForm = getFormData($('#gReeneyeUserForm')));
 
@@ -473,27 +479,29 @@ if (document.querySelector('div>a>img') !== null) {
 
         /** Click btnDate, Get ID of btn */
         $("#appointment").on('click', '.btnDate', e => {
-            btnDate = e.target.id; // Set Selected btn ID
-            // console.log('clicked ' + btnDate);
+            if (checkValid(validString, '#pnamE', 2, 30, 'Name') && checkValid(validNumbers, '#pnuM', 9, 11, 'Mobile Number') && checkValid(validString, '#pgeN', 3, 7, 'Gender')) {
+                btnDate = e.target.id; // Set Selected btn ID
+                // console.log('clicked ' + btnDate);
+            }
         });
 
         /** Click btnTime, Get ID of btn */
         $("#appointment").on('click', '.btnTime', e => {
-            btnTime = e.target.id; // Set Selected btn ID
-            // console.log('clicked ' + btnTime);
+            if (checkValid(validString, '#pnamE', 2, 30, 'Name') && checkValid(validNumbers, '#pnuM', 9, 11, 'Mobile Number') && checkValid(validString, '#pgeN', 3, 7, 'Gender')) {
+                btnTime = e.target.id; // Set Selected btn ID
+                // console.log('clicked ' + btnTime);
+            }
         });
 
         /** Click on btnDate */
         $('#appointment').on('click', '.btnDate', () => {
-
-            $('.help-block').remove(); // Remove Helper Text
-            validInput('#pnamE'); // Valid Input pnamE
-            validInput('#pnuM'); // Valid Input pnuM
-            validInput('#pgeN'); // Valid Input pgeN
-            $('.help-block').remove(); // Remove Helper Text
+            $('.help-block').remove();
+            checkValid(validString, '#pnamE', 2, 30, 'Name');
+            checkValid(validNumbers, '#pnuM', 9, 11, 'Mobile Number');
+            checkValid(validString, '#pgeN', 3, 7, 'Gender');
 
             /** Check Form not Empty */
-            if (validInput('#pnamE') && validName('#pnamE') && validInput('#pnuM') && validNum('#pnuM') && validInput('#pgeN') && validName('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '') {
+            if (checkValidRegEx(validString, '#pnamE') && checkValidRegEx(validNumbers, '#pnuM') && checkValidRegEx(validString, '#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '') {
 
                 ajaxLoading('#appointment'); // Show Loader
                 $.ajax({
@@ -511,8 +519,12 @@ if (document.querySelector('div>a>img') !== null) {
 
                 /** Click on btnTime */
                 $('#appointment').on('click', '.btnTime', () => {
+                    $('.help-block').remove();
+                    checkValid(validString, '#pnamE', 2, 30, 'Name');
+                    checkValid(validNumbers, '#pnuM', 9, 11, 'Mobile Number');
+                    checkValid(validString, '#pgeN', 3, 7, 'Gender');
 
-                    if (validName('#pnamE') && validInput('#pnamE') && validInput('#pnuM') && validNum('#pnuM') && validInput('#pgeN') && validName('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '' && typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
+                    if (checkValidRegEx(validString, '#pnamE') && checkValidRegEx(validNumbers, '#pnuM') && checkValidRegEx(validString, '#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '' && typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
 
                         ajaxLoading('#appointment'); // Show Loader
                         $.ajax({
@@ -558,48 +570,58 @@ if (document.querySelector('div>a>img') !== null) {
         $('#pnamE').on('input', () => {
             $('.form-control').css('margin-bottom', '30px');
             $('.help-block').remove();
-            validName('#pnamE');
+            $('.help-block').remove();
+            checkValid(validString, '#pnamE', 2, 30, 'Name');
         });
 
         /** pnumber Input */
         $('#pnuM').on('input', () => {
             $('.form-control').css('margin-bottom', '30px');
             $('.help-block').remove();
-            validNum('#pnuM');
+            checkValid(validNumbers, '#pnuM', 9, 11, 'Mobile Number');
         });
 
         /** Click On pGender */
         $('.nice-select').click(() => {
             $('.form-control').css('margin-bottom', '30px');
             $('.help-block').remove();
-            validInput('#pgeN');
+            checkValid(validString, '#pgeN', 3, 7, 'Gender');
         });
 
         /** Click On btnSet */
         $('#appointment').on('click', '.btnSet', e => {
             e.preventDefault();
-            if (validInput('#pnamE') && validInput('#pnuM') && validInput('#pgeN') && validName('#pnamE') && validNum('#pnuM') && validName('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '' && typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
+
+            $('.help-block').remove(); // Remove Help Block Class
+            checkValid(validString, '#pnamE', 2, 30, 'Name');
+            checkValid(validNumbers, '#pnuM', 9, 11, 'Mobile Number');
+            checkValid(validString, '#pgeN', 3, 7, 'Gender');
+
+            if (checkValidRegEx(validString, '#pnamE') && checkValidRegEx(validNumbers, '#pnuM') && checkValidRegEx(validString, '#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '' && typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
                 genrateOTP();
             }
         });
 
         let successOTP;
 
+        /** Input #otp */
+        $('#otp').on('input', () => {
+            $('.form-control').css('margin-bottom', '30px');
+            $('.help-block').remove();
+            checkValid(validOTPs, '#otp', 5, 7, 'OTP');
+        });
+
         /** Click on Verify */
         $('.btnVerify').click(e => {
             e.preventDefault();
 
-            $('#otp').on('input', () => {
-                $('.form-control').css('margin-bottom', '30px');
-                $('.help-block').remove();
-                validOTP('#otp');
-            });
+            $('.help-block').remove();
+            checkValid(validOTPs, '#otp', 5, 7, 'OTP');
 
             let otpValue;
             otpValue = $('#otp').val();
-            $('.help-block').remove();
 
-            if (validOTP('#otp') && otpValue !== '' && validInput('#pnamE') && validInput('#pnuM') && validInput('#pgeN') && validName('#pnamE') && validNum('#pnuM') && validName('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '' && typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
+            if (checkValidRegEx(validOTPs, '#otp') && checkValidRegEx(validString, '#pnamE') && checkValidRegEx(validNumbers, '#pnuM') && checkValidRegEx(validString, '#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '' && typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '' && otpValue !== '') {
 
                 ajaxLoading('#appointment');
                 $.ajax({
@@ -628,7 +650,6 @@ if (document.querySelector('div>a>img') !== null) {
             }
         });
 
-
         /** Cancel Button on Modal is Clicked */
         $('.btnClose').click(e => {
             e.preventDefault();
@@ -643,41 +664,31 @@ if (document.querySelector('div>a>img') !== null) {
         /** Click on Submit */
         $('#gReeneyeBook').click(e => {
             e.preventDefault();
-            $('.help-block').remove(); // Remove Helper Class
+            $('.help-block').remove(); // Remove Helper Text
+            checkValid(validString, '#pnamE', 2, 30, 'Name');
+            checkValid(validNumbers, '#pnuM', 9, 11, 'Mobile Number');
+            checkValid(validString, '#pgeN', 3, 7, 'Gender');
 
-            /** Check Form Value Not Empty */
-            if (typeof (successOTP) != "undefined" && validInput('#pnamE') && validInput('#pnuM') && validInput('#pgeN') && validName('#pnamE') && validNum('#pnuM') && validName('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '' && typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
+            if (checkValidRegEx(validString, '#pnamE') && checkValidRegEx(validNumbers, '#pnuM') && checkValidRegEx(validString, '#pgeN')) {
 
-                $('#pnamE').val('');
-                $('#pnuM').val('');
-                $('#pgeN').val('');
-                btnDate = '';
-                btnTime = '';
+                validBTN(btnDate, '.btnDate');
+                if (typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '') {
 
-                // console.log(JSON.stringify($('#gReeneyeForm').serializeArray()));
-
-                // console.log(getFormData($('#gReeneyeForm')));
-
-                // ajaxLoading('#appointment');
-                // $.ajax({
-                //     type: "POST",
-                //     url: $('#gReeneyeForm').attr('action'),
-                //     cache: false,
-                //     data: {
-                //         getForm: "Booked",
-                //         formData: getFormData($('#gReeneyeForm')),
-                //         formDate: btnDate,
-                //         formTime: btnTime
-                //     },
-                //     success: response =>{
-                //         $('#appointment').before(response + ' Appointment Booked');
-                //         getDate();
-                //     }
-                // });
-                // console.log('Form Submit');
-            } else {
-                genrateOTP();
-                // console.log('Empty Form');
+                    validBTN(btnTime, '.btnTime');
+                    if (typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
+                        genrateOTP();
+                        if (typeof (successOTP) != "undefined") {
+                            $('#pnamE').val('');
+                            $('#pnuM').val('');
+                            $('#pgeN').val('');
+                            btnDate = '';
+                            btnTime = '';
+                            console.log('Form Submit');
+                        }
+                    }
+                } else {
+                    console.log('Empty Form');
+                }
             }
         });
 
@@ -693,105 +704,40 @@ if (document.querySelector('div>a>img') !== null) {
                 keyboard: false
             });
 
-            if (validInput('#pnamE') && validInput('#pnuM') && validInput('#pgeN') && validName('#pnamE') && validNum('#pnuM') && validName('#pgeN') && typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '' && typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
+            $('.help-block').remove(); // Remove Helper Text
+            checkValid(validString, '#pnamE', 2, 30, 'Name');
+            checkValid(validNumbers, '#pnuM', 9, 11, 'Mobile Number');
+            checkValid(validString, '#pgeN', 3, 7, 'Gender');
 
-                ajaxLoading('#appointment');
-                $.ajax({
-                    type: "POST",
-                    url: $('#gReeneyeForm').attr('action'),
-                    data: {
-                        getForm: "OTP",
-                        formData: getFormData($('#gReeneyeForm')),
-                        formDate: btnDate,
-                        formTime: btnTime
-                    },
-                    cache: false,
-                    success: response => {
-                        // console.log(response);
+            if (checkValidRegEx(validString, '#pnamE') && checkValidRegEx(validNumbers, '#pnuM') && checkValidRegEx(validString, '#pgeN')) {
+
+                validBTN(btnDate, '.btnDate');
+                if (typeof (btnDate) != "undefined" && btnDate !== null && btnDate !== '') {
+
+                    validBTN(btnTime, '.btnTime');
+                    if (typeof (btnTime) != "undefined" && btnTime !== null && btnTime !== '') {
+
+                        ajaxLoading('#appointment');
+                        $.ajax({
+                            type: "POST",
+                            url: $('#gReeneyeForm').attr('action'),
+                            data: {
+                                getForm: "OTP",
+                                formData: getFormData($('#gReeneyeForm')),
+                                formDate: btnDate,
+                                formTime: btnTime
+                            },
+                            cache: false,
+                            success: response => {
+                                console.log(response);
+                            }
+                        });
                     }
-                });
+                } else {
+                    console.log('Empty Form');
+                }
             }
         }
-
-
-
-        // $(".btnDate").click(e => {
-        // console.log(btnDate = e.target.id); // Value of btnDate's id
-        // });
-        // console.log('Two');
-
-        // $(".btnTime").click(e => {
-        // console.log(btnTime = e.target.id); // Value of btnTime's id
-        // });
-
-
-        // $('#gReeneyeForm').find("input").not("[type=submit]").jqBootstrapValidation({
-        //     submitSuccess: function ($form, event) {
-
-        //         if (typeof (btnDate) != "undefined" && btnDate !== null) { //Check btnDate is Clicked
-        // console.log(btnDate);
-
-        //             ajaxLoading('#appointment');
-        //             $.ajax({
-        //                 type: "POST",
-        //                 url: $('#gReeneyeForm').attr('action'),
-        //                 cache: false,
-        //                 data: {
-        //                     getForm: "Time"
-        //                 },
-        //                 success: response =>{
-        //                     $('#appointment').html(response);
-        //                 }
-        //             });
-
-
-        //             if (typeof (btnTime) != "undefined" && btnTime !== null) { //Check btnTime is Clicked
-        // console.log(btnTime);
-
-        //                 ajaxLoading('#appointment');
-        //                 $.ajax({
-        //                     type: "POST",
-        //                     url: $('#gReeneyeForm').attr('action'),
-        //                     cache: false,
-        //                     data: {
-        //                         getForm: "Set",
-        //                         formDate: btnDate,
-        //                         formTime: btnTime
-        //                     },
-        //                     success: response =>{
-        //                         $('#appointment').html(response);
-        //                     }
-        //                 });
-
-
-
-        //                 // ajaxLoading('#appointment');
-        //                 // $.ajax({
-        //                 //     type: "POST",
-        //                 //     url: $form.attr("action"),
-        //                 //     data: $form.serialize(),
-        //                 //     cache: false,
-        //                 //     success: response =>{
-        // console.log($form.serialize());
-        // console.log(response);
-        //                 //     }
-        //                 // });
-
-        //             } else {
-        // console.log('Please Select Time');
-        // console.log(btnTime);
-
-        //             }
-        //         } else {
-        // console.log('Please Select Date.');
-        // console.log(btnDate);
-
-        //         }
-        //         event.preventDefault();
-        //     }
-        // });
-
-
 
         /** Show Date Buttons */
         function getDate() {
@@ -818,72 +764,110 @@ if (document.querySelector('div>a>img') !== null) {
         $(Target).html('<div id="ajaxLoading" class="ajaxLoader"></div>');
     }
 
-    /** Validate Form */
-    function validInput(inputID) {
-        if ($(inputID).val() !== '' && $(inputID).val() !== null) {
-            $(inputID).css('margin-bottom', '30px');
-            $(inputID).closest('.form-group').removeClass('error').addClass('validate');
+
+    //----------------------------------------------------------------------------
+    //                            Validating Functions
+    //----------------------------------------------------------------------------
+
+    /** `validBTN Function`
+     *
+     * Btn Clicked or Not */
+    function validBTN(btnID, btnClass) {
+        if (typeof (btnID) != "undefined" && btnID !== null && btnID !== '') {
+            $(btnClass).css('margin-bottom', '30px');
+            $('#formBooking').removeClass('error').addClass('validate');
             return true;
         } else {
-            $(inputID).css('margin-bottom', '10px');
-            $(inputID).closest('.form-group').removeClass('validate').addClass('error').append('<span class="help-block">* ' + $(inputID).attr('data-require-msg') + '</span>'); // Add Helper Text
+            $(btnClass).css('margin-bottom', '10px');
+            $('#formBooking').removeClass('validate').addClass('error');
+            $('#formBooking').append('<p class="help-block text-danger">* Please Select Appointment Date.</p>'); // Add Helper Text
             return false;
         }
     }
 
-    /** Valid Number */
-    function validNum(inputID) {
-        if (/^[0-9]+$/.test($(inputID).val()) && $(inputID).val().length == 10) {
-            $(inputID).css('margin-bottom', '30px');
-            $(inputID).closest('.form-group').removeClass('error').addClass('validate');
+    /** `checkValid Function`
+     *
+     * Input Field is Not Empty and It's Valid RegEx. */
+    function checkValid(RegEx, inputID, MinLimit, MaxLimit, Msg) {
+        if (validInput(inputID)) {
+            if (RegEx.test($(inputID).val()) && $(inputID).val().length > MinLimit && $(inputID).val().length < MaxLimit) {
+                $(inputID).css('margin-bottom', '30px');
+                $(inputID).closest('.form-group').removeClass('error').addClass('validate');
+                return true;
+            } else {
+                $(inputID).css('margin-bottom', '10px');
+                $(inputID).closest('.form-group').removeClass('validate').addClass('error').append('<span class="help-block">* ' +
+                    "Don't Be Kidding, Tell me Your Valid " + Msg + "." + '</span>'); // Add Helper Text
+                return false;
+            }
+        }
+    }
+
+    /** Check Test Value */
+    function checkValidRegEx(RegEx, inputID) {
+        if (RegEx.test($(inputID).val()) && $(inputID).val() !== '' && $(inputID).val() !== null) {
             return true;
         } else {
-            $(inputID).css('margin-bottom', '10px');
-            $(inputID).closest('.form-group').removeClass('validate').addClass('error').append('<span class="help-block">* ' +
-                "Don't Be Kidding, Tell me Your Valid Mobile Number." + '</span>'); // Add Helper Text
             return false;
         }
     }
 
-    /** Valid OTP */
-    function validOTP(inputID) {
-        if (/^[0-9]+$/.test($(inputID).val()) && $(inputID).val().length == 6) {
-            $(inputID).css('margin-bottom', '30px');
-            $(inputID).closest('.form-group').removeClass('error').addClass('validate');
-            return true;
-        } else {
-            $(inputID).css('margin-bottom', '10px');
-            $(inputID).closest('.form-group').removeClass('validate').addClass('error').append('<span class="help-block">* ' +
-                "Don't Be Kidding, Tell me Your Valid OTP." + '</span>'); // Add Helper Text
-            return false;
-        }
-    }
+    // /** Valid OTP */
+    // function validOTP(inputID) {
+    //     if (/^[0-9]+$/.test($(inputID).val()) && $(inputID).val().length == 6) {
+    //         $(inputID).css('margin-bottom', '30px');
+    //         $(inputID).closest('.form-group').removeClass('error').addClass('validate');
+    //         return true;
+    //     } else {
+    //         $(inputID).css('margin-bottom', '10px');
+    //         $(inputID).closest('.form-group').removeClass('validate').addClass('error').append('<span class="help-block">* ' +
+    //             "Don't Be Kidding, Tell me Your Valid OTP." + '</span>'); // Add Helper Text
+    //         return false;
+    //     }
+    // }
 
-    /** Valid Name */
-    function validName(inputID) {
-        if (/^[A-z ]+$/.test($(inputID).val()) && $(inputID).val().length > 2) {
-            $(inputID).css('margin-bottom', '30px');
-            $(inputID).closest('.form-group').removeClass('error').addClass('validate');
-            return true;
-        } else {
-            $(inputID).css('margin-bottom', '10px');
-            $(inputID).closest('.form-group').removeClass('validate').addClass('error').append('<span class="help-block">* ' +
-                "Don't Be Kidding, Tell me Your Name." + '</span>'); // Add Helper Text
-            return false;
-        }
-    }
+    // /** `validName Function`
+    //  *
+    //  * Check Input Field is Valid String With WhiteSpace */
+    // function validName(inputID) {
+    //     if (validInput(inputID)) {
+    //         if (/^[A-z ]+$/.test($(inputID).val()) && $(inputID).val().length > 2) {
+    //             $(inputID).css('margin-bottom', '30px');
+    //             $(inputID).closest('.form-group').removeClass('error').addClass('validate');
+    //             return true;
+    //         } else {
+    //             $(inputID).css('margin-bottom', '10px');
+    //             $(inputID).closest('.form-group').removeClass('validate').addClass('error').append('<span class="help-block">* ' +
+    //                 "Don't Be Kidding, Tell me Your Name." + '</span>'); // Add Helper Text
+    //             return false;
+    //         }
+    //     }
+    // }
+
+
+
+    // 0/** Check Test Number */
+    // function checkValidNum(inputID) {
+    //     if (/^[0-9]+$/.test($(inputID).val()) && $(inputID).val().length == 10 && $(inputID).val() !== '' && $(inputID).val() !== null) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
 
     /** Valid Refference */
     function validREF(inputID) {
-        if (/^[REF{3}]+[0-9{6}]+$/.test($(inputID).val()) && $(inputID).val().length === 9) {
-            $(inputID).css('margin-bottom', '30px');
-            $(inputID).closest('.form-group').removeClass('error').addClass('validate');
-            return true;
-        } else {
-            $(inputID).css('margin-bottom', '10px');
-            $(inputID).closest('.form-group').removeClass('validate').addClass('error').append('<span class="help-block">* ' +
-                "Look Like You Forgot Your Refference ID, " + '<p class="help-block">* ' + "It's Like '" + '<span class="font-weight-bold text-success">REF123456</span>' + "'</p></span>"); // Add Helper Text
-            return false;
+        if (validInput(inputID)) {
+            if (/^[REF{3}]+[0-9{6}]+$/.test($(inputID).val()) && $(inputID).val().length === 9) {
+                $(inputID).css('margin-bottom', '30px');
+                $(inputID).closest('.form-group').removeClass('error').addClass('validate');
+                return true;
+            } else {
+                $(inputID).css('margin-bottom', '10px');
+                $(inputID).closest('.form-group').removeClass('validate').addClass('error').append('<span class="help-block">* ' +
+                    "Look Like You Forgot Your Refference ID, " + '<p class="help-block">* ' + "It's Like '" + '<span class="font-weight-bold text-success">REF123456</span>' + "'</p></span>"); // Add Helper Text
+                return false;
+            }
         }
     }
 
@@ -895,6 +879,19 @@ if (document.querySelector('div>a>img') !== null) {
             FormValues[Value['name']] = Value['value'];
         });
         return FormValues;
+    }
+
+    /** Validate Form */
+    function validInput(inputID) {
+        if ($(inputID).val() !== '' && $(inputID).val() !== null) {
+            $(inputID).css('margin-bottom', '30px');
+            $(inputID).closest('.form-group').removeClass('error').addClass('validate');
+            return true;
+        } else {
+            $(inputID).css('margin-bottom', '10px');
+            $(inputID).closest('.form-group').removeClass('validate').addClass('error').append('<span class="help-block">* ' + $(inputID).attr('data-require-msg') + '</span>'); // Add Helper Text
+            return false;
+        }
     }
 
 })(jQuery);

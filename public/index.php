@@ -6,8 +6,7 @@
 <section class="hero-area">
     <div class="hero-slides owl-carousel">
         <!-- Single Hero Slide -->
-        <div class="single-hero-slide bg-img bg-overlay-white"
-            style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/q_62/v1555558042/hero1.jpg);">
+        <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/q_62/v1555558042/hero1.jpg);">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
@@ -21,16 +20,14 @@
                                 adipiscing elit sed diam nonummy nibh
                                 euismod.
                             </h6>
-                            <a href="#" class="btn greeneye-btn mt-50" data-animation="fadeInUp"
-                                data-delay="700ms">Discover <?php echo SITENAME; ?> <span>+</span></a>
+                            <a href="#" class="btn greeneye-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Discover <?php echo SITENAME; ?> <span>+</span></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Single Hero Slide -->
-        <div class="single-hero-slide bg-img bg-overlay-white"
-            style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557200/breadcumb3.jpg);">
+        <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557200/breadcumb3.jpg);">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
@@ -44,16 +41,14 @@
                                 adipiscing elit sed diam nonummy nibh
                                 euismod.
                             </h6>
-                            <a href="#" class="btn greeneye-btn mt-50" data-animation="fadeInUp"
-                                data-delay="700ms">Discover <?php echo SITENAME; ?> <span>+</span></a>
+                            <a href="#" class="btn greeneye-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Discover <?php echo SITENAME; ?> <span>+</span></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Single Hero Slide -->
-        <div class="single-hero-slide bg-img bg-overlay-white"
-            style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555558240/breadcumb1.jpg);">
+        <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555558240/breadcumb1.jpg);">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
@@ -67,8 +62,7 @@
                                 adipiscing elit sed diam nonummy nibh
                                 euismod.
                             </h6>
-                            <a href="#" class="btn greeneye-btn mt-50" data-animation="fadeInUp"
-                                data-delay="700ms">Discover <?php echo SITENAME; ?> <span>+</span></a>
+                            <a href="#" class="btn greeneye-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Discover <?php echo SITENAME; ?> <span>+</span></a>
                         </div>
                     </div>
                 </div>
@@ -134,8 +128,7 @@
             </div>
             <div class="col-12 col-lg-6">
                 <div class="features-thumbnail">
-                    <img src="https://res.cloudinary.com/dv0xm4c4v/image/upload/c_scale,q_61,w_800/v1555557241/g1.jpg"
-                        alt="image " />
+                    <img src="https://res.cloudinary.com/dv0xm4c4v/image/upload/c_scale,q_61,w_800/v1555557241/g1.jpg" alt="image " />
                 </div>
             </div>
         </div>
@@ -227,8 +220,7 @@
             <div class="col-md-6 col-lg-3">
                 <div class="greenEye-blocks">
                     <div class="flipper">
-                        <div class="front"
-                            style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557295/doctor4.jpg);">
+                        <div class="front" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557295/doctor4.jpg);">
                             <div class="box">
                                 <h2>Lisa Ray</h2>
                                 <p>Neurologist</p>
@@ -243,8 +235,7 @@
                             </blockquote>
                             <div class="author d-flex">
                                 <div class="image mr-3 align-self-center">
-                                    <div class="img bg-img"
-                                        style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557295/doctor4.jpg);">
+                                    <div class="img bg-img" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557295/doctor4.jpg);">
                                     </div>
                                 </div>
                                 <div class="name align-self-center">Lisa Ray <span class="position">Neurologist</span>
@@ -257,8 +248,7 @@
             <div class="col-md-6 col-lg-3">
                 <div class="greenEye-blocks">
                     <div class="flipper">
-                        <div class="front"
-                            style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557294/doctor3.jpg);">
+                        <div class="front" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557294/doctor3.jpg);">
                             <div class="box">
                                 <h2>Lee Hied</h2>
                                 <p>Pediatrician</p>
@@ -273,8 +263,7 @@
                             </blockquote>
                             <div class="author d-flex">
                                 <div class="image mr-3 align-self-center">
-                                    <div class="img bg-img"
-                                        style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557294/doctor3.jpg);">
+                                    <div class="img bg-img" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557294/doctor3.jpg);">
                                     </div>
                                 </div>
                                 <div class="name align-self-center">Lee Hied <span class="position">Pediatrician</span>
@@ -287,8 +276,7 @@
             <div class="col-md-6 col-lg-3">
                 <div class="greenEye-blocks">
                     <div class="flipper">
-                        <div class="front"
-                            style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557294/doctor2.jpg);">
+                        <div class="front" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557294/doctor2.jpg);">
                             <div class="box">
                                 <h2>Prakash Rao</h2>
                                 <p>Ophthalmologist</p>
@@ -303,12 +291,10 @@
                             </blockquote>
                             <div class="author d-flex">
                                 <div class="image mr-3 align-self-center">
-                                    <div class="img bg-img"
-                                        style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557294/doctor2.jpg);">
+                                    <div class="img bg-img" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557294/doctor2.jpg);">
                                     </div>
                                 </div>
-                                <div class="name align-self-center">Prakash Rao <span
-                                        class="position">Ophthalmologist</span></div>
+                                <div class="name align-self-center">Prakash Rao <span class="position">Ophthalmologist</span></div>
                             </div>
                         </div>
                     </div>
@@ -317,8 +303,7 @@
             <div class="col-md-6 col-lg-3">
                 <div class="greenEye-blocks">
                     <div class="flipper">
-                        <div class="front"
-                            style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557294/doctor1.jpg);">
+                        <div class="front" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557294/doctor1.jpg);">
                             <div class="box">
                                 <h2>Aldin Powell</h2>
                                 <p>Pulmonologist</p>
@@ -333,12 +318,10 @@
                             </blockquote>
                             <div class="author d-flex">
                                 <div class="image mr-3 align-self-center">
-                                    <div class="img bg-img"
-                                        style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557294/doctor1.jpg);">
+                                    <div class="img bg-img" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557294/doctor1.jpg);">
                                     </div>
                                 </div>
-                                <div class="name align-self-center">Aldin Powell <span
-                                        class="position">Pulmonologist</span></div>
+                                <div class="name align-self-center">Aldin Powell <span class="position">Pulmonologist</span></div>
                             </div>
                         </div>
                     </div>
@@ -362,24 +345,21 @@
     <div class="single-gallery-item">
         <img src="https://res.cloudinary.com/dv0xm4c4v/image/upload/q_44/v1555557241/g1.jpg" alt="" />
         <div class="view-more-btn">
-            <a href="https://res.cloudinary.com/dv0xm4c4v/image/upload/q_44/v1555557241/g1.jpg"
-                class="btn gallery-img">See More +</a>
+            <a href="https://res.cloudinary.com/dv0xm4c4v/image/upload/q_44/v1555557241/g1.jpg" class="btn gallery-img">See More +</a>
         </div>
     </div>
     <!-- Single Gallery Item -->
     <div class="single-gallery-item">
         <img src="https://res.cloudinary.com/dv0xm4c4v/image/upload/q_52/v1555557241/g2.jpg" alt="" />
         <div class="view-more-btn">
-            <a href="https://res.cloudinary.com/dv0xm4c4v/image/upload/q_52/v1555557241/g2.jpg"
-                class="btn gallery-img">See More +</a>
+            <a href="https://res.cloudinary.com/dv0xm4c4v/image/upload/q_52/v1555557241/g2.jpg" class="btn gallery-img">See More +</a>
         </div>
     </div>
     <!-- Single Gallery Item -->
     <div class="single-gallery-item">
         <img src="https://res.cloudinary.com/dv0xm4c4v/image/upload/q_53/v1555557241/g3.jpg" alt="" />
         <div class="view-more-btn">
-            <a href="https://res.cloudinary.com/dv0xm4c4v/image/upload/q_53/v1555557241/g3.jpg"
-                class="btn gallery-img">See More +</a>
+            <a href="https://res.cloudinary.com/dv0xm4c4v/image/upload/q_53/v1555557241/g3.jpg" class="btn gallery-img">See More +</a>
         </div>
     </div>
 
@@ -387,8 +367,7 @@
     <div class="single-gallery-item">
         <img src="https://res.cloudinary.com/dv0xm4c4v/image/upload/q_54/v1555557243/g4.jpg" alt="" />
         <div class="view-more-btn">
-            <a href="https://res.cloudinary.com/dv0xm4c4v/image/upload/q_54/v1555557243/g4.jpg"
-                class="btn gallery-img">See More +</a>
+            <a href="https://res.cloudinary.com/dv0xm4c4v/image/upload/q_54/v1555557243/g4.jpg" class="btn gallery-img">See More +</a>
         </div>
     </div>
 </div>
