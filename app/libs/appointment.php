@@ -109,6 +109,25 @@ class Appointment extends Database
         }
     }
 
+
+    function showFiveAppointment(string $Status)
+    {
+        if (!empty($Status)) {
+            ($Status === 'Book' and $Status = 1) or ($Status === 'Cancel' and $Status = 0);
+
+            $this->query("SELECT * FROM `gReeneye_bOok` WHERE `gReeneye_bOok`.`gReeneye_bstS` = $Status ORDER BY `gReeneye_bOok`.`gReeneye_bcrT` DESC LIMIT 5");
+            $result = $this->resultArray();
+            if ($this->rowCount() !== 0) {
+                return $result;
+            } else {
+                return false;
+            }
+        } else {
+            echo 'Something Went Wrong';
+            return false;
+        }
+    }
+
     function cancelBooking()
     {
         if (!empty($_POST['formData'])) {
