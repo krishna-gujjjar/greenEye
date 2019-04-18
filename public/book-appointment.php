@@ -5,7 +5,7 @@
 }; ?>
 <?php Import::Header(); ?>
 <!-- ***** Breadcumb Area Start ***** -->
-<section class="breadcumb-area bg-img gradient-background-overlay" style="background-image: url(<?php echo ASSETS; ?>img/bg-img/breadcumb1.jpg);">
+<section class="breadcumb-area bg-img gradient-background-overlay" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555558240/breadcumb1.jpg);">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12">
