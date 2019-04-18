@@ -1,11 +1,11 @@
 <?php require_once '../__constants.php'; ?>
-<?php use GreenEye\App\Config \{
+<?php use GreenEye\App\Config \ {
     Import,
     Config
 }; ?>
 <?php Import::Header(); ?>
 <!-- ***** Breadcumb Area Start ***** -->
-<section class="breadcumb-area bg-img gradient-background-overlay" style="background-image: url(<?php echo ASSETS; ?>img/bg-img/breadcumb1.jpg);">
+<section class="breadcumb-area bg-img gradient-background-overlay" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555558240/breadcumb1.jpg);">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12">
@@ -46,7 +46,7 @@
             </div>
             <div class="col-12 col-lg-6">
                 <div class="features-thumbnail">
-                    <img src="<?php echo ASSETS; ?>img/bg-img/about1.jpg" alt="">
+                    <img src="https://res.cloudinary.com/dv0xm4c4v/image/upload/q_53/v1555559564/about1.jpg" alt="aboutphoto">
                 </div>
             </div>
         </div>
@@ -64,7 +64,7 @@
             <div class="col-md-6 col-lg-3">
                 <div class="greenEye-blocks">
                     <div class="flipper">
-                        <div class="front" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/doctor4.jpg);">
+                        <div class="front" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557295/doctor4.jpg);">
                             <div class="box">
                                 <h2>Lisa Ray</h2>
                                 <p>Neurologist</p>
@@ -79,7 +79,7 @@
                             </blockquote>
                             <div class="author d-flex">
                                 <div class="image mr-3 align-self-center">
-                                    <div class="img bg-img" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/doctor4.jpg);"></div>
+                                    <div class="img bg-img" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557295/doctor4.jpg);"></div>
                                 </div>
                                 <div class="name align-self-center">Lisa Ray <span class="position">Neurologist</span></div>
                             </div>
@@ -90,7 +90,7 @@
             <div class="col-md-6 col-lg-3">
                 <div class="greenEye-blocks">
                     <div class="flipper">
-                        <div class="front" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/doctor3.jpg);">
+                        <div class="front" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557294/doctor3.jpg);">
                             <div class="box">
                                 <h2>Lee Hied</h2>
                                 <p>Pediatrician</p>
@@ -105,7 +105,7 @@
                             </blockquote>
                             <div class="author d-flex">
                                 <div class="image mr-3 align-self-center">
-                                    <div class="img bg-img" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/doctor3.jpg);"></div>
+                                    <div class="img bg-img" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557294/doctor3.jpg);"></div>
                                 </div>
                                 <div class="name align-self-center">Lee Hied <span class="position">Pediatrician</span></div>
                             </div>
@@ -116,7 +116,7 @@
             <div class="col-md-6 col-lg-3">
                 <div class="greenEye-blocks">
                     <div class="flipper">
-                        <div class="front" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/doctor2.jpg);">
+                        <div class="front" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557294/doctor2.jpg);">
                             <div class="box">
                                 <h2>Prakash Rao</h2>
                                 <p>Ophthalmologist</p>
@@ -131,7 +131,7 @@
                             </blockquote>
                             <div class="author d-flex">
                                 <div class="image mr-3 align-self-center">
-                                    <div class="img bg-img" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/doctor2.jpg);"></div>
+                                    <div class="img bg-img" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557294/doctor2.jpg);"></div>
                                 </div>
                                 <div class="name align-self-center">Prakash Rao <span class="position">Ophthalmologist</span></div>
                             </div>
@@ -142,7 +142,7 @@
             <div class="col-md-6 col-lg-3">
                 <div class="greenEye-blocks">
                     <div class="flipper">
-                        <div class="front" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/doctor1.jpg);">
+                        <div class="front" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557241/g1.jpg);">
                             <div class="box">
                                 <h2>Aldin Powell</h2>
                                 <p>Pulmonologist</p>
@@ -157,7 +157,7 @@
                             </blockquote>
                             <div class="author d-flex">
                                 <div class="image mr-3 align-self-center">
-                                    <div class="img bg-img" style="background-image: url(<?php echo ASSETS; ?>img/blog-img/doctor1.jpg);"></div>
+                                    <div class="img bg-img" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557241/g1.jpg);"></div>
                                 </div>
                                 <div class="name align-self-center">Aldin Powell <span class="position">Pulmonologist</span></div>
                             </div>
@@ -179,12 +179,12 @@
 
 
 <!-- ***** Video Area Start ***** -->
-<section class="greeneye-video-area section-padding-100 bg-overlay bg-img" style="background-image: url(<?php echo ASSETS; ?>img/bg-img/video.jpg);">
+<section class="greeneye-video-area section-padding-100 bg-overlay bg-img" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557243/g4.jpg);">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-lg-8">
                 <div class="video-box bg-overlay-black">
-                    <img src="<?php echo ASSETS; ?>img/bg-img/video2.jpg" alt="">
+                    <img src="https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555557243/g4.jpg" alt="vedio">
                     <div class="play-btn">
                         <a class="popup-video" href="http://www.youtube.com/watch?v=0O2aH4XLbto">
                             <i data-feather="play-circle" class="fill-none"></i>

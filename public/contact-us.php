@@ -1,11 +1,11 @@
 <?php require_once '../__constants.php'; ?>
-<?php use GreenEye\App\Config \{
+<?php use GreenEye\App\Config \ {
     Import,
     Config
 }; ?>
 <?php Import::Header(); ?>
 <!-- ***** Breadcumb Area Start ***** -->
-<section class="breadcumb-area bg-img gradient-background-overlay" style="background-image: url(<?php echo ASSETS; ?>img/bg-img/breadcumb3.jpg);">
+<section class="breadcumb-area bg-img gradient-background-overlay" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555558240/breadcumb1.jpg);">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12">
@@ -86,7 +86,7 @@
                     </div>
 
                     <!-- medilife Emergency Card -->
-                    <div class="greeneye-emergency-card bg-img bg-overlay" style="background-image: url(<?php echo ASSETS; ?>img/bg-img/about1.jpg);">
+                    <div class="greeneye-emergency-card bg-img bg-overlay" style="background-image: url(https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555558240/breadcumb1.jpg);">
                         <i class="icon-smartphone"></i>
                         <h2>For Emergency calls</h2>
                         <h3>+91-123-456-7890</h3>
