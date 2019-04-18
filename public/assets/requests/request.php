@@ -110,7 +110,7 @@ $HospitalTime = [
             <?php $Appointment->Book(); ?>
 
             <div class="my-3 text-right mb-5">
-                <img src="<?php echo ASSETS; ?>img/core-img/logo.png" alt="Logo" />
+                <img src="https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555559219/logo.png" alt="Logo" />
                 <p class="pt-2 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <p class=""><?php echo date('F d, Y h : i A', time()); ?></p>
                 <hr class="w-100 border-secondary">
@@ -167,7 +167,7 @@ $HospitalTime = [
         <?php if ($Appointment->checkAppointment()) : ?>
             <?php $user = $Appointment->checkAppointment(); ?>
             <div class="my-3 text-right mb-5">
-                <img src="<?php echo ASSETS; ?>img/core-img/logo.png" alt="Logo" />
+                <img src="https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555559219/logo.png" alt="Logo" />
                 <p class="pt-2 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <p class=""><?php echo date('F d, Y h : i A', time()); ?></p>
                 <hr class="w-100 border-secondary">
