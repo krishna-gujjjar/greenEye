@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/perfect-scrollbar.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/prism.min.css">
     <!-- <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/dropzone.min.css"> -->
-
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/chartist.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/sweetalert2.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pace-minimal.css">
@@ -499,22 +499,22 @@
                                         </ul>
                                     </div>
                                     <!-- <div aria-labelledby="dropdownBasic3" class="dropdown-menu dropdown-menu-right">
-                                            <div class="arrow_box_right">
-                                                <a href="user-profile-page.html" class="dropdown-item py-1">
-                                                    <i class="ft-edit mr-2"></i>
-                                                    <span>My Profile</span>
-                                                </a>
-                                                <a href="javascript:;" class="dropdown-item py-1">
-                                                    <i class="ft-settings mr-2"></i>
-                                                    <span>Settings</span>
-                                                </a>
-                                                <div class="dropdown-divider"></div>
-                                                <a href="<?php getself::delIndex(); ?>?logout" class="dropdown-item">
-                                                    <i class="ft-power mr-2"></i>
-                                                    <span>Logout</span>
-                                                </a>
-                                            </div>
-                                        </div> -->
+                                                                    <div class="arrow_box_right">
+                                                                        <a href="user-profile-page.html" class="dropdown-item py-1">
+                                                                            <i class="ft-edit mr-2"></i>
+                                                                            <span>My Profile</span>
+                                                                        </a>
+                                                                        <a href="javascript:;" class="dropdown-item py-1">
+                                                                            <i class="ft-settings mr-2"></i>
+                                                                            <span>Settings</span>
+                                                                        </a>
+                                                                        <div class="dropdown-divider"></div>
+                                                                        <a href="<?php getself::delIndex(); ?>?logout" class="dropdown-item">
+                                                                            <i class="ft-power mr-2"></i>
+                                                                            <span>Logout</span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div> -->
                                 </li>
                             </ul>
                         </div>

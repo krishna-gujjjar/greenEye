@@ -12,15 +12,15 @@
     <title><?php Config::getPageTitle(); ?> | GreenEye</title>
 
     <!-- Favicon  -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo ASSETS; ?>img/core-img/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo ASSETS; ?>img/core-img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo ASSETS; ?>img/core-img/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo ASSETS; ?>img/core-img/apple-touch-icon.png">
-    <link rel="manifest" href="<?php echo ASSETS; ?>img/core-img/site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555586044/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555586044/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555586044/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555586044/apple-touch-icon.png">
+    <link rel="manifest" href="https://res.cloudinary.com/dv0xm4c4v/raw/upload/v1555586646/site.webmanifest">
     <meta name="apple-mobile-web-app-title" content="greenEye">
     <meta name="application-name" content="greenEye">
     <meta name="msapplication-TileColor" content="#ffc40d">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#21a32f">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
