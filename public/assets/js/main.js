@@ -1,8 +1,8 @@
-/*
+/**
  * @Author: GurjarsPro
  * @Date: 2019-04-11 17:39:27
  * @Last Modified by: krishna_gujjjar
- * @Last Modified time: 2019-04-18 15:49:10
+ * @Last Modified time: 2019-04-20 13:50:52
  */
 
 /** Remove Banner from Document */
@@ -206,31 +206,17 @@ if (document.querySelector('div>a>img') !== null) {
         }
     }(jQuery, window);
 
-(function ($) {
+($ => {
     'use strict';
-
-    // :: Index of Plugins Active Code :: //
 
     var $window = $(window);
 
     // :: Preloader Active Code
-    $window.on('load', function () {
-        $('#preloader').fadeOut('slow', function () {
+    $window.on('load', () => {
+        $('#preloader').fadeOut('slow', () => {
             $(this).remove();
         });
     });
-
-    // :: Fullscreen Active Code
-    $window.on('resizeEnd', function () {
-        $('.full_height').height($window.height());
-    });
-
-    $window.on('resize', function () {
-        if (this.resizeTO) clearTimeout(this.resizeTO);
-        this.resizeTO = setTimeout(function () {
-            $(this).trigger('resizeEnd');
-        }, 300);
-    }).trigger('resize');
 
     // :: Sticky Active Code
     if ($window.width() > 767) {
@@ -266,36 +252,34 @@ if (document.querySelector('div>a>img') !== null) {
             items: 1,
             margin: 0,
             loop: true,
-            // nav: true,
-            // navText: ['<i class="fill-none" data-feather="arrow-left"></i>', '<i class="fill-none" data-feather="arrow-right"></i>'],
             dots: true,
             autoplay: false,
             autoplayTimeout: 5000,
             smartSpeed: 1000
         });
 
-        welcomeSlide.on('translate.owl.carousel', function () {
+        welcomeSlide.on('translate.owl.carousel', () => {
             var slideLayer = $('[data-animation]');
-            slideLayer.each(function () {
+            slideLayer.each(() => {
                 var anim_name = $(this).data('animation');
                 $(this).removeClass('animated ' + anim_name).css('opacity', '0');
             });
         });
 
-        welcomeSlide.on('translated.owl.carousel', function () {
+        welcomeSlide.on('translated.owl.carousel', () => {
             var slideLayer = welcomeSlide.find('.owl-item.active').find('[data-animation]');
-            slideLayer.each(function () {
+            slideLayer.each(() => {
                 var anim_name = $(this).data('animation');
                 $(this).addClass('animated ' + anim_name).css('opacity', '1');
             });
         });
 
-        $("[data-delay]").each(function () {
+        $("[data-delay]").each(() => {
             var anim_del = $(this).data('delay');
             $(this).css('animation-delay', anim_del);
         });
 
-        $("[data-duration]").each(function () {
+        $("[data-duration]").each(() => {
             var anim_dur = $(this).data('duration');
             $(this).css('animation-duration', anim_dur);
         });
@@ -337,7 +321,6 @@ if (document.querySelector('div>a>img') !== null) {
     }
 
     // :: Magnific Popup Active Code
-
     if ($.fn.magnificPopup) {
         $('.gallery-img').magnificPopup({
             type: 'image'
@@ -367,15 +350,6 @@ if (document.querySelector('div>a>img') !== null) {
             time: 2000
         });
     }
-
-    // :: ScrollUp Active Code
-    // // if ($.fn.scrollUp) {
-    // $.scrollUp({
-    //     scrollSpeed: 1000,
-    //     easingType: 'easeInOutQuart',
-    //     scrollText: '<i class="fill-none stroke-light" data-feather="chevron-up"></i>'
-    // });
-    // // }
 
     // :: PreventDefault a Click
     $("a[href='#']").on('click', function ($) {
@@ -846,7 +820,7 @@ if (document.querySelector('div>a>img') !== null) {
 
 
 
-    // 0/** Check Test Number */
+    // /** Check Test Number */
     // function checkValidNum(inputID) {
     //     if (/^[0-9]+$/.test($(inputID).val()) && $(inputID).val().length == 10 && $(inputID).val() !== '' && $(inputID).val() !== null) {
     //         return true;
@@ -858,7 +832,7 @@ if (document.querySelector('div>a>img') !== null) {
     /** Valid Refference */
     function validREF(inputID) {
         if (validInput(inputID)) {
-            if (/^[REF{3}]+[0-9{6}]+$/.test($(inputID).val()) && $(inputID).val().length === 9) {
+            if (validREFs.test($(inputID).val()) && $(inputID).val().length === 9) {
                 $(inputID).css('margin-bottom', '30px');
                 $(inputID).closest('.form-group').removeClass('error').addClass('validate');
                 return true;

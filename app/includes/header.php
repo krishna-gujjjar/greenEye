@@ -26,14 +26,19 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="<?php echo VENDORS; ?>bootstrap/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="<?php echo VENDORS; ?>bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo VENDORS; ?>animate/animate.css">
     <link rel="stylesheet" href="<?php echo ASSETS; ?>css/owl.carousel.css">
     <link rel="stylesheet" href="<?php echo ASSETS; ?>css/magnific-popup.css">
     <link rel="stylesheet" href="<?php echo ASSETS; ?>css/themify-icons.css">
     <link rel="stylesheet" href="<?php echo ASSETS; ?>css/greeneye-icons.css">
-    <link rel="stylesheet" href="<?php echo ASSETS; ?>css/nice-select.css">
+    <link rel="stylesheet" href="<?php echo ASSETS; ?>css/nice-select.css"> -->
     <!-- <link rel="stylesheet" href="<?php echo ASSETS; ?>style/main.min.css"> -->
+    <link rel="stylesheet" href="<?php echo ASSETS; ?>css/greeneye-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo ASSETS; ?>css/main.css" />
 </head>
 

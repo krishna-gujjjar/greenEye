@@ -7,7 +7,7 @@
                 <div class="col-12 col-sm-6 col-xl-3">
                     <div class="footer-widget-area">
                         <div class="footer-logo">
-                            <img src="<?php echo ASSETS; ?>img/core-img/logo.png" alt="" />
+                            <img src="https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555559219/logo.png" alt="GreenEyeLogo" />
                         </div>
                         <p>
                             Lorem ipsum dolor sit amet, consectetuer
@@ -98,17 +98,73 @@
 <!-- ***** Footer Area End ***** -->
 
 <!-- Feather js -->
-<script src="<?php echo VENDORS; ?>feather/feather.min.js"></script>
+<!-- <script src="<?php echo VENDORS; ?>feather/feather.min.js"></script> -->
 <!-- jQuery js-->
 <!-- <script src="<?php echo VENDORS; ?>jquery/jquery-2.2.4.min.js"></script> -->
-<script src="<?php echo VENDORS; ?>jquery/jquery-3.3.1.min.js"></script>
+<!-- <script src="<?php echo VENDORS; ?>jquery/jquery-3.3.1.min.js"></script> -->
 <!-- Popper js -->
-<script src="<?php echo VENDORS; ?>popperjs/popper.min.js"></script>
+<!-- <script src="<?php echo VENDORS; ?>popperjs/popper.min.js"></script> -->
 <!-- Bootstrap js -->
-<script src="<?php echo VENDORS; ?>bootstrap/js/bootstrap.min.js"></script>
+<!-- <script src="<?php echo VENDORS; ?>bootstrap/js/bootstrap.min.js"></script> -->
 <!-- Plugins js -->
-<script src="<?php echo VENDORS; ?>plugins/plugins.js"></script>
-<script src="<?php echo VENDORS; ?>jqueryvalidation/jqBootstrapValidation.js"></script>
+<!-- <script src="<?php echo VENDORS; ?>plugins/plugins.js"></script> -->
+<!-- <script src="<?php echo VENDORS; ?>jqueryvalidation/jqBootstrapValidation.js"></script> -->
+
+<!-- Jquery V3.4.0 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<script src="<?php echo VENDORS; ?>nicescroll/nicescroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.4/jquery.sticky.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+
+
+<!-- ----------------------------------------- -->
+<!--                For Home Page              -->
+<!-- ----------------------------------------- -->
+<?php if (basename($_SERVER['PHP_SELF'], '.php') === 'index') : ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="<?php echo VENDORS; ?>counterJS/jquery.counter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<?php endif; ?>
+
+
+<!-- ----------------------------------------- -->
+<!--            For Appointment Page           -->
+<!-- ----------------------------------------- -->
+<!-- Jquery Nice Select V1.1.0 -->
+<?php if (basename($_SERVER['PHP_SELF'], '.php') === 'book-appointment') : ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+<?php endif; ?>
+
+
+<!-- ----------------------------------------- -->
+<!--                For About Page             -->
+<!-- ----------------------------------------- -->
+<!-- Jquery Magnific Popup V1.1.0 -->
+<?php if (basename($_SERVER['PHP_SELF'], '.php') === 'about-us') : ?>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<?php endif; ?>
+
+
+<!-- ----------------------------------------- -->
+<!--            For Service Page               -->
+<!-- ----------------------------------------- -->
+<!-- Jquery Nice Select V1.1.0 -->
+<?php if (basename($_SERVER['PHP_SELF'], '.php') === 'services') : ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
+<?php endif; ?>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.21.0/feather.min.js"></script>
+
+<!-- UNUSED JS -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollup/2.4.1/jquery.scrollUp.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script> -->
+
 <!-- Main js -->
 <script src="<?php echo ASSETS; ?>js/main.js"></script>
 <script>
