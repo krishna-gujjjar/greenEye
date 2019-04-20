@@ -29,7 +29,7 @@
     <link href="https://fonts.googleapis.com/css?family=Asap:500,600,700" rel="stylesheet">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="<?php echo ASSETS; ?>css/greeneye-icons.css">
+    <link rel="stylesheet" href="<?php echo ASSETS; ?>css/greeneye-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
