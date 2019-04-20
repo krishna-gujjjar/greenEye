@@ -170,7 +170,7 @@
             </div>
             <div class="col-12 col-md-4">
                 <div class="single-benefits-thumb">
-                    <img src="<?php echo ASSETS; ?>img/bg-img/benefits.png" alt="">
+                    <img src="https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555754711/benefits.png" alt="benits">
                 </div>
             </div>
             <div class="col-12 col-md-4">
