@@ -56,7 +56,7 @@
                     </footer>
                 </div>
                 <div class="col-12 col-md-7 col-lg-6 col-xl-7 d-none d-lg-block px-5 bg-light">
-                    <div class="bg-overlay bg-img vh-100" style="background: url('assets/img/auth.svg');"></div>
+                    <div class="bg-overlay bg-img vh-100" style="background: url('https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555754960/authentication_fsn5.svg');"></div>
                 </div>
             </div>
         </section>
