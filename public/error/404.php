@@ -4,7 +4,7 @@
 <div class="container py-5">
     <div class="col pt-5">
         <h1 class="font-bold text-center mt-md-5 pt-5">I Think You Are Lost, Your Page Not Found.</h1>
-        <img class="bg-img pt-3" src="<?php echo ASSETS; ?>img/svg/a_day_at_the_park.svg" alt="">
+        <img class="bg-img pt-3" src="https://res.cloudinary.com/dv0xm4c4v/image/upload/v1555754960/a_day_at_the_park.svg" alt="404 error">
     </div>
 </div>
 <?php Import::Footer(); ?>
