@@ -97,22 +97,8 @@
 </footer>
 <!-- ***** Footer Area End ***** -->
 
-<!-- Feather js -->
-<!-- <script src="<?php echo VENDORS; ?>feather/feather.min.js"></script> -->
-<!-- jQuery js-->
-<!-- <script src="<?php echo VENDORS; ?>jquery/jquery-2.2.4.min.js"></script> -->
-<!-- <script src="<?php echo VENDORS; ?>jquery/jquery-3.3.1.min.js"></script> -->
-<!-- Popper js -->
-<!-- <script src="<?php echo VENDORS; ?>popperjs/popper.min.js"></script> -->
-<!-- Bootstrap js -->
-<!-- <script src="<?php echo VENDORS; ?>bootstrap/js/bootstrap.min.js"></script> -->
-<!-- Plugins js -->
-<!-- <script src="<?php echo VENDORS; ?>plugins/plugins.js"></script> -->
-<!-- <script src="<?php echo VENDORS; ?>jqueryvalidation/jqBootstrapValidation.js"></script> -->
-
-<!-- Jquery V3.4.0 -->
+<!-- JS Script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-
 <script src="<?php echo VENDORS; ?>nicescroll/nicescroll.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.4/jquery.sticky.min.js"></script>
@@ -145,7 +131,7 @@
 <!-- ----------------------------------------- -->
 <!-- Jquery Magnific Popup V1.1.0 -->
 <?php if (basename($_SERVER['PHP_SELF'], '.php') === 'about-us') : ?>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 <?php endif; ?>
 
 
@@ -166,7 +152,7 @@
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script> -->
 
 <!-- Main js -->
-<script src="<?php echo ASSETS; ?>js/main.js"></script>
+<script src="<?php echo ASSETS; ?>js/main.min.js"></script>
 <script>
     // Get Current Year for Copyright
     $('#year').html(new Date().getFullYear());
