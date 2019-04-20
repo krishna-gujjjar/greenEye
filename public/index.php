@@ -20,7 +20,7 @@
                                 adipiscing elit sed diam nonummy nibh
                                 euismod.
                             </h6>
-                            <a href="#" class="btn greeneye-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Discover <?php echo SITENAME; ?> <span>+</span></a>
+                            <a href="<?php echo ROOT_URL; ?>book-appointment" class="btn greeneye-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Book <?php echo SITENAME; ?> <span>+</span></a>
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                                 adipiscing elit sed diam nonummy nibh
                                 euismod.
                             </h6>
-                            <a href="#" class="btn greeneye-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Discover <?php echo SITENAME; ?> <span>+</span></a>
+                            <a href="<?php echo ROOT_URL; ?>book-appointment" class="btn greeneye-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Book <?php echo SITENAME; ?> <span>+</span></a>
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                                 adipiscing elit sed diam nonummy nibh
                                 euismod.
                             </h6>
-                            <a href="#" class="btn greeneye-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Discover <?php echo SITENAME; ?> <span>+</span></a>
+                            <a href="<?php echo ROOT_URL; ?>book-appointment" class="btn greeneye-btn mt-50" data-animation="fadeInUp" data-delay="700ms">Book <?php echo SITENAME; ?> <span>+</span></a>
                         </div>
                     </div>
                 </div>
@@ -123,7 +123,7 @@
                         . And for all Sudha hospitalites who are dedicated over the path of health care, for us
                         Coming together is a beginning; keeping together is progress; working together is success.
                     </p>
-                    <a href="#" class="btn greeneye-btn mt-50">View the services <span>+</span></a>
+                    <a href="<?php echo ROOT_URL; ?>about-us" class="btn greeneye-btn mt-50">About Us <span>+</span></a>
                 </div>
             </div>
             <div class="col-12 col-lg-6">
@@ -144,7 +144,7 @@
                 <div class="greenEye-about-content">
                     <h2>We always put our pacients first</h2>
                     <p>We are give attention to our patients first .</p>
-                    <a href="#" class="btn greeneye-btn mt-50">View the services <span>+</span></a>
+                    <a href="<?php echo ROOT_URL; ?>services" class="btn greeneye-btn mt-50">View the Services <span>+</span></a>
                 </div>
             </div>
             <div class="col-12 col-lg-8">

@@ -21,7 +21,7 @@
 <!-- ***** Breadcumb Area End ***** -->
 
 <!-- ***** Services Area Start ***** -->
-<div class="medilife-services-area section-padding-100-20">
+<div class="greeneye-services-area section-padding-100-20">
     <div class="container">
         <div class="row">
             <!-- Single Service Area -->
@@ -101,7 +101,7 @@
 </div>
 <!-- ***** Services Area End ***** -->
 
-<div class="medilife-services-area clearfix">
+<div class="greeneye-services-area clearfix">
     <!-- Single Services Area -->
     <div class="singleServiceArea equalize d-flex">
         <div class="singleServiceIcon">
@@ -134,7 +134,7 @@
     </div>
 </div>
 
-<section class="medilife-benefits-area section-padding-100-50">
+<section class="greeneye-benefits-area section-padding-100-50">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -201,7 +201,7 @@
 </section>
 
 <!-- ***** CTA Area Start ***** -->
-<!-- <div class="medilife-cta-area">
+<!-- <div class="greeneye-cta-area">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
