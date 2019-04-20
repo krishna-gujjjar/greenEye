@@ -53,7 +53,7 @@ abstract class DB
                                 `gReeneye_btimE` VARCHAR(255) NOT NULL COMMENT 'Patient\'s Appointment Time' ,
                                 `gReeneye_bcrT` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Booking Time' ,
                                 `gReeneye_bstS` INT(11) NOT NULL DEFAULT '1' COMMENT 'Booking Status'
-                                ) ENGINE = InnoDB COMMENT = 'Patient\'s Booking Data';";
+                                ) ENGINE = InnoDB DEFAULT CHARSET=utf8 COMMENT = 'Patient\'s Booking Data';";
                     $createAppoint = mysqli_query($this->connect, $createAppoint) or exit(errMsg('Oops, `gReeneye_bOok` Table Not Created'));
                     if ($createUser && $createDoctor && $createAppoint) {
                         $checkData = "SELECT * FROM `gReeneye_uSer` WHERE `gReeneye_uiD` = 1";
