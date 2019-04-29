@@ -63,5 +63,5 @@
     </div>
     <?php Import::getFooter(); ?>
 <?php else : ?>
-    <?php header('location:' . ADMIN); ?>
+    <?php Valid::reDirect(ADMIN); ?>
 <?php endif; ?>

@@ -2,11 +2,11 @@
  * @Author: GurjarsPro
  * @Date: 2019-04-11 17:39:27
  * @Last Modified by: krishna_gujjjar
- * @Last Modified time: 2019-04-20 13:50:52
+ * @Last Modified time: 2019-04-29 12:48:48
  */
 
 /** Remove Banner from Document */
-if (document.querySelector('div>a>img') !== null) {
+if (document.querySelector('div>a>img')) {
     document.onreadystatechange = () => {
         if (document.readyState === 'interactive') {
             let el = document.querySelector('[alt="www.000webhost.com"]').parentNode.parentNode;

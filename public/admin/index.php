@@ -145,12 +145,7 @@
         </div>
     </div>
 
-
-
     <!-- All appointments -->
-
-
-
     <div class="row">
         <div class="col-md-12 col-12">
             <div class="card">
@@ -195,10 +190,7 @@
         </body>
 
         </html>
-
-
-
         <?php Import::getFooter(); ?>
     <?php else : ?>
-        <?php header('location:' . LOGIN); ?>
+        <?php Valid::reDirect(LOGIN); ?>
     <?php endif; ?>

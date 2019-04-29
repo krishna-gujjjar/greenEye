@@ -87,21 +87,25 @@ class Validate extends GreenEyeDatabase
                         is_null($row["gReeneye_upiC"]) or $_SESSION["uSer_piC"] = $row["gReeneye_upiC"];
                         $_SESSION["gReeneye"] = rand(0000, 9999);
                         Flash::setMsg("Welcome Back, " . $_SESSION["uSer_namE"]);
-                        header("location:" . ADMIN);
+                        // header("location:" . ADMIN);
+                        self::reDirect(ADMIN);
                         exit();
                     } else {
                         Flash::setMsg("Invalid Login Details");
-                        header("location:" . $this->Path());
+                        // header("location:" . $this->Path());
+                        self::reDirect($this->Path());
                         exit();
                     }
                 } else {
                     Flash::setMsg("Something Went Wrong");
-                    header("location:" . $this->Path());
+                    // header("location:" . $this->Path());
+                    self::reDirect($this->Path());
                     exit();
                 }
             } else {
                 Flash::setMsg("Fields Are Empty, Please Fill All Field.");
-                header("location:" . $this->Path());
+                // header("location:" . $this->Path());
+                self::reDirect($this->Path());
                 exit();
             }
         }
